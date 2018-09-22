@@ -1,26 +1,9 @@
-# gatsby-starter-default
-The default Gatsby starter.
+# Justin Kaseman's website
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
+You're curious, I like you!
 
-## Install
+This is my [Gatsby](https://www.gatsbyjs.org)-powered personal website where I talk about myself, my work, self-improvement, and all of the things in life that I enjoy.
 
-Make sure that you have the Gatsby CLI program installed:
-```sh
-npm install --global gatsby-cli
-```
+This wouldn't be possible without some of the amazing work I leaned on:
 
-And run from your CLI:
-```sh
-gatsby new gatsby-example-site
-```
-
-Then you can run it by:
-```sh
-cd gatsby-example-site
-gatsby develop
-```
-
-## Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+- Coming soon

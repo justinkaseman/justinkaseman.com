@@ -1,11 +1,11 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from "react";
 
-import Layout from '../components/layout'
+import Layout from "../components/layout";
+import Section from "../components/section";
 
 const IndexPage = () => (
   <Layout>
-    <div>
+    {/* <div>
       <p>Contact / Intro</p>
       <Link to="/page-2/">Go to page 2</Link>
     </div>
@@ -20,11 +20,15 @@ const IndexPage = () => (
     </div>
     <div>
       <p>Made by Justin Kaseman with Gatsby</p>
-    </div>
+    </div> */}
+    <Section title={"Hi"} item={"Big Item"} />
+    <Section title={"Bio"} item={"Big Item"} />
+    <Section title={"Projects"} item={"Big Item"} />
+    <Section title={"Writing"} item={"Big Item"} />
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;
 
 /* .css-1f1i0qo {
     box-sizing: border-box;

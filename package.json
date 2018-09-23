@@ -10,7 +10,8 @@
     "gatsby-plugin-offline": "next",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "styled-components": "^1.2.1"
   },
   "keywords": [
     "gatsby"

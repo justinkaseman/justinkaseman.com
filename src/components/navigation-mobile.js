@@ -1,21 +1,25 @@
 import React, { Component } from "react";
 
-class NavigationMobile extends Component {
-  state = {
-    isOpen: false,
-  };
+import { NavigationSubButton } from "../styles/styled-components.js";
 
-  toggle = () => {
-    this.setState({ isOpen: !this.state.isOpen });
-    // register eventlistener if isOpen that fires when clicking anywhere else closes modal
-    // register eventlistener on arrow key right opens modal
+class NavigationMobile extends Component {
+  // state = {
+  //   isOpen: false,
+  // };
+
+  toggle = e => {
+    e.preventDefault();
+    console.log("fire");
   };
 
   render() {
     this.toggle = this.toggle.bind(this);
     return (
-      <div>
-        <button onClick={this.toggle}>Mobile Modal</button>
+      <div style={{ display: "flex" }}>
+        <NavigationSubButton onClick={this.toggle}>Mobile</NavigationSubButton>
+        <NavigationSubButton onClick={this.toggle}>Mobile</NavigationSubButton>
+        <NavigationSubButton onClick={this.toggle}>Mobile</NavigationSubButton>
+        {/* {this.state.isOpen ? <NavigationMobileButton /> : null} */}
       </div>
     );
   }

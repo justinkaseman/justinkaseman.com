@@ -4,6 +4,7 @@ import Helmet from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
 
 import Navigation from "./navigation.js";
+import { Wrapper } from "../styles/styled-components.js";
 import "../styles/layout.css";
 
 const Layout = ({ children }) => (
@@ -29,16 +30,7 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <Navigation />
-        <div
-          style={{
-            margin: "0 auto",
-            maxWidth: 960,
-            padding: "0px 1.0875rem 1.45rem",
-            paddingTop: 0,
-          }}
-        >
-          {children}
-        </div>
+        {children}
       </>
     )}
   />

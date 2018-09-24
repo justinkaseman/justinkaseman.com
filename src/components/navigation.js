@@ -4,11 +4,15 @@ import NavigationMobile from "./navigation-mobile.js";
 import NavigationTablet from "./navigation-tablet.js";
 import NavigationDesktop from "./navigation-desktop.js";
 
-import { NavigationModal } from "../styles/styled-components.js";
+import {
+  NavigationModal,
+  NavigationButton,
+} from "../styles/styled-components.js";
 
 class Navigation extends Component {
   state = {
     screenSize: null,
+    isOpen: false,
   };
 
   componentDidMount() {
@@ -20,6 +24,13 @@ class Navigation extends Component {
     window.removeEventListener("resize", this.checkSize);
   }
 
+  toggle = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+    console.log(this.state.isOpen);
+    // register eventlistener if isOpen that fires when clicking anywhere else closes modal
+    // register eventlistener on arrow key right opens modal
+  };
+
   checkSize() {
     const currentSize = window.innerWidth;
     let newSize;
@@ -27,16 +38,22 @@ class Navigation extends Component {
     else if (currentSize < 1201) newSize = "Tablet";
     else if (currentSize > 1200) newSize = "Desktop";
     if (this.state.screenSize != newSize)
-      this.setState({ screenSize: newSize });
+      this.setState({ screenSize: newSize, isOpen: false });
   }
 
   render() {
     this.checkSize = this.checkSize.bind(this);
+    this.toggle = this.toggle.bind(this);
     return (
       <NavigationModal>
-        {this.state.screenSize === "Mobile" ? <NavigationMobile /> : null}
-        {this.state.screenSize === "Tablet" ? <NavigationTablet /> : null}
-        {this.state.screenSize === "Desktop" ? <NavigationDesktop /> : null}
+        <NavigationButton onClick={this.toggle}>Map</NavigationButton>
+        {this.state.isOpen ? (
+          <div>
+            {this.state.screenSize === "Mobile" ? <NavigationMobile /> : null}
+            {this.state.screenSize === "Tablet" ? <NavigationTablet /> : null}
+            {this.state.screenSize === "Desktop" ? <NavigationDesktop /> : null}
+          </div>
+        ) : null}
       </NavigationModal>
     );
   }

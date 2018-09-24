@@ -92,18 +92,25 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
-
+// svg {
+//   position: absolute;
+//   top: 0px;
+//   bottom: 0px;
+//   right: 0px;
+//   left: 0px;
+//   height: 100%;
+//   width: 100%;
+//   z-index: 1;
+// }
 export const BackgroundContainer = styled.div`
-  svg {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-  }
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 1;
 `;
 
 /* 
@@ -112,9 +119,9 @@ COMPONENTS
 
 export const NavigationModal = styled.div`
   background: brown;
+  display: flex;
   position: fixed;
-  height: 60px;
-  width: 60px;
+  z-index: 10;
   ${small`
     bottom: 3%;
     left: 6%;
@@ -122,29 +129,73 @@ export const NavigationModal = styled.div`
   ${medium`
     right: 3%;
     bottom: 50vh;
+    flex-direction: column;
   `}
   ${large`
     right: 3%;
     bottom: 50vh;
+    flex-direction: column;
   `}
 `;
 
+export const NavigationMap = styled.div`
+  position: fixed;
+  background: black;
+  right: 3%;
+  bottom: calc(50vh - 80px);
+  height: 200px;
+  width: 300px;
+  z-index: 15;
+`;
+
+export const NavigationButton = styled.button`
+  height: 80px;
+  width: 80px;
+  order: 0;
+  ${medium`
+  order: 1;
+  `} ${large`
+  order: 1;
+  `};
+`;
+
+export const NavigationSubButton = styled.button`
+  height: 80px;
+  width: 80px;
+`;
+
 export const SectionContainer = styled.div`
-  background: grey;
-  height: 80%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+${small`
+padding: 10px 10px 10px 10px;
+`}
+${medium`
+padding: 20px 80px 20px 80px;
+min-height: 100vh;
+`}
+${large`
+padding: 40px 120px 40px 120px;
+min-height: 100vh;
+`}
 `;
 
 export const SectionContents = styled.div`
-  background: grey;
-  height: 80%;
+  position: relative;
+  z-index: 5;
+  background: ${white};
+  box-shadow: 8px 8px rgba(0, 0, 0, 0.15);
+  border-left: 40px solid #eee;
 `;
 
 export const SectionHeader = styled.div`
-  background: grey;
+  background: ${white};
   height: 80%;
 `;
 
 export const SectionItems = styled.div`
-  background: grey;
+  background: ${white};
   height: 80%;
 `;

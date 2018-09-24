@@ -1,5 +1,6 @@
 import React from "react";
 
+import Background from "./background.js";
 import {
   SectionContainer,
   SectionContents,
@@ -17,7 +18,7 @@ const Section = ({
   text,
   cta,
 }) => (
-  <SectionContainer>
+  <SectionContainer style={{ backgroundColor: background }}>
     {/* <Background
       className="svg-background"
       width={100}
@@ -25,7 +26,7 @@ const Section = ({
       data={{}}
       options={{ index }}
     /> */}
-
+    <Background className="svg-background" index={index} />
     <SectionContents>
       {/* Maybe ICON */}
       <SectionHeader>
@@ -40,10 +41,13 @@ const Section = ({
       {/* Maybe CTA */}
 
       <SectionItems>
-        {/* {items
-          ? items.map((item, index) => <Item {...item} key={index} />)
-          : null} */}
-        {items}
+        {items
+          ? items.map((item, index) => (
+              <p>
+                {item} {index}
+              </p>
+            ))
+          : null}
       </SectionItems>
     </SectionContents>
   </SectionContainer>

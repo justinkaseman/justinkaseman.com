@@ -5,26 +5,25 @@ import Section from "../components/section";
 
 const IndexPage = () => (
   <Layout>
-    {/* <div>
-      <p>Contact / Intro</p>
-      <Link to="/page-2/">Go to page 2</Link>
-    </div>
-    <div>
-      <p>Bio</p>
-    </div>
-    <div>
-      <p>Projects</p>
-    </div>
-    <div>
-      <p>Writing</p>
-    </div>
-    <div>
-      <p>Made by Justin Kaseman with Gatsby</p>
-    </div> */}
-    <Section title={"Hi"} item={"Big Item"} />
-    <Section title={"Bio"} item={"Big Item"} />
-    <Section title={"Projects"} item={"Big Item"} />
-    <Section title={"Writing"} item={"Big Item"} />
+    <Section
+      title={"Hi"}
+      items={["Big Item", "Some Item"]}
+      index={0}
+      background={"blue"}
+    />
+    <Section title={"Bio"} items={["Big Item"]} index={1} background={"red"} />
+    <Section
+      title={"Projects"}
+      items={["Big Item", "Little Item"]}
+      index={2}
+      background={"green"}
+    />
+    <Section
+      title={"Writing"}
+      items={["Big Item"]}
+      index={3}
+      background={"purple"}
+    />
   </Layout>
 );
 

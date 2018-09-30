@@ -3,10 +3,6 @@ import React, { Component } from "react";
 import { NavigationSubButton } from "../styles/styled-components.js";
 
 class NavigationMobile extends Component {
-  // state = {
-  //   isOpen: false,
-  // };
-
   toggle = e => {
     e.preventDefault();
     console.log("fire");
@@ -15,11 +11,11 @@ class NavigationMobile extends Component {
   render() {
     this.toggle = this.toggle.bind(this);
     return (
-      <div style={{ display: "flex" }}>
+      <div>
         <NavigationSubButton onClick={this.toggle}>Mobile</NavigationSubButton>
         <NavigationSubButton onClick={this.toggle}>Mobile</NavigationSubButton>
         <NavigationSubButton onClick={this.toggle}>Mobile</NavigationSubButton>
-        {/* {this.state.isOpen ? <NavigationMobileButton /> : null} */}
+        <NavigationSubButton onClick={this.toggle}>Mobile</NavigationSubButton>
       </div>
     );
   }

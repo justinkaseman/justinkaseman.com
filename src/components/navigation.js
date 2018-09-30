@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
 import NavigationMobile from "./navigation-mobile.js";
-import NavigationTablet from "./navigation-tablet.js";
-import NavigationDesktop from "./navigation-desktop.js";
+// import NavigationTablet from "./navigation-tablet.js";
+// import NavigationDesktop from "./navigation-desktop.js";
 
 import {
   NavigationModal,
@@ -26,9 +26,6 @@ class Navigation extends Component {
 
   toggle = () => {
     this.setState({ isOpen: !this.state.isOpen });
-    console.log(this.state.isOpen);
-    // register eventlistener if isOpen that fires when clicking anywhere else closes modal
-    // register eventlistener on arrow key right opens modal
   };
 
   checkSize() {
@@ -37,7 +34,7 @@ class Navigation extends Component {
     if (currentSize < 601) newSize = "Mobile";
     else if (currentSize < 1201) newSize = "Tablet";
     else if (currentSize > 1200) newSize = "Desktop";
-    if (this.state.screenSize != newSize)
+    if (this.state.screenSize !== newSize)
       this.setState({ screenSize: newSize, isOpen: false });
   }
 
@@ -50,8 +47,9 @@ class Navigation extends Component {
         {this.state.isOpen ? (
           <div>
             {this.state.screenSize === "Mobile" ? <NavigationMobile /> : null}
-            {this.state.screenSize === "Tablet" ? <NavigationTablet /> : null}
-            {this.state.screenSize === "Desktop" ? <NavigationDesktop /> : null}
+            {this.state.screenSize === "Tablet" ? <NavigationMobile /> : null}
+            {this.state.screenSize === "Desktop" ? <NavigationMobile /> : null}
+            {/* Eventually <NavigationDesktop toggle={this.toggle} /> will be used */}
           </div>
         ) : null}
       </NavigationModal>

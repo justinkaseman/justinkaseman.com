@@ -4,14 +4,17 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "d3": "^5.7.0",
     "gatsby": "next",
-    "gatsby-plugin-react-helmet": "next",
     "gatsby-plugin-manifest": "next",
     "gatsby-plugin-offline": "next",
+    "gatsby-plugin-react-helmet": "next",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-faux-dom": "^4.2.0",
     "react-helmet": "^5.2.0",
-    "styled-components": "^1.2.1"
+    "styled-components": "^1.2.1",
+    "textures": "^1.2.0"
   },
   "keywords": [
     "gatsby"

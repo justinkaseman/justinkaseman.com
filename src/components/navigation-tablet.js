@@ -3,10 +3,6 @@ import React, { Component } from "react";
 import { NavigationSubButton } from "../styles/styled-components.js";
 
 class NavigationTablet extends Component {
-  // state = {
-  //   isOpen: false,
-  // };
-
   toggle = e => {
     e.preventDefault();
     console.log("fire");

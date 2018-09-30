@@ -26,7 +26,7 @@ const Section = ({
       data={{}}
       options={{ index }}
     /> */}
-    <Background className="svg-background" index={index} />
+    <Background index={index} />
     <SectionContents>
       {/* Maybe ICON */}
       <SectionHeader>

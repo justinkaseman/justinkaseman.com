@@ -2,11 +2,9 @@ import React, { Component } from "react";
 
 import { NavigationMap } from "../styles/styled-components.js";
 
-class NavigationDesktop extends Component {
-  // state = {
-  //   isOpen: false,
-  // };
+// WIP Component
 
+class NavigationDesktop extends Component {
   toggle = e => {
     e.preventDefault();
     console.log("fire");
@@ -14,7 +12,14 @@ class NavigationDesktop extends Component {
 
   render() {
     this.toggle = this.toggle.bind(this);
-    return <NavigationMap />;
+    return (
+      <NavigationMap
+        onClick={this.props.toggle}
+        onMouseLeave={this.props.toggle}
+      >
+        SVG MAP
+      </NavigationMap>
+    );
   }
 }
 

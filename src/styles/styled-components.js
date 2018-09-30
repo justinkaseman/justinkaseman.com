@@ -92,16 +92,20 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
-// svg {
-//   position: absolute;
-//   top: 0px;
-//   bottom: 0px;
-//   right: 0px;
-//   left: 0px;
-//   height: 100%;
-//   width: 100%;
-//   z-index: 1;
-// }
+
+export const TextureContainer = styled.div`
+  svg {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
+`;
+
 export const BackgroundContainer = styled.div`
   position: absolute;
   height: 100%;
@@ -118,50 +122,58 @@ COMPONENTS
 */
 
 export const NavigationModal = styled.div`
-  background: brown;
   display: flex;
   position: fixed;
   z-index: 10;
-  ${small`
-    bottom: 3%;
-    left: 6%;
-  `}
-  ${medium`
-    right: 3%;
-    bottom: 50vh;
-    flex-direction: column;
-  `}
-  ${large`
-    right: 3%;
-    bottom: 50vh;
-    flex-direction: column;
-  `}
+  bottom: 2%;
+  left: 1%;
+
+  // ${small`
+  //   justify-content: space-evenly;
+  //   bottom: 3%;
+  //   left: 6%;
+  // `}
+  // ${medium`
+  //   right: 0;
+  //   bottom: 50vh;
+  //   flex-direction: column;
+  // `}
+  // ${large`
+  //   right: 2%;
+  //   bottom: 50vh;
+  //   flex-direction: column;
+  // `}
 `;
 
 export const NavigationMap = styled.div`
   position: fixed;
-  background: black;
-  right: 3%;
-  bottom: calc(50vh - 80px);
-  height: 200px;
-  width: 300px;
+  background: red;
+  right: 1%;
+  bottom: calc(50vh - 110px);
+  height: 300px;
+  width: 350px;
   z-index: 15;
 `;
 
 export const NavigationButton = styled.button`
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
   order: 0;
-  ${medium`
-  order: 1;
-  `} ${large`
-  order: 1;
-  `};
+  border: none;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.15);
+
+  // ${medium`
+  // order: 1;
+  // `} ${large`
+  // order: 1;
+  // `};
 `;
 
 export const NavigationSubButton = styled.button`
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
+  border: none;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.15);
 `;
 
 export const SectionContainer = styled.div`
@@ -188,6 +200,16 @@ export const SectionContents = styled.div`
   background: ${white};
   box-shadow: 8px 8px rgba(0, 0, 0, 0.15);
   border-left: 40px solid #eee;
+  width: 100%;
+  ${small`
+    padding: ${spacing.half} ${spacing.half};
+  `}
+  ${medium`
+    padding: ${spacing.single} ${spacing.double};
+  `}
+  ${large`
+    padding: ${spacing.single} ${spacing.double};
+  `}
 `;
 
 export const SectionHeader = styled.div`
@@ -196,6 +218,30 @@ export const SectionHeader = styled.div`
 `;
 
 export const SectionItems = styled.div`
-  background: ${white};
-  height: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  ${large`
+  > div {
+    width: calc( ( 100% - ${spacing.double} ) / 2 );
+  }
+  > div:nth-child(2n) {
+    margin-left: ${spacing.double};
+  }
+`};
+`;
+
+export const Item = styled.div``;
+
+const rotate360 = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const Test = styled.p`
+  transition: transform 300ms ease-in-out;
 `;

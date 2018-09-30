@@ -4,7 +4,6 @@ import Helmet from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
 
 import Navigation from "./navigation.js";
-import { Wrapper } from "../styles/styled-components.js";
 import "../styles/layout.css";
 
 const Layout = ({ children }) => (

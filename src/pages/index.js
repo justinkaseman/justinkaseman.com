@@ -2,11 +2,9 @@ import React from "react";
 
 import Layout from "../components/layout";
 import Section from "../components/section";
-import Test from "../components/test";
 
 const IndexPage = () => (
   <Layout>
-    <Test />
     <Section
       title={"Hi"}
       items={["Big Item", "Some Item"]}

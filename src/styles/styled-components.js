@@ -1,4 +1,4 @@
-import { injectGlobal, css, keyframes } from "styled-components";
+import { createGlobalStyle, css, keyframes } from "styled-components";
 
 import styled from "styled-components";
 
@@ -45,7 +45,7 @@ const easeOutCubic = "cubic-bezier(0.215, 0.610, 0.355, 1.000)";
 
 // Global
 
-injectGlobal`
+export const GlobalStyle = createGlobalStyle`
   
   @import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700');
   *, *:before, *:after {
@@ -106,6 +106,31 @@ export const TextureContainer = styled.div`
   }
 `;
 
+export const SketchyContainer = styled.div`
+  width: calc(100% + ${props => (props.offSetLeft ? props.offSetLeft : 4)}px);
+  height: calc(
+    101% + ${props => (props.offSetBottom ? props.offSetBottom : 0)}px
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  svg {
+    position: absolute;
+    top: -2px;
+    bottom: 0px;
+    right: 0px;
+    left: -${props => (props.offSetLeft ? props.offSetLeft : 3)}px;
+    height: calc(
+      102% + ${props => (props.offSetBottom ? props.offSetBottom : 0)}px
+    );
+    width: calc(
+      100% + ${props => (props.offSetLeft ? props.offSetLeft : 10)}px
+    );
+  }
+`;
+
 export const BackgroundContainer = styled.div`
   position: absolute;
   height: 100%;
@@ -126,23 +151,17 @@ export const NavigationModal = styled.div`
   position: fixed;
   z-index: 10;
   bottom: 2%;
+  left: 3%;
+  width: ${props => props.width}px;
+  justify-content: space-between;
+
+  ${medium`
+  left: 2%;
+
+  `} ${large`
   left: 1%;
 
-  // ${small`
-  //   justify-content: space-evenly;
-  //   bottom: 3%;
-  //   left: 6%;
-  // `}
-  // ${medium`
-  //   right: 0;
-  //   bottom: 50vh;
-  //   flex-direction: column;
-  // `}
-  // ${large`
-  //   right: 2%;
-  //   bottom: 50vh;
-  //   flex-direction: column;
-  // `}
+  `};
 `;
 
 export const NavigationMap = styled.div`
@@ -159,21 +178,19 @@ export const NavigationButton = styled.button`
   height: 60px;
   width: 60px;
   order: 0;
-  border: none;
   box-shadow: 4px 4px rgba(0, 0, 0, 0.15);
+  position: relative;
 
-  // ${medium`
-  // order: 1;
-  // `} ${large`
-  // order: 1;
-  // `};
+  &:hover {
+    background-color: #eeee;
+  }
 `;
 
 export const NavigationSubButton = styled.button`
   height: 60px;
   width: 60px;
-  border: none;
   box-shadow: 4px 4px rgba(0, 0, 0, 0.15);
+  position: relative;
 `;
 
 export const SectionContainer = styled.div`
@@ -231,17 +248,3 @@ export const SectionItems = styled.div`
 `;
 
 export const Item = styled.div``;
-
-const rotate360 = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-`;
-
-export const Test = styled.p`
-  transition: transform 300ms ease-in-out;
-`;

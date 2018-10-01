@@ -1,5 +1,6 @@
 import React from "react";
 import * as d3 from "d3";
+import rough from "roughjs";
 import textures from "textures";
 
 import ReactFauxDOM from "react-faux-dom";

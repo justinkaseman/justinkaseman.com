@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from "gatsby";
 
 import Navigation from "./navigation.js";
 import "../styles/layout.css";
+import { GlobalStyle } from "../styles/styled-components";
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -30,6 +31,7 @@ const Layout = ({ children }) => (
         </Helmet>
         <Navigation />
         {children}
+        <GlobalStyle />
       </>
     )}
   />

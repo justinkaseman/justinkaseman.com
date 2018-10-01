@@ -12,10 +12,10 @@ class NavigationMobile extends Component {
     this.toggle = this.toggle.bind(this);
     return (
       <div>
-        <NavigationSubButton onClick={this.toggle}>Mobile</NavigationSubButton>
-        <NavigationSubButton onClick={this.toggle}>Mobile</NavigationSubButton>
-        <NavigationSubButton onClick={this.toggle}>Mobile</NavigationSubButton>
-        <NavigationSubButton onClick={this.toggle}>Mobile</NavigationSubButton>
+        <NavigationSubButton>Mobile</NavigationSubButton>
+        <NavigationSubButton>Mobile</NavigationSubButton>
+        <NavigationSubButton>Mobile</NavigationSubButton>
+        <NavigationSubButton>Mobile</NavigationSubButton>
       </div>
     );
   }

@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-
+import { Link } from "gatsby";
 import Sketchy from "./sketchy.js";
 
 import {
   NavigationModal,
   NavigationButton,
+  NavigationSubButton,
 } from "../styles/styled-components.js";
-
-import { NavigationSubButton } from "../styles/styled-components.js";
 
 class Navigation extends Component {
   state = {
@@ -24,21 +23,21 @@ class Navigation extends Component {
 
   expandNavigation = () => {
     return [
-      <NavigationSubButton key={0}>
+      <NavigationSubButton key={0} onClick={this.close}>
         <Sketchy offSetBottom={3} />
-        Mobile
+        <Link to="/projects">2</Link>
       </NavigationSubButton>,
-      <NavigationSubButton key={1}>
+      <NavigationSubButton key={1} onClick={this.close}>
         <Sketchy offSetBottom={3} />
-        Mobile
+        <Link to="/writing">3</Link>
       </NavigationSubButton>,
-      <NavigationSubButton key={2}>
+      <NavigationSubButton key={2} onClick={this.close}>
         <Sketchy offSetBottom={3} />
-        Mobile
+        <Link to="/about">4</Link>
       </NavigationSubButton>,
-      <NavigationSubButton key={3}>
+      <NavigationSubButton key={3} onClick={this.close}>
         <Sketchy offSetBottom={3} />
-        Mobile
+        <Link to="/random">5</Link>
       </NavigationSubButton>,
     ];
   };

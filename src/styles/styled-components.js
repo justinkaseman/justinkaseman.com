@@ -180,9 +180,13 @@ export const NavigationButton = styled.button`
   order: 0;
   box-shadow: 4px 4px rgba(0, 0, 0, 0.15);
   position: relative;
+  cursor: pointer;
 
-  &:hover {
-    background-color: #eeee;
+  &:active {
+    border: 1px solid black;
+  }
+  &:focus {
+    outline: none;
   }
 `;
 
@@ -191,6 +195,14 @@ export const NavigationSubButton = styled.button`
   width: 60px;
   box-shadow: 4px 4px rgba(0, 0, 0, 0.15);
   position: relative;
+  cursor: pointer;
+
+  &:active {
+    border: 1px solid black;
+  }
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const SectionContainer = styled.div`

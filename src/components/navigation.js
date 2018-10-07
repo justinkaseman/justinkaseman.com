@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
 import Sketchy from "./sketchy.js";
 
 import {
@@ -23,42 +23,46 @@ class Navigation extends Component {
 
   expandNavigation = () => {
     return [
-      <NavigationSubButton key={0} onClick={this.close}>
-        <Sketchy offSetBottom={3} />
-        <Link to="/projects">2</Link>
-      </NavigationSubButton>,
-      <NavigationSubButton key={1} onClick={this.close}>
-        <Sketchy offSetBottom={3} />
-        <Link to="/writing">3</Link>
-      </NavigationSubButton>,
-      <NavigationSubButton key={2} onClick={this.close}>
-        <Sketchy offSetBottom={3} />
-        <Link to="/about">4</Link>
-      </NavigationSubButton>,
-      <NavigationSubButton key={3} onClick={this.close}>
-        <Sketchy offSetBottom={3} />
-        <Link to="/random">5</Link>
-      </NavigationSubButton>,
+      <Link to="/projects/">
+        <NavigationSubButton key={0} onClick={this.close}>
+          <Sketchy offSetBottom={3} />
+        </NavigationSubButton>
+      </Link>,
+      <Link to="/writing/">
+        <NavigationSubButton key={1} onClick={this.close}>
+          <Sketchy offSetBottom={3} />
+        </NavigationSubButton>
+      </Link>,
+      <Link to="/about/">
+        <NavigationSubButton key={2} onClick={this.close}>
+          <Sketchy offSetBottom={3} />
+        </NavigationSubButton>
+      </Link>,
+      <Link to="/random/">
+        <NavigationSubButton key={3} onClick={this.close}>
+          <Sketchy offSetBottom={3} />
+        </NavigationSubButton>
+      </Link>,
     ];
   };
 
   render() {
     this.toggle = this.toggle.bind(this);
     this.close = this.close.bind(this);
-
     this.expandNavigation = this.expandNavigation.bind(this);
-
     return (
-      <NavigationModal
-        onMouseLeave={this.close}
-        width={this.state.isOpen ? 350 : 60}
-      >
-        <NavigationButton onClick={this.toggle}>
-          <Sketchy offSetBottom={3} />
-          Map
-        </NavigationButton>
-        {this.state.isOpen ? this.expandNavigation() : null}
-      </NavigationModal>
+      <div>
+        <NavigationModal
+          onMouseLeave={this.close}
+          width={this.state.isOpen ? 350 : 60}
+        >
+          <NavigationButton onClick={this.toggle}>
+            <Sketchy offSetBottom={3} />
+            Map
+          </NavigationButton>
+          {this.state.isOpen ? this.expandNavigation() : null}
+        </NavigationModal>
+      </div>
     );
   }
 }

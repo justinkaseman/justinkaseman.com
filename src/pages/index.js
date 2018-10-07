@@ -1,7 +1,10 @@
 import React, { Component } from "react";
+import posed from "react-pose";
 
+import { Link } from "gatsby";
 import Layout from "../components/layout";
 import Section from "../components/section";
+import NavigationArrows from "../components/navigationArrows";
 
 class IndexPage extends Component {
   constructor(props) {
@@ -35,8 +38,14 @@ class IndexPage extends Component {
   // TODO: Handle this dynamically
 
   render() {
+    const Div = posed.section({
+      enter: { y: 0 },
+      exit: {
+        y: 0,
+      },
+    });
     return (
-      <Layout>
+      <Div>
         {this.state.screenSize === "Mobile" ? (
           <div>
             <Section
@@ -71,14 +80,27 @@ class IndexPage extends Component {
             />
           </div>
         ) : (
-          <Section
-            title={"Hi"}
-            items={["Big Item", "Some Item"]}
-            index={0}
-            background={"lightblue"}
-          />
+          <div>
+            <Section
+              title={"Hi"}
+              items={["Big Item", "Some Item"]}
+              index={0}
+              background={"lightblue"}
+            />
+            <NavigationArrows
+              previous={
+                this.props.location.state
+                  ? this.props.location.state.direction
+                  : "none"
+              }
+              up={"/about"}
+              right={"/projects"}
+              down={"/writing"}
+              left={"/random"}
+            />
+          </div>
         )}
-      </Layout>
+      </Div>
     );
   }
 }

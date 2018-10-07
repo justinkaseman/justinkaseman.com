@@ -3,17 +3,25 @@ import { Link } from "gatsby";
 
 import Layout from "../components/layout";
 import Section from "../components/section";
+import NavigationArrows from "../components/navigationArrows";
 
-const RandomPage = () => (
-  <Layout>
-    <Section
-      title={"Random"}
-      items={["Big Item", "Some Item"]}
-      index={5}
-      background={"lightblue"}
-    />
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
-);
+const RandomPage = props => {
+  return (
+    <div>
+      <Section
+        title={"Random"}
+        items={["Big Item", "Some Item"]}
+        index={5}
+        background={"lightblue"}
+      />
+      <NavigationArrows
+        previous={
+          props.location.state ? props.location.state.direction : "none"
+        }
+        right={"/"}
+      />
+    </div>
+  );
+};
 
 export default RandomPage;

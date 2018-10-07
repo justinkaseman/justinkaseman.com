@@ -3,17 +3,21 @@ import { Link } from "gatsby";
 
 import Layout from "../components/layout";
 import Section from "../components/section";
+import NavigationArrows from "../components/navigationArrows";
 
-const ProjectsPage = () => (
-  <Layout>
+const ProjectsPage = props => (
+  <div>
     <Section
       title={"Projects"}
       items={["Big Item", "Little Item"]}
       index={2}
       background={"lightgreen"}
     />
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
+    <NavigationArrows
+      previous={props.location.state ? props.location.state.direction : "none"}
+      left={"/"}
+    />
+  </div>
 );
 
 export default ProjectsPage;

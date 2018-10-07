@@ -260,3 +260,16 @@ export const SectionItems = styled.div`
 `;
 
 export const Item = styled.div``;
+
+export const Arrow = styled.div`
+  height: 60px;
+  width: 60px;
+  position: fixed;
+  background: lightblue;
+  ${props => (props.up ? "top: 0; margin-left: -60px; left: 50%;" : null)}
+  ${props => (props.left ? "margin-top: -30px; top: 50%;" : null)}
+  ${props => (props.down ? "bottom: 0; margin-left: -60px; left: 50%;" : null)}
+  ${props => (props.right ? "right:0; margin-top: -30px; top: 50%;" : null)}
+  cursor: pointer;
+z-index: 15;
+`;

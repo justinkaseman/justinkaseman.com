@@ -146,6 +146,8 @@ export const BackgroundContainer = styled.div`
 COMPONENTS
 */
 
+//Navigation
+
 export const NavigationModal = styled.div`
   display: flex;
   position: fixed;
@@ -205,6 +207,34 @@ export const NavigationSubButton = styled.button`
   }
 `;
 
+export const Arrow = styled.div`
+  height: 30px;
+  width: 30px;
+  position: fixed;
+  ${props => (props.up ? "top: 4%; margin-left: -30px; left: 50%;" : null)}
+  ${props => (props.left ? "margin-top: -15px; top: 50%; left: 3%;" : null)}
+  ${props => (props.down ? "bottom: 1%; margin-left: -30px; left: 50%;" : null)}
+  ${props => (props.right ? "right: 3%; margin-top: -15px; top: 50%;" : null)}
+  cursor: pointer;
+  z-index: 15;
+
+	background: transparent;
+	border-top: 1vmin solid white;
+	border-right: 1vmin solid white;
+	box-shadow: 0 0 0 lightgray;
+  ${props =>
+    props.up ? "transform: translate3d(0,-50%,0) rotate(-45deg);" : null}
+  ${props =>
+    props.left ? "transform: translate3d(0,-50%,0) rotate(-135deg);" : null}
+  ${props =>
+    props.down ? "transform: translate3d(0,-50%,0) rotate(135deg);" : null}
+  ${props =>
+    props.right ? "transform: translate3d(0,-50%,0) rotate(45deg);" : null}
+
+`;
+
+// Section
+
 export const SectionContainer = styled.div`
   flex: 1;
   display: flex;
@@ -214,11 +244,11 @@ ${small`
 padding: 10px 10px 10px 10px;
 `}
 ${medium`
-padding: 20px 80px 20px 80px;
+padding: 20px 100px 20px 100px;
 min-height: 100vh;
 `}
 ${large`
-padding: 40px 120px 40px 120px;
+padding: 40px 160px 40px 160px;
 min-height: 100vh;
 `}
 `;
@@ -246,6 +276,14 @@ export const SectionHeader = styled.div`
   height: 80%;
 `;
 
+export const SectionTitle = styled.h1`
+  width: 50%;
+`;
+
+export const SectionDescription = styled.h2`
+  width: 50%;
+`;
+
 export const SectionItems = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -259,17 +297,32 @@ export const SectionItems = styled.div`
 `};
 `;
 
-export const Item = styled.div``;
+export const IconContainer = styled.div`
+height: 80px;
+width: 80px;
+position: absolute;
+left: 50%;
+margin-left: -80px
+margin-top: -50px;
+top: 0;
 
-export const Arrow = styled.div`
-  height: 60px;
-  width: 60px;
-  position: fixed;
-  background: lightblue;
-  ${props => (props.up ? "top: 0; margin-left: -60px; left: 50%;" : null)}
-  ${props => (props.left ? "margin-top: -30px; top: 50%;" : null)}
-  ${props => (props.down ? "bottom: 0; margin-left: -60px; left: 50%;" : null)}
-  ${props => (props.right ? "right:0; margin-top: -30px; top: 50%;" : null)}
-  cursor: pointer;
-z-index: 15;
+${small`
+height: 50px;
+width: 50px;
+position: absolute;
+left: 0;
+margin-left: -44px;
+margin-top: -25px;
+top: 50%;
+`}
+`;
+
+export const Icon = styled.img`
+  position: absolute;
+  height: 80px;
+  width: 80px;
+`;
+
+export const Item = styled.div`
+  padding: 5px;
 `;

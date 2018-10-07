@@ -15,9 +15,7 @@ const navigationArrows = props => {
             })
           }
           role="link"
-        >
-          ^
-        </Arrow>
+        />
       ) : null}
 
       {props.left ? (
@@ -29,9 +27,7 @@ const navigationArrows = props => {
             })
           }
           role="link"
-        >
-          2
-        </Arrow>
+        />
       ) : null}
 
       {props.down ? (
@@ -43,9 +39,7 @@ const navigationArrows = props => {
             })
           }
           role="link"
-        >
-          v
-        </Arrow>
+        />
       ) : null}
 
       {props.right ? (
@@ -57,9 +51,7 @@ const navigationArrows = props => {
             })
           }
           role="link"
-        >
-          4
-        </Arrow>
+        />
       ) : null}
     </div>
   );

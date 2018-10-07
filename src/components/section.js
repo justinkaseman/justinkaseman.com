@@ -8,7 +8,12 @@ import {
   SectionContainer,
   SectionContents,
   SectionHeader,
+  SectionDescription,
   SectionItems,
+  SectionTitle,
+  Item,
+  Icon,
+  IconContainer,
 } from "../styles/styled-components.js";
 
 const Section = props => {
@@ -29,24 +34,25 @@ const Section = props => {
       <Background index={props.index} />{" "}
       <SectionContents>
         <Sketchy offSetLeft={40} />
-        {/* Maybe ICON */}
+        <IconContainer>
+          <Sketchy offSetBottom={3} />
+          <Icon />
+        </IconContainer>
         <SectionHeader>
-          {/* <SectionTitle className="section-title">{title}</SectionTitle> */}
-          {props.title}
-          {/* {description ? (
-          <SectionDescription
-            dangerouslySetInnerHTML={{ __html: md.render(description) }}
-          />
-        ) : null} */}
+          <SectionTitle>{props.title}</SectionTitle>
+          {props.description ? (
+            <SectionDescription />
+          ) : // dangerouslySetInnerHTML={{ __html: md.render(description)}}
+          null}
         </SectionHeader>
         {/* Maybe CTA */}
 
         <SectionItems>
           {props.items
             ? props.items.map((item, index) => (
-                <p key={index}>
+                <Item key={index}>
                   {item} {index}
-                </p>
+                </Item>
               ))
             : null}
         </SectionItems>

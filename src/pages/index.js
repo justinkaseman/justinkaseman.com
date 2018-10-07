@@ -83,7 +83,7 @@ class IndexPage extends Component {
           <div>
             <Section
               title={"Hi"}
-              items={["Big Item", "Some Item"]}
+              items={["Big Item", "Some Item", "Big Item2", "Some Item2"]}
               index={0}
               background={"lightblue"}
             />

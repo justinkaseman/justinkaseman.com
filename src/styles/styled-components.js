@@ -156,7 +156,8 @@ export const NavigationModal = styled.div`
   left: 3%;
   width: ${props => props.width}px;
   justify-content: space-between;
-
+  width: 100%;
+  height: 100%;
   ${medium`
   left: 2%;
 
@@ -208,30 +209,49 @@ export const NavigationSubButton = styled.button`
 `;
 
 export const Arrow = styled.div`
-  height: 30px;
-  width: 30px;
+  height: 1px;
+  width: 1px;
   position: fixed;
-  ${props => (props.up ? "top: 4%; margin-left: -30px; left: 50%;" : null)}
-  ${props => (props.left ? "margin-top: -15px; top: 50%; left: 3%;" : null)}
-  ${props => (props.down ? "bottom: 1%; margin-left: -30px; left: 50%;" : null)}
-  ${props => (props.right ? "right: 3%; margin-top: -15px; top: 50%;" : null)}
+  ${props =>
+    props.up
+      ? "top: 0; margin-top: 10px; margin-left: -14px; left: 50%;"
+      : null}
+  ${props =>
+    props.left
+      ? "left: 0; margin-left: 10px; margin-top: -15px; top: 50%;"
+      : null}
+  ${props =>
+    props.down
+      ? "bottom: 0; margin-bottom: 98px; margin-left: -14px; left: 50%;"
+      : null}
+  ${props =>
+    props.right
+      ? "right: 0; margin-right: 98px; margin-top: -50px; top: 50%;"
+      : null}
   cursor: pointer;
   z-index: 15;
+  font-family: Sullivan Regular;
+  font-size: 8rem;
 
-	background: transparent;
-	border-top: 1vmin solid white;
-	border-right: 1vmin solid white;
-	box-shadow: 0 0 0 lightgray;
   ${props =>
-    props.up ? "transform: translate3d(0,-50%,0) rotate(-45deg);" : null}
+    props.down ? "transform: translate3d(0,-50%,0) rotate(90deg);" : null}
   ${props =>
-    props.left ? "transform: translate3d(0,-50%,0) rotate(-135deg);" : null}
-  ${props =>
-    props.down ? "transform: translate3d(0,-50%,0) rotate(135deg);" : null}
-  ${props =>
-    props.right ? "transform: translate3d(0,-50%,0) rotate(45deg);" : null}
-
+    props.up ? "transform: translate3d(0,-50%,0) rotate(90deg);" : null}
 `;
+
+// Unused: White Arrow style //
+/* background: transparent;
+border-top: 1vmin solid white;
+border-right: 1vmin solid white;
+box-shadow: 0 0 0 lightgray;
+${props =>
+  props.up ? "transform: translate3d(0,-50%,0) rotate(-45deg);" : null}
+${props =>
+  props.left ? "transform: translate3d(0,-50%,0) rotate(-135deg);" : null}
+${props =>
+  props.down ? "transform: translate3d(0,-50%,0) rotate(135deg);" : null}
+${props =>
+  props.right ? "transform: translate3d(0,-50%,0) rotate(45deg);" : null} */
 
 // Section
 
@@ -273,7 +293,6 @@ export const SectionContents = styled.div`
 
 export const SectionHeader = styled.div`
   background: ${white};
-  height: 80%;
 `;
 
 export const SectionTitle = styled.h1`
@@ -287,6 +306,17 @@ export const SectionDescription = styled.h2`
 export const SectionItems = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  ${medium`
+  > div {
+  width: calc( ( 100% - ${spacing.double} ) / 2 );
+  }
+  > div:nth-child(2n) {
+  margin-left: ${spacing.double};
+  }
+  `};
+
   ${large`
   > div {
     width: calc( ( 100% - ${spacing.double} ) / 2 );
@@ -319,8 +349,9 @@ top: 50%;
 
 export const Icon = styled.img`
   position: absolute;
-  height: 80px;
+  height: 84px;
   width: 80px;
+  background: white;
 `;
 
 export const Item = styled.div`

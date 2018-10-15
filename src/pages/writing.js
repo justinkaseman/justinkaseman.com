@@ -7,8 +7,17 @@ import Section from "../components/section";
 import NavigationArrows from "../components/navigationArrows";
 
 const Div = posed.section({
-  enter: { y: "-100%", transition: { duration: 1200 } },
-  exit: { y: "100%" },
+  enter: {
+    opacity: 0.5,
+    y: "0",
+    transition: { duration: 1000 },
+    delay: 1000,
+  },
+  exit: {
+    opacity: 0,
+    y: "-100%",
+    delay: 1000,
+  },
 });
 
 const P = posed.p({
@@ -18,7 +27,7 @@ const P = posed.p({
 
 const WritingPage = props => {
   return (
-    <div>
+    <Div>
       <Section
         title={"Writing"}
         items={["Big Item"]}
@@ -31,7 +40,7 @@ const WritingPage = props => {
         }
         up={"/"}
       />
-    </div>
+    </Div>
   );
 };
 

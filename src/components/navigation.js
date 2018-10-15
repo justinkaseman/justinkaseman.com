@@ -51,18 +51,15 @@ class Navigation extends Component {
     this.close = this.close.bind(this);
     this.expandNavigation = this.expandNavigation.bind(this);
     return (
-      <div>
-        <NavigationModal
-          onMouseLeave={this.close}
-          width={this.state.isOpen ? 350 : 60}
-        >
-          <NavigationButton onClick={this.toggle}>
-            <Sketchy offSetBottom={3} />
-            Map
-          </NavigationButton>
-          {this.state.isOpen ? this.expandNavigation() : null}
-        </NavigationModal>
-      </div>
+      <NavigationModal
+        onMouseLeave={this.close}
+        width={this.state.isOpen ? 350 : 60}
+      >
+        <NavigationButton onClick={this.toggle}>
+          <Sketchy offSetBottom={3} />
+        </NavigationButton>
+        {this.state.isOpen ? this.expandNavigation() : null}
+      </NavigationModal>
     );
   }
 }

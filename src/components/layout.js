@@ -29,8 +29,8 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Navigation />
         {children}
+        <Navigation />
         <GlobalStyle />
       </>
     )}

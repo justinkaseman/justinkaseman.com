@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, navigate } from "gatsby";
+import { navigate } from "gatsby";
 
 import { Arrow } from "../styles/styled-components.js";
 
@@ -15,7 +15,9 @@ const navigationArrows = props => {
             })
           }
           role="link"
-        />
+        >
+          &larr;
+        </Arrow>
       ) : null}
 
       {props.left ? (
@@ -27,7 +29,9 @@ const navigationArrows = props => {
             })
           }
           role="link"
-        />
+        >
+          &larr;
+        </Arrow>
       ) : null}
 
       {props.down ? (
@@ -39,7 +43,9 @@ const navigationArrows = props => {
             })
           }
           role="link"
-        />
+        >
+          &rarr;
+        </Arrow>
       ) : null}
 
       {props.right ? (
@@ -51,7 +57,9 @@ const navigationArrows = props => {
             })
           }
           role="link"
-        />
+        >
+          &rarr;
+        </Arrow>
       ) : null}
     </div>
   );

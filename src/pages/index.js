@@ -6,6 +6,8 @@ import Layout from "../components/layout";
 import Section from "../components/section";
 import NavigationArrows from "../components/navigationArrows";
 
+import jkhead from "../images/jkhead2.png";
+
 class IndexPage extends Component {
   constructor(props) {
     super(props);
@@ -39,20 +41,27 @@ class IndexPage extends Component {
 
   render() {
     const Div = posed.section({
-      enter: { y: 0 },
+      enter: {
+        opacity: 1,
+        y: 10,
+      },
       exit: {
-        y: 0,
+        opacity: 1,
+        y: 10,
       },
     });
     return (
-      <Div>
+      <div>
         {this.state.screenSize === "Mobile" ? (
           <div>
             <Section
-              title={"Hi"}
+              // prettier-ignore
+              title={"Hi there"}
               items={["Big Item", "Some Item"]}
               index={0}
               background={"lightblue"}
+              image={"../images/jkhead2.png"}
+              alt={"justin kaseman head"}
             />
             <Section
               title={"About"}
@@ -82,10 +91,12 @@ class IndexPage extends Component {
         ) : (
           <div>
             <Section
-              title={"Hi"}
+              title={"Hi there"}
               items={["Big Item", "Some Item", "Big Item2", "Some Item2"]}
               index={0}
               background={"lightblue"}
+              image={jkhead}
+              alt={"justin kaseman head"}
             />
             <NavigationArrows
               previous={
@@ -94,13 +105,13 @@ class IndexPage extends Component {
                   : "none"
               }
               up={"/about"}
-              right={"/projects"}
-              down={"/writing"}
-              left={"/random"}
+              right={"/projects/"}
+              down={"/writing/"}
+              left={"/random/"}
             />
           </div>
         )}
-      </Div>
+      </div>
     );
   }
 }

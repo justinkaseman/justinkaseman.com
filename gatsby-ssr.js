@@ -5,3 +5,10 @@
  */
 
 // You can delete this file if you're not using it
+
+import React from "react";
+import posed, { PoseGroup } from "react-pose";
+
+export const wrapRootElement = ({ element }) => {
+  return <PoseGroup>{element}</PoseGroup>;
+};

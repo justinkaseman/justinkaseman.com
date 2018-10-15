@@ -18,10 +18,9 @@ import {
 
 const Section = props => {
   const AnimatedSection = posed.section({
-    enter: { scale: 0.1 },
+    enter: { x: "10%" },
     exit: {
-      scale: 1,
-      delay: 100,
+      x: "-100%",
     },
   });
 
@@ -35,8 +34,8 @@ const Section = props => {
       <SectionContents>
         <Sketchy offSetLeft={40} />
         <IconContainer>
-          <Sketchy offSetBottom={3} />
-          <Icon />
+          <Sketchy offSetBottom={6} offSetLeft={2} />
+          <Icon src={props.image} alt={props.alt} />
         </IconContainer>
         <SectionHeader>
           <SectionTitle>{props.title}</SectionTitle>

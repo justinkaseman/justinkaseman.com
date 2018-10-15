@@ -42,7 +42,6 @@ class Sketchy extends Component {
     const roughSvg = rough.svg(node);
     const fill = roughSvg.rectangle(1, 1, width, height);
     node.appendChild(fill);
-
     return (
       <SketchyContainer
         ref={this.setDivRef}

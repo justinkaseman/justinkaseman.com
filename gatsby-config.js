@@ -3,7 +3,6 @@ module.exports = {
     title: "Justin Kaseman",
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -16,6 +15,7 @@ module.exports = {
         icon: "src/images/gatsby-icon.png", // This path is relative to the root of the site.
       },
     },
+    "gatsby-plugin-react-helmet",
     "gatsby-plugin-offline",
   ],
 };

@@ -7,7 +7,7 @@ import NavigationArrows from "../components/navigationArrows";
 
 const RandomPage = props => {
   return (
-    <div>
+    <React.Fragment>
       <Section
         title={"Random"}
         items={["Big Item", "Some Item"]}
@@ -20,7 +20,7 @@ const RandomPage = props => {
         }
         right={"/"}
       />
-    </div>
+    </React.Fragment>
   );
 };
 

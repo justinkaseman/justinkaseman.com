@@ -8,6 +8,8 @@ import {
   NavigationSubButton,
 } from "../styles/styled-components.js";
 
+import map from "../images/iconmonstr-map-10.png";
+
 class Navigation extends Component {
   state = {
     isOpen: false,
@@ -56,7 +58,9 @@ class Navigation extends Component {
         width={this.state.isOpen ? 350 : 60}
       >
         <NavigationButton onClick={this.toggle}>
-          <Sketchy offSetBottom={3} />
+          <Sketchy offSetBottom={3}>
+            <img src={map} alt="map svg icon" />
+          </Sketchy>
         </NavigationButton>
         {this.state.isOpen ? this.expandNavigation() : null}
       </NavigationModal>

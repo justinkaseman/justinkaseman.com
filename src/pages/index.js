@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import posed from "react-pose";
 
-import { Link } from "gatsby";
-import Layout from "../components/layout";
+import { FromRight } from "../components/poses";
+
 import Section from "../components/section";
+import SectionMain from "../components/sectionMain";
 import NavigationArrows from "../components/navigationArrows";
 
 import jkhead from "../images/jkhead2.png";
@@ -40,22 +40,11 @@ class IndexPage extends Component {
   // TODO: Handle this dynamically
 
   render() {
-    const Div = posed.section({
-      enter: {
-        opacity: 1,
-        y: 10,
-      },
-      exit: {
-        opacity: 1,
-        y: 10,
-      },
-    });
     return (
       <div>
         {this.state.screenSize === "Mobile" ? (
           <div>
-            <Section
-              // prettier-ignore
+            <SectionMain
               title={"Hi there"}
               items={["Big Item", "Some Item"]}
               index={0}
@@ -90,7 +79,7 @@ class IndexPage extends Component {
           </div>
         ) : (
           <div>
-            <Section
+            <SectionMain
               title={"Hi there"}
               items={["Big Item", "Some Item", "Big Item2", "Some Item2"]}
               index={0}
@@ -115,5 +104,9 @@ class IndexPage extends Component {
     );
   }
 }
+
+IndexPage.defaultProps = {
+  transitionComponent: FromRight,
+};
 
 export default IndexPage;

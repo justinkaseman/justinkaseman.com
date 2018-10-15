@@ -6,7 +6,7 @@ import Section from "../components/section";
 import NavigationArrows from "../components/navigationArrows";
 
 const ProjectsPage = props => (
-  <div>
+  <React.Fragment>
     <Section
       title={"Projects"}
       items={["Big Item", "Little Item"]}
@@ -17,7 +17,7 @@ const ProjectsPage = props => (
       previous={props.location.state ? props.location.state.direction : "none"}
       left={"/"}
     />
-  </div>
+  </React.Fragment>
 );
 
 export default ProjectsPage;

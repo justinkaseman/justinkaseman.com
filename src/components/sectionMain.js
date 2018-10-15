@@ -16,15 +16,15 @@ import {
   IconContainer,
 } from "../styles/styled-components.js";
 
-const Section = props => {
+const SectionMain = props => {
   return (
     <SectionContainer style={{ backgroundColor: props.background }}>
       <Background index={props.index} />{" "}
       <SectionContents>
         <Sketchy offSetLeft={40} />
-        <IconContainer>
-          <Sketchy offSetBottom={6} offSetLeft={2} />
-          <Icon src={props.image} alt={props.alt} />
+        <IconContainer height={170} width={168}>
+          <Sketchy offSetBottom={2} offSetLeft={2} />
+          <Icon src={props.image} alt={props.alt} height={168} width={168} />
         </IconContainer>
         <SectionHeader>
           <SectionTitle>{props.title}</SectionTitle>
@@ -49,4 +49,17 @@ const Section = props => {
   );
 };
 
-export default Section;
+export default SectionMain;
+
+/* 
+  const AnimatedSection = posed.section({
+    enter: { x: "10%" },
+    exit: {
+      x: "-100%",
+    },
+  });
+
+  const P = posed.p({
+    enter: { y: 0, opacity: 1 },
+    exit: { y: 50, opacity: 0 },
+  }); */

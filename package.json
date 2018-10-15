@@ -1,11 +1,12 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "justin-kaseman",
+  "description": "Justin Kaseman's portfolio website",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Justin Kaseman <justinkaseman@live.com>",
   "dependencies": {
     "d3": "^5.7.0",
     "gatsby": "next",
+    "gatsby-plugin-layout": "^1.0.0-rc.1",
     "gatsby-plugin-manifest": "next",
     "gatsby-plugin-offline": "next",
     "gatsby-plugin-react-helmet": "next",
@@ -13,7 +14,8 @@
     "react-dom": "^16.4.2",
     "react-faux-dom": "^4.2.0",
     "react-helmet": "^5.2.0",
-    "react-pose": "^3.0.2",
+    "react-pose": "^3.3.0",
+    "react-transition-group": "^2.4.0",
     "roughjs": "^2.2.5",
     "styled-components": "^4.0.0-beta.9",
     "textures": "^1.2.0"
@@ -33,6 +35,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/Jkasem/justinkaseman.com"
   }
 }

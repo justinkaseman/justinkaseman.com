@@ -16,10 +16,10 @@ class Background extends React.Component {
       case 0:
         t = textures
           .circles()
-          .radius(4)
+          .radius(10)
           .fill("transparent")
           .stroke("rgba(0,0,0,0.13)")
-          .size(20)
+          .size(30)
           .strokeWidth(1);
         break;
 
@@ -51,11 +51,6 @@ class Background extends React.Component {
         break;
 
       case 4:
-        // t = textures.paths()
-        //   .d("hexagons")
-        //   .lighter()
-        //   .stroke("rgba(0,0,0,0.1)")
-        //   .size(20)
         t = textures
           .circles()
           .lighter()

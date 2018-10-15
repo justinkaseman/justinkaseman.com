@@ -237,6 +237,33 @@ export const Arrow = styled.div`
     props.down ? "transform: translate3d(0,-50%,0) rotate(90deg);" : null}
   ${props =>
     props.up ? "transform: translate3d(0,-50%,0) rotate(90deg);" : null}
+
+
+  ${props =>
+    props.right || props.down
+      ? `
+  &:after {
+    position: absolute;
+    z-index: -1;
+    content: "→";
+    font-family: Sullivan Fill;
+    top: 100%;
+    left: 50%;
+    height: 0;
+    width: 0;
+    color: white;`
+      : `&:after {
+      position: absolute;
+      z-index: -1;
+      content: "←";
+      font-family: Sullivan Fill;
+      top: 100%;
+      left: 50%;
+      height: 0;
+      width: 0;
+      color: white;
+    }`}
+  }
 `;
 
 // Unused: White Arrow style //
@@ -328,15 +355,15 @@ export const SectionItems = styled.div`
 `;
 
 export const IconContainer = styled.div`
-height: 80px;
-width: 80px;
-position: absolute;
-left: 50%;
-margin-left: -80px
-margin-top: -50px;
-top: 0;
+  height: ${props => (props.height ? props.height : 80)}px;
+  width: ${props => (props.width ? props.width : 80)}px;
+  position: absolute;
+  left: 50%;
+  margin-left: ${props => (props.width ? -props.width + 40 : -80)}px;
+  margin-top: ${props => (props.height ? -props.height + 30 : -80)}px;
+  top: 0;
 
-${small`
+  ${small`
 height: 50px;
 width: 50px;
 position: absolute;
@@ -344,14 +371,19 @@ left: 0;
 margin-left: -44px;
 margin-top: -25px;
 top: 50%;
-`}
+`};
 `;
 
 export const Icon = styled.img`
   position: absolute;
-  height: 84px;
-  width: 80px;
+  height: ${props => (props.height ? props.height : 80)}px;
+  width: ${props => (props.width ? props.width : 80)}px;
   background: white;
+
+  ${small`
+  height: 55px;
+  width: 55px;
+  `};
 `;
 
 export const Item = styled.div`

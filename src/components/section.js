@@ -29,7 +29,7 @@ const Section = props => {
         <SectionHeader>
           <SectionTitle>{props.title}</SectionTitle>
           {props.description ? (
-            <SectionDescription />
+            <SectionDescription>{props.description}</SectionDescription>
           ) : // dangerouslySetInnerHTML={{ __html: md.render(description)}}
           null}
         </SectionHeader>
@@ -38,9 +38,12 @@ const Section = props => {
         <SectionItems>
           {props.items
             ? props.items.map((item, index) => (
-                <Item key={index}>
-                  {item} {index}
-                </Item>
+                <div>
+                  <h3>hi</h3>
+                  <Item key={index}>
+                    {item} {index}
+                  </Item>
+                </div>
               ))
             : null}
         </SectionItems>

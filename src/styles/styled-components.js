@@ -13,6 +13,15 @@ const spacing = {
   double: "80px",
 };
 
+const fontsize = {
+  extralarge: "4em",
+  lage: "1.7em",
+  medium: "1.3em",
+  small: "1em",
+  extrasmall: "0.6em",
+  tiny: "0.4em",
+};
+
 // Media Queries
 
 const small = (...args) => css`
@@ -212,26 +221,26 @@ export const Arrow = styled.div`
   height: 1px;
   width: 1px;
   position: fixed;
-  ${props =>
-    props.up
-      ? "top: 0; margin-top: 10px; margin-left: -14px; left: 50%;"
-      : null}
-  ${props =>
-    props.left
-      ? "left: 0; margin-left: 10px; margin-top: -15px; top: 50%;"
-      : null}
-  ${props =>
-    props.down
-      ? "bottom: 0; margin-bottom: 98px; margin-left: -14px; left: 50%;"
-      : null}
-  ${props =>
-    props.right
-      ? "right: 0; margin-right: 98px; margin-top: -50px; top: 50%;"
-      : null}
   cursor: pointer;
   z-index: 15;
   font-family: Sullivan Regular;
   font-size: 8rem;
+
+    
+  ${props =>
+    props.up ? "top: 0; margin-top: 44px; margin-left: 8px; left: 50%;" : null}
+  ${props =>
+    props.left
+      ? "left: 0; margin-left: 40px; margin-top: -10px; top: 50%;"
+      : null}
+  ${props =>
+    props.down
+      ? "bottom: 0; margin-bottom: 140px; margin-left: 8px; left: 50%;"
+      : null}
+  ${props =>
+    props.right
+      ? "right: 0; margin-right: 120px; margin-top: -10px; top: 50%;"
+      : null}
 
   ${props =>
     props.down ? "transform: translate3d(0,-50%,0) rotate(90deg);" : null}
@@ -264,21 +273,40 @@ export const Arrow = styled.div`
       color: white;
     }`}
   }
+
+  ${medium`
+  ${props =>
+    props.left
+      ? "left: 0; margin-left: 10px; margin-top: -10px; top: 50%;"
+      : null}
+  ${props =>
+    props.right
+      ? "right: 0; margin-right: 98px; margin-top: -10px; top: 50%;"
+      : null}
+  } `}
 `;
 
-// Unused: White Arrow style //
-/* background: transparent;
-border-top: 1vmin solid white;
-border-right: 1vmin solid white;
-box-shadow: 0 0 0 lightgray;
-${props =>
-  props.up ? "transform: translate3d(0,-50%,0) rotate(-45deg);" : null}
-${props =>
-  props.left ? "transform: translate3d(0,-50%,0) rotate(-135deg);" : null}
-${props =>
-  props.down ? "transform: translate3d(0,-50%,0) rotate(135deg);" : null}
-${props =>
-  props.right ? "transform: translate3d(0,-50%,0) rotate(45deg);" : null} */
+export const ArrowText = styled.span`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  top: ${props =>
+    props.direction === "up" || props.direction === "down" ? "-180" : "-260"}px;
+  height: ${props => (props.length % 2 === 1 ? "50vh" : "70vh")};
+  height: ${props => (props.length % 2 === 1 ? "50vh" : "70vh")};
+  ${props => (props.direction === "left" ? "right: 8px;" : null)}
+  ${props => (props.direction === "up" ? "left: -30px;" : null)}
+  ${props => (props.direction === "down" ? "left: 94px;" : null)}
+  ${props => (props.direction === "right" ? "left: 92px;" : null)}
+  font-size: ${fontsize.tiny};
+
+  ${medium`
+  ${props => (props.direction === "left" ? "right: -24px;" : null)}
+  ${props => (props.direction === "right" ? "left: 64px;" : null)}
+  `}
+`;
 
 // Section
 
@@ -359,8 +387,8 @@ export const IconContainer = styled.div`
   width: ${props => (props.width ? props.width : 80)}px;
   position: absolute;
   left: 50%;
-  margin-left: ${props => (props.width ? -props.width + 40 : -80)}px;
-  margin-top: ${props => (props.height ? -props.height + 30 : -80)}px;
+  margin-left: ${props => (props.width ? -props.width + 60 : -80)}px;
+  margin-top: ${props => (props.height ? -props.height + 38 : -80)}px;
   top: 0;
 
   ${small`

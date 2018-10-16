@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "gatsby";
 
-import Layout from "../components/layout";
+import { FromRight } from "../components/poses";
+
 import Section from "../components/section";
 import NavigationArrows from "../components/navigationArrows";
 
@@ -14,14 +14,13 @@ const RandomPage = props => {
         index={5}
         background={"lightblue"}
       />
-      <NavigationArrows
-        previous={
-          props.location.state ? props.location.state.direction : "none"
-        }
-        right={"/"}
-      />
+      <NavigationArrows right={"/"} rightText={"back"} />
     </React.Fragment>
   );
+};
+
+RandomPage.defaultProps = {
+  transitionComponent: FromRight,
 };
 
 export default RandomPage;

@@ -1,23 +1,23 @@
 import posed from "react-pose";
 
 const FromRight = posed.div({
-  enter: { y: "0%", rotate: "0deg", delay: 0, beforeChildren: 300 },
-  exit: { y: "200%", rotate: "90deg", transition: { duration: 300 } },
+  enter: { x: "0%", delay: 0, beforeChildren: 300 },
+  exit: { x: "200%", transition: { duration: 300 } },
 });
 
 const FromTop = posed.div({
-  enter: { x: "0%", delay: 0, beforeChildren: 300 },
-  exit: { x: "50%", transition: { duration: 1000 } },
+  enter: { y: "0%", delay: 0, beforeChildren: 300 },
+  exit: { y: "200%", transition: { duration: 1000 } },
 });
 
 const FromLeft = posed.div({
   enter: { x: "0%", delay: 0, beforeChildren: 300 },
-  exit: { x: "-50%", transition: { duration: 1000 } },
+  exit: { x: "-200%", transition: { duration: 1000 } },
 });
 
 const FromBottom = posed.div({
   enter: { y: "0%", delay: 0, beforeChildren: 300 },
-  exit: { y: "-100%", transition: { duration: 1000 } },
+  exit: { y: "-200%", transition: { duration: 1000 } },
 });
 
 const Fade = posed.div({

@@ -1,31 +1,37 @@
 import React from "react";
 
-import { FromBottom } from "../components/poses";
+import posed from "react-pose";
+import { FromTop } from "../components/poses";
 
 import Section from "../components/section";
 import NavigationArrows from "../components/navigationArrows";
 
+const LinkContainer = posed.div({
+  enter: {
+    x: "10%",
+    delay: 0,
+    beforeChildren: 300,
+    transition: { duration: 3000 },
+  },
+  exit: { x: "0%", transition: { duration: 1000 } },
+});
+
 const WritingPage = props => {
   return (
-    <React.Fragment>
+    <LinkContainer>
       <Section
         title={"Writing"}
         items={["Big Item"]}
         index={3}
         background={"violet"}
       />
-      <NavigationArrows
-        previous={
-          props.location.state ? props.location.state.direction : "none"
-        }
-        up={"/"}
-      />
-    </React.Fragment>
+      <NavigationArrows up={"/"} upText="B A C K" />
+    </LinkContainer>
   );
 };
 
 WritingPage.defaultProps = {
-  transitionComponent: FromBottom,
+  transitionComponent: FromTop,
 };
 
 export default WritingPage;

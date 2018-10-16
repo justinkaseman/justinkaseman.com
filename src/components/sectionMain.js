@@ -50,16 +50,3 @@ const SectionMain = props => {
 };
 
 export default SectionMain;
-
-/* 
-  const AnimatedSection = posed.section({
-    enter: { x: "10%" },
-    exit: {
-      x: "-100%",
-    },
-  });
-
-  const P = posed.p({
-    enter: { y: 0, opacity: 1 },
-    exit: { y: 50, opacity: 0 },
-  }); */

@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "gatsby";
 
-import Layout from "../components/layout";
+import { FromLeft } from "../components/poses";
+
 import Section from "../components/section";
 import NavigationArrows from "../components/navigationArrows";
 
@@ -9,15 +9,17 @@ const ProjectsPage = props => (
   <React.Fragment>
     <Section
       title={"Projects"}
+      description="Things I am proud of"
       items={["Big Item", "Little Item"]}
       index={2}
       background={"lightgreen"}
     />
-    <NavigationArrows
-      previous={props.location.state ? props.location.state.direction : "none"}
-      left={"/"}
-    />
+    <NavigationArrows left={"/"} leftText="BACK" />
   </React.Fragment>
 );
+
+ProjectsPage.defaultProps = {
+  transitionComponent: FromLeft,
+};
 
 export default ProjectsPage;

@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-import { FromRight } from "../components/poses";
-
 import Section from "../components/section";
 import SectionMain from "../components/sectionMain";
 import NavigationArrows from "../components/navigationArrows";
 
 import jkhead from "../images/jkhead2.png";
+
+import { CatTransition } from "../components/poses";
 
 class IndexPage extends Component {
   constructor(props) {
@@ -48,7 +48,7 @@ class IndexPage extends Component {
               title={"Hi there"}
               items={["Big Item", "Some Item"]}
               index={0}
-              background={"lightblue"}
+              background={"lightgrey"}
               image={"../images/jkhead2.png"}
               alt={"justin kaseman head"}
             />
@@ -83,7 +83,7 @@ class IndexPage extends Component {
               title={"Hi there"}
               items={["Big Item", "Some Item", "Big Item2", "Some Item2"]}
               index={0}
-              background={"lightblue"}
+              background={"lightgrey"}
               image={jkhead}
               alt={"justin kaseman head"}
             />
@@ -94,9 +94,13 @@ class IndexPage extends Component {
                   : "none"
               }
               up={"/about"}
+              upText={"ABOUT"}
               right={"/projects/"}
+              rightText={"PROJECTS"}
               down={"/writing/"}
+              downText="WRITING"
               left={"/random/"}
+              leftText="RANDOM"
             />
           </div>
         )}
@@ -106,7 +110,7 @@ class IndexPage extends Component {
 }
 
 IndexPage.defaultProps = {
-  transitionComponent: FromRight,
+  transitionComponent: CatTransition,
 };
 
 export default IndexPage;

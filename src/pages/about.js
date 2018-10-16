@@ -1,7 +1,6 @@
 import React from "react";
-import { Link } from "gatsby";
+import { FromBottom } from "../components/poses";
 
-import Layout from "../components/layout";
 import NavigationArrows from "../components/navigationArrows";
 
 import Section from "../components/section";
@@ -14,11 +13,12 @@ const AboutPage = props => (
       index={1}
       background={"pink"}
     />
-    <NavigationArrows
-      previous={props.location.state ? props.location.state.direction : "none"}
-      down={"/"}
-    />
+    <NavigationArrows down={"/"} downText="B A C K" />
   </React.Fragment>
 );
+
+AboutPage.defaultProps = {
+  transitionComponent: FromBottom,
+};
 
 export default AboutPage;

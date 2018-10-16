@@ -7,3 +7,4 @@ This is my [Gatsby](https://www.gatsbyjs.org)-powered personal website where I t
 This wouldn't be possible without some of the amazing work I leaned on:
 
 - [Styled Components](https://www.styled-components.com/)
+- [Popmotion Pose](https://popmotion.io/pose/)

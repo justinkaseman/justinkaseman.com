@@ -4,8 +4,6 @@ import Section from "../components/section";
 import SectionMain from "../components/sectionMain";
 import NavigationArrows from "../components/navigationArrows";
 
-import jkhead from "../images/jkhead2.png";
-
 import { CatTransition } from "../components/poses";
 
 class IndexPage extends Component {
@@ -26,7 +24,7 @@ class IndexPage extends Component {
   checkSize() {
     const currentSize = window.innerWidth;
     let newSize;
-    if (currentSize < 601) newSize = "Mobile";
+    if (currentSize < 641) newSize = "Mobile";
     else if (currentSize < 1201) newSize = "Tablet";
     else if (currentSize > 1200) newSize = "Desktop";
     if (this.state.screenSize !== newSize)
@@ -46,11 +44,8 @@ class IndexPage extends Component {
           <div>
             <SectionMain
               title={"Hi there"}
-              items={["Big Item", "Some Item"]}
               index={0}
               background={"lightgrey"}
-              image={"../images/jkhead2.png"}
-              alt={"justin kaseman head"}
             />
             <Section
               title={"About"}
@@ -79,14 +74,7 @@ class IndexPage extends Component {
           </div>
         ) : (
           <div>
-            <SectionMain
-              title={"Hi there"}
-              items={["Big Item", "Some Item", "Big Item2", "Some Item2"]}
-              index={0}
-              background={"lightgrey"}
-              image={jkhead}
-              alt={"justin kaseman head"}
-            />
+            <SectionMain index={0} background={"lightgrey"} />
             <NavigationArrows
               previous={
                 this.props.location.state

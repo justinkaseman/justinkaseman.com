@@ -16,10 +16,8 @@ const Layout = props => (
       ]}
     />
     {props.children}
+    <GlobalStyle />
   </div>
 );
 
 export default Layout;
-
-/*     <Navigation />
-<GlobalStyle /> */

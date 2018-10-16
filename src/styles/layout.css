@@ -641,3 +641,12 @@ pre tt:after {
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Triumph Wheels";
+  src: url("../fonts/Triumph-Wheels.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat");

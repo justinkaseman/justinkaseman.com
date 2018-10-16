@@ -15,8 +15,8 @@ const spacing = {
 
 const fontsize = {
   extralarge: "4em",
-  lage: "1.7em",
-  medium: "1.3em",
+  large: "1.9em",
+  medium: "1.5em",
   small: "1em",
   extrasmall: "0.6em",
   tiny: "0.4em",
@@ -25,12 +25,12 @@ const fontsize = {
 // Media Queries
 
 const small = (...args) => css`
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 640px) {
     ${css(...args)};
   }
 `;
 const medium = (...args) => css`
-  @media screen and (min-width: 601px) and (max-width: 1200px) {
+  @media screen and (min-width: 641px) and (max-width: 1200px) {
     ${css(...args)};
   }
 `;
@@ -52,16 +52,71 @@ const grey = "#BBC0C6";
 
 const easeOutCubic = "cubic-bezier(0.215, 0.610, 0.355, 1.000)";
 
+const blink = keyframes`
+  85.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  86%{
+    color: #333;
+  }
+  87.5% {
+    text-shadow: none;
+  }
+  88% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  89.5% {
+    color: #333;
+    text-shadow: none;
+  }
+  90% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  99% {
+    color: #333;
+    text-shadow: none;
+  }
+  99.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+`;
+
+const hop = keyframes`
+  10% { transform: scale(1.1, .8) translateY(3%) }
+  15% { transform: scale(.9, 1.1) translateY(-6%)}
+  25% { transform: scale(1.05, .9) translateY(-10%) }
+  30% { transform: scale(1) translateY(-8%) }
+  40% { transform: scale(1.05, 1) translateY(0) }
+  41% { transform: scale(1.1, .9) }
+  50% { transform: translateY(-4%) }
+  60% { transform: translateY(0) }
+}`;
+
+const point = keyframes`
+  10% { transform: scale(1.1, .8) translateX(3%) }
+  15% { transform: scale(.9, 1.1) translateX(-6%)}
+  25% { transform: scale(1.05, .9) translateX(-10%) }
+  30% { transform: scale(1) translateX(-8%) }
+  40% { transform: scale(1.05, 1) translateX(0) }
+  41% { transform: scale(1.1, .9) }
+  50% { transform: translateX(-4%) }
+  60% { transform: translateX(0) }
+}`;
+
 // Global
 
 export const GlobalStyle = createGlobalStyle`
   
-  @import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700');
+  @import url('https://fonts.googleapis.com/css?family=Montserrat');
   *, *:before, *:after {
     box-sizing: border-box;
   }
   body{
-    font-family: "Space Mono", monospace, sans-serif;
+    font-family: "Monserrat", monospace, sans-serif;
     font-variant-ligatures: no-common-ligatures
     padding: 0;
     margin: 0;
@@ -225,7 +280,7 @@ export const Arrow = styled.div`
   z-index: 15;
   font-family: Sullivan Regular;
   font-size: 8rem;
-
+  transition: color 0.4s;
     
   ${props =>
     props.up ? "top: 0; margin-top: 44px; margin-left: 8px; left: 50%;" : null}
@@ -246,32 +301,36 @@ export const Arrow = styled.div`
     props.down ? "transform: translate3d(0,-50%,0) rotate(90deg);" : null}
   ${props =>
     props.up ? "transform: translate3d(0,-50%,0) rotate(90deg);" : null}
-
-
-  ${props =>
-    props.right || props.down
-      ? `
-  &:after {
-    position: absolute;
-    z-index: -1;
-    content: "→";
-    font-family: Sullivan Fill;
-    top: 100%;
-    left: 50%;
-    height: 0;
-    width: 0;
-    color: white;`
-      : `&:after {
+    
+    ${props =>
+      props.right || props.down
+        ? `
+    &:after {
       position: absolute;
       z-index: -1;
-      content: "←";
+      content: "→";
       font-family: Sullivan Fill;
       top: 100%;
       left: 50%;
       height: 0;
       width: 0;
       color: white;
-    }`}
+    }`
+        : `&:after {
+        position: absolute;
+        z-index: -1;
+        content: "←";
+        font-family: Sullivan Fill;
+        top: 100%;
+        left: 50%;
+        height: 0;
+        width: 0;
+        color: white;
+      }`}
+
+    &:hover {
+      color: black;
+    }
   }
 
   ${medium`
@@ -350,12 +409,91 @@ export const SectionHeader = styled.div`
   background: ${white};
 `;
 
+export const SectionMainTitle = styled.h1`
+  position: absolute;
+  font-family: Triumph Wheels;
+  font-weight: 500;
+  font-size: 7em;
+  color: #fee;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
+    0 0 0.1em #ff4444, 0 10px 3px #000;
+  > span {
+    animation: ${blink} linear infinite 4s;
+  }
+
+  @media screen and (max-width: 900px) {
+    visibility: hidden;
+  }
+
+  ${medium`
+    top: 42px;
+    font-size: 6em;
+    right: -520px;
+    width: 540px;
+  `} ${large`
+    top: 30px;
+    right: -620px;
+    width: 640px;
+  `};
+`;
+
+export const SectionMainDescription = styled.body`
+  padding-top: 20px;
+  font-weight: 20;
+  width: 100%;
+  line-height: 30px;
+  font-family: Monserrat;
+
+  ${small`
+    font-size: ${fontsize.small};
+  `}
+  ${medium`
+    font-size: ${fontsize.medium};
+  `}
+  ${large`
+    font-size: ${fontsize.large};
+  `}
+`;
+
 export const SectionTitle = styled.h1`
+  font-size: ${fontsize.extralarge};
   width: 50%;
 `;
 
 export const SectionDescription = styled.h2`
   width: 50%;
+`;
+
+export const IconContainer = styled.div`
+  height: ${props => (props.height ? props.height : 80)}px;
+  width: ${props => (props.width ? props.width : 80)}px;
+  position: absolute;
+  left: 50%;
+  margin-left: ${props => (props.width ? "-46%" : "-80px")};
+  margin-top: ${props => (props.height ? -props.height + 36 : -80)}px;
+  top: 0;
+
+  ${small`
+height: 50px;
+width: 50px;
+position: absolute;
+left: 0;
+margin-left: -44px;
+margin-top: -25px;
+top: 50%;
+`};
+`;
+
+export const Icon = styled.img`
+  position: absolute;
+  height: ${props => (props.height ? props.height : 80)}px;
+  width: ${props => (props.width ? props.width : 80)}px;
+  background: white;
+
+  ${small`
+height: 55px;
+width: 55px;
+`};
 `;
 
 export const SectionItems = styled.div`
@@ -382,38 +520,34 @@ export const SectionItems = styled.div`
 `};
 `;
 
-export const IconContainer = styled.div`
-  height: ${props => (props.height ? props.height : 80)}px;
-  width: ${props => (props.width ? props.width : 80)}px;
-  position: absolute;
-  left: 50%;
-  margin-left: ${props => (props.width ? -props.width + 60 : -80)}px;
-  margin-top: ${props => (props.height ? -props.height + 38 : -80)}px;
-  top: 0;
+export const Item = styled.div`
+  padding: 5px;
+`;
 
-  ${small`
-height: 50px;
-width: 50px;
-position: absolute;
-left: 0;
-margin-left: -44px;
-margin-top: -25px;
-top: 50%;
+export const SocialLinks = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+
+  ${medium`
+  margin-top: 14px;
 `};
 `;
 
-export const Icon = styled.img`
-  position: absolute;
-  height: ${props => (props.height ? props.height : 80)}px;
-  width: ${props => (props.width ? props.width : 80)}px;
-  background: white;
+export const Social = styled.li`
+  height: 100%;
+  width: 70px;
+  list-style: none;
+  margin: 0 40px;
 
-  ${small`
-  height: 55px;
-  width: 55px;
+  > a {
+    fill: #343434;
+    &:hover {
+      fill: black;
+    }
+  }
+
+  ${medium`
+  margin: 0 1%;
   `};
-`;
-
-export const Item = styled.div`
-  padding: 5px;
 `;

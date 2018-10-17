@@ -54,7 +54,7 @@ class ProjectsPage extends Component {
               image:
                 "https://raw.githubusercontent.com/helios-coop/cryptogym/master/client/public/favicon.ico",
               description:
-                "An interactive code training platform to help bring developers into the blockchain age.",
+                "An interactive code training platform to help bring web developers into the blockchain age.",
               technology: "MongoDB • Express • React • Node",
               url: "https://cryptogym.netlify.com/",
             },

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { navigate } from "gatsby";
 import Layout from "../components/layout";
+
+import { navigate } from "gatsby";
 
 import Section from "../components/section";
 import SectionMain from "../components/sectionMain";
@@ -51,12 +52,12 @@ class IndexPage extends Component {
       <Layout>
         {this.state.screenSize === "Mobile" ? (
           <div>
-            <SectionMain index={0} background={"#cecece"} />
+            <SectionMain index={0} background={"#cecece"} size={true} />
             <Section
               title={"About"}
               body={[
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi exercitationem quasi, labore vero aperiam debitis recusandae! Pariatur culpa necessitatibus, architecto tempora aperiam laboriosam, doloremque, perspiciatis laborum at nihil consectetur! Facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi exercitationem quasi, labore vero aperiam debitis recusandae! Pariatur culpa necessitatibus, architecto tempora aperiam laboriosam, doloremque, perspiciatis laborum at nihil consectetur! Facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi exercitationem quasi, labore vero aperiam debitis recusandae!",
-                "Pariatur culpa necessitatibus, architecto tempora aperiam laboriosam, doloremque, perspiciatis laborum at nihil consectetur! Facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi exercitationem quasi, labore vero aperiam debitis recusandae! Pariatur culpa necessitatibus, architecto tempora aperiam laboriosam, doloremque, perspiciatis laborum at nihil consectetur! Facilis.",
+                "I’m a San Fransisco Bay Area, native born and raised. My background is in health and fitness which grew from my own body transformation in which I lost 100lbs. This taught me my strongest life lesson: you can do anything I set my mind to. It led me down the path of getting my BSc. in Exercise Physiology. While in university, I opened my own independent personal training business. I needed a website to advertise myself, so I decided to build my own.. and that was it, I was addicted.",
+                "After graduation, I spent the next 6 months engrossed self-studying. I enrolled in Lambda School, a full time intensive 7.5 month long Computer Science Academy. I finished with honors along with 6 weeks of TAing for the Computer Science curriculum (Data Structures & Algorithms, C lang, & OS/Processes). Software Engineering has given me an outlet to fulfill my greatest passions: creating, problem-solving, lifelong learning.",
               ]}
               index={1}
               background={"pink"}
@@ -78,7 +79,7 @@ class IndexPage extends Component {
                   image:
                     "https://raw.githubusercontent.com/helios-coop/cryptogym/master/client/public/favicon.ico",
                   description:
-                    "An interactive code training platform to help bring developers into the blockchain age.",
+                    "An interactive code training platform to help bring web developers into the blockchain age.",
                   technology: "MongoDB • Express • React • Node",
                   url: "https://cryptogym.netlify.com/",
                 },
@@ -93,7 +94,7 @@ class IndexPage extends Component {
                 {
                   title: "Justin Kaseman.com",
                   image: "",
-                  description: "Check out this site out on GitHub",
+                  description: "Check this site out on GitHub",
                   technology: "Gatsby using GraphQL",
                   url: "https://github.com/Jkasem/justinkaseman.com",
                 },
@@ -117,7 +118,8 @@ class IndexPage extends Component {
                   title: "Lambda School: CS Front-End Recap",
                   image:
                     "https://miro.medium.com/max/728/1*YuF6cg0QfqCnpI_d1YBmWg.png",
-                  description: "A recap of the first third of Lambda School",
+                  description:
+                    "Ever wondered what non-traditional schooling is like? A recap of my first third of Lambda School",
                   url:
                     "https://medium.com/@justinkaseman/lambda-school-cs-front-end-recap-48646fc11e2c",
                 },
@@ -126,7 +128,7 @@ class IndexPage extends Component {
                   image:
                     "https://static1.squarespace.com/static/573d46ef60b5e97fae685d44/t/57c3b9368419c2d24d6237f2/1472444734183/?format=750w",
                   description:
-                    "My first technical writing back in my personal training days",
+                    "Technical writing from my personal training days.",
                   url:
                     "http://www.toptierfitnessonline.com/blog/how-to-lose-weight",
                 },
@@ -142,12 +144,12 @@ class IndexPage extends Component {
             />
             <Section
               title={"Random"}
-              description={"Some other things I enjoy include:"}
+              description={"Things that I enjoy"}
               items={[
                 { title: "💪 Weight Lifting" },
                 { title: "⛰ Hiking & Backpacking" },
                 { title: "🎹 Piano" },
-                { title: "🂠 Magic the Gathering" },
+                { title: "🂠 Board Games & Magic the Gathering" },
                 { title: "🗑 Disc Golf" },
                 { title: "🌟 Self Improvement" },
               ]}

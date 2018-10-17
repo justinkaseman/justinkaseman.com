@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { navigate } from "gatsby";
-
 import Layout from "../components/layout";
+
+import { navigate } from "gatsby";
 
 // import { FromTop } from "../components/poses";
 
@@ -53,7 +53,8 @@ class WritingPage extends Component {
               title: "Lambda School: CS Front-End Recap",
               image:
                 "https://miro.medium.com/max/728/1*YuF6cg0QfqCnpI_d1YBmWg.png",
-              description: "A recap of the first third of Lambda School",
+              description:
+                "Ever wondered what non-traditional schooling is like? A recap of my first third of Lambda School",
               url:
                 "https://medium.com/@justinkaseman/lambda-school-cs-front-end-recap-48646fc11e2c",
             },
@@ -61,8 +62,7 @@ class WritingPage extends Component {
               title: "The Simple First Step to Start Losing Fat",
               image:
                 "https://static1.squarespace.com/static/573d46ef60b5e97fae685d44/t/57c3b9368419c2d24d6237f2/1472444734183/?format=750w",
-              description:
-                "My first technical writing back in my personal training days",
+              description: "Technical writing from my personal training days.",
               url:
                 "http://www.toptierfitnessonline.com/blog/how-to-lose-weight",
             },

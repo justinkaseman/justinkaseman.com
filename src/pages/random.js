@@ -39,12 +39,12 @@ class RandomPage extends Component {
       <Layout>
         <Section
           title={"Random"}
-          description={"Some other things I enjoy include:"}
+          description={"Things that I enjoy"}
           items={[
             { title: "💪 Weight Lifting" },
             { title: "⛰ Hiking & Backpacking" },
             { title: "🎹 Piano" },
-            { title: "🂠 Magic the Gathering" },
+            { title: "🂠 Board Games & Magic the Gathering" },
             { title: "🗑 Disc Golf" },
             { title: "🌟 Self Improvement" },
           ]}

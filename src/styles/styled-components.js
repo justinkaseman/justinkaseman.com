@@ -85,40 +85,6 @@ const blink = keyframes`
   }
 `;
 
-// Global
-
-export const GlobalStyle = createGlobalStyle`
-  
-  @import url('https://fonts.googleapis.com/css?family=Montserrat');
-  *, *:before, *:after {
-    box-sizing: border-box;
-  }
-  body{
-    font-family: "Monserrat", monospace, sans-serif;
-    font-variant-ligatures: no-common-ligatures
-    padding: 0;
-    margin: 0;
-    color: ${black};
-  }
-  h1, h2, h3, h4, h5, h6{
-    margin: 0 0 ${spacing.single} 0;
-    line-height: 1.3;
-  }
-  p{
-    margin: 0;
-    line-height: 1.6;
-  }
-  a{
-    color: ${orangered};
-    text-decoration: none;
-    font-weight: bold;
-    &:hover{
-      color: ${orangered};
-      text-decoration: underline;
-    }
-  }
-`;
-
 /* 
 TEMPLATES
 */
@@ -436,7 +402,7 @@ export const SectionMainDescription = styled.main`
   font-weight: 20;
   width: 100%;
   line-height: 30px;
-  font-family: Federo Regular;
+  font-family: "Federo Regular";
 
   ${small`
     padding: 20px 40px;

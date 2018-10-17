@@ -66,7 +66,13 @@ const Section = props => {
                     <ItemTitle>{item.title}</ItemTitle>
                   </div>
                   {item.description ? (
-                    <p style={{ margin: "0 5%", fontFamily: "-apple-system" }}>
+                    <p
+                      style={{
+                        margin: "0 5%",
+                        fontFamily:
+                          "Lucida Sans Unicode, Lucida Grande, sans-serif",
+                      }}
+                    >
                       {item.description}
                     </p>
                   ) : null}
@@ -84,7 +90,16 @@ const Section = props => {
         {props.body ? (
           <SectionBody>
             {props.body.map((item, index) => (
-              <p key={index + "body"}>{item}</p>
+              <p
+                key={index + "body"}
+                style={{
+                  fontFamily: "Federo Regular",
+                  paddingBottom: "10px",
+                  textIndent: "20px",
+                }}
+              >
+                {item}
+              </p>
             ))}
           </SectionBody>
         ) : null}

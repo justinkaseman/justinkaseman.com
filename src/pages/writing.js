@@ -39,6 +39,20 @@ const WritingPage = props => {
             url:
               "https://medium.com/@justinkaseman/lambda-school-cs-front-end-recap-48646fc11e2c",
           },
+          {
+            title: "The Simple First Step to Start Losing Fat",
+            image:
+              "https://static1.squarespace.com/static/573d46ef60b5e97fae685d44/t/57c3b9368419c2d24d6237f2/1472444734183/?format=750w",
+            description:
+              "My first technical writing back in my personal training days",
+            url: "http://www.toptierfitnessonline.com/blog/how-to-lose-weight",
+          },
+          {
+            title: "",
+            image: "",
+            description: "",
+            url: "",
+          },
         ]}
         index={3}
         background={"violet"}

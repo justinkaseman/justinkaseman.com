@@ -1,3 +1,3 @@
-import { WrapPageElement } from "./src/components/WrapPageElement";
+import { WrapPageElement } from "./src/components/Transition";
 
 export const wrapPageElement = WrapPageElement;

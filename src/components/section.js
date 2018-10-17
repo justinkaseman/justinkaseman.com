@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 
 import Background from "./background.js";
 import Sketchy from "./sketchy.js";
@@ -13,6 +14,10 @@ import {
   SectionDescription,
   SectionItems,
   Item,
+  ItemLink,
+  ItemTitle,
+  ItemIcon,
+  ItemIconAlt,
   SectionBody,
 } from "../styles/styled-components.js";
 
@@ -37,15 +42,44 @@ const Section = props => {
           ) : null}
         </SectionHeader>
 
-        {props.items
-          ? props.items.map((item, index) => (
-              <SectionItems>
-                <Item key={index}>{item.title}</Item>
-              </SectionItems>
-            ))
-          : null}
+        {props.items ? (
+          <SectionItems>
+            {props.items.map((item, index) => (
+              <Item key={index}>
+                <a
+                  href={item.url}
+                  style={{ textDecoration: "none", zIndex: "-1" }}
+                >
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    {item.image ? (
+                      <ItemIcon src={item.image} />
+                    ) : item.image === "" ? (
+                      <ItemIconAlt>
+                        {item.title[0]}
+                        {item.title.split(" ").length > 1
+                          ? item.title.split(" ")[1][0]
+                          : null}
+                      </ItemIconAlt>
+                    ) : null}
+                    <ItemTitle>{item.title}</ItemTitle>
+                  </div>
+                  <p style={{ margin: "0 5%", fontFamily: "-apple-system" }}>
+                    {item.description}
+                  </p>
+                  <p style={{ margin: "2% 5%" }}>{item.technology}</p>
+                </a>
+              </Item>
+            ))}
+          </SectionItems>
+        ) : null}
 
-        {props.body ? <SectionBody>{props.body}</SectionBody> : null}
+        {props.body ? (
+          <SectionBody>
+            {props.body.map(item => (
+              <p>{item}</p>
+            ))}
+          </SectionBody>
+        ) : null}
       </SectionContents>
     </SectionContainer>
   );

@@ -85,28 +85,6 @@ const blink = keyframes`
   }
 `;
 
-const hop = keyframes`
-  10% { transform: scale(1.1, .8) translateY(3%) }
-  15% { transform: scale(.9, 1.1) translateY(-6%)}
-  25% { transform: scale(1.05, .9) translateY(-10%) }
-  30% { transform: scale(1) translateY(-8%) }
-  40% { transform: scale(1.05, 1) translateY(0) }
-  41% { transform: scale(1.1, .9) }
-  50% { transform: translateY(-4%) }
-  60% { transform: translateY(0) }
-}`;
-
-const point = keyframes`
-  10% { transform: scale(1.1, .8) translateX(3%) }
-  15% { transform: scale(.9, 1.1) translateX(-6%)}
-  25% { transform: scale(1.05, .9) translateX(-10%) }
-  30% { transform: scale(1) translateX(-8%) }
-  40% { transform: scale(1.05, 1) translateX(0) }
-  41% { transform: scale(1.1, .9) }
-  50% { transform: translateX(-4%) }
-  60% { transform: translateX(0) }
-}`;
-
 // Global
 
 export const GlobalStyle = createGlobalStyle`
@@ -458,7 +436,7 @@ export const SectionMainDescription = styled.main`
   font-weight: 20;
   width: 100%;
   line-height: 30px;
-  font-family: Monserrat;
+  font-family: Federo Regular;
 
   ${small`
     padding: 20px 40px;
@@ -526,10 +504,7 @@ export const SectionItems = styled.main`
 
   ${medium`
   > div {
-  width: calc( ( 100% - ${spacing.double} ) / 2 );
-  }
-  > div:nth-child(2n) {
-  margin-left: ${spacing.double};
+  width: 100%;
   }
   `};
 
@@ -544,7 +519,53 @@ export const SectionItems = styled.main`
 `;
 
 export const Item = styled.div`
-  padding: 5px;
+  padding: 10px;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+    }
+  }
+`;
+
+export const ItemIcon = styled.img`
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+  border-radius: 10%;
+  margin-bottom: 20px;
+
+  ${medium`
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  `};
+`;
+
+export const ItemIconAlt = styled.h2`
+  font-family: Triumph Wheels;
+  font-size: 2.4rem;
+  margin-right: 10px;
+
+  ${medium`
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  `};
+`;
+
+export const ItemTitle = styled.h3`
+  padding: 10px;
+
+  ${medium`
+  font-size: 1em;
+  `};
+`;
+
+export const SectionBody = styled.article`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
 `;
 
 export const SocialLinks = styled.section`
@@ -577,10 +598,4 @@ export const Social = styled.li`
   ${medium`
   margin: 0 1%;
   `};
-`;
-
-export const SectionBody = styled.article`
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
 `;

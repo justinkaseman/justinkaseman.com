@@ -4,6 +4,6 @@
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
 
-import { WrapPageElement } from "./src/components/WrapPageElement";
+import { WrapPageElement } from "./src/components/Transition";
 
 export const wrapPageElement = WrapPageElement;

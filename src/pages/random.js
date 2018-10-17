@@ -12,10 +12,12 @@ const RandomPage = props => {
         title={"Random"}
         description={"Some other things I enjoy include:"}
         items={[
-          { title: "Weight Lifting" },
-          { title: "Hiking" },
-          { title: "Piano" },
-          { title: "Magic the Gathering" },
+          { title: "💪 Weight Lifting" },
+          { title: "⛰ Hiking & Backpacking" },
+          { title: "🎹 Piano" },
+          { title: "🂠 Magic the Gathering" },
+          { title: "🗑 Disc Golf" },
+          { title: "🌟 Self Improvement" },
         ]}
         index={4}
         background={"lightblue"}

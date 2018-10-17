@@ -1,4 +1,4 @@
-import { createGlobalStyle, css, keyframes } from "styled-components";
+import { css, keyframes } from "styled-components";
 
 import styled from "styled-components";
 
@@ -42,9 +42,9 @@ const large = (...args) => css`
 
 // Colors
 
-const orangered = "#EB613D";
+// const orangered = "#EB613D";
 // const blue = "#0000ff";
-const black = "#282B2E";
+// const black = "#282B2E";
 const white = "#ffffff";
 // const grey = "#BBC0C6";
 
@@ -258,7 +258,7 @@ export const Arrow = styled.nav`
       left: 50%;
       height: 0;
       width: 0;
-      color: white;
+      color: ${white};
     }`
         : `&:after {
         position: absolute;
@@ -269,7 +269,7 @@ export const Arrow = styled.nav`
         left: 50%;
         height: 0;
         width: 0;
-        color: white;
+        color: ${white};
       }`}
 
     &:hover {
@@ -373,7 +373,7 @@ export const SectionMainTitle = styled.h1`
     left: 0;
     height: 40%;
     width: 100%;
-    color: white;
+    color: ${white};
     background: grey;
   }
 
@@ -397,8 +397,8 @@ export const SectionMainTitle = styled.h1`
   `};
 `;
 
-export const SectionMainDescription = styled.main`
-  padding: 20px 0;
+export const SectionMainDescription = styled.p`
+  margin-top: 60px;
   font-weight: 20;
   width: 100%;
   line-height: 30px;
@@ -410,6 +410,7 @@ export const SectionMainDescription = styled.main`
   `}
   ${medium`
     font-size: ${fontsize.medium};
+    margin-top: 30px;
   `}
   ${large`
     font-size: ${fontsize.large};
@@ -454,7 +455,7 @@ export const Icon = styled.img`
   position: absolute;
   height: ${props => (props.height ? props.height : 80)}px;
   width: ${props => (props.width ? props.width : 80)}px;
-  background: white;
+  background: ${white};
   pointer-events: none;
 
   ${small`

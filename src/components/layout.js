@@ -1,8 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
 
-// import Navigation from "./navigation";
-
 import "../styles/layout.css";
 
 const Layout = props => (

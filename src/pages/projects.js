@@ -69,7 +69,7 @@ class ProjectsPage extends Component {
             {
               title: "Justin Kaseman.com",
               image: "",
-              description: "Check out this site out on GitHub",
+              description: "Check this site out on GitHub",
               technology: "Gatsby using GraphQL",
               url: "https://github.com/Jkasem/justinkaseman.com",
             },

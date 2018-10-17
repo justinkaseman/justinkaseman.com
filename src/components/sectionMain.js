@@ -41,7 +41,9 @@ const SectionMain = props => {
           Software Engineer in the San Fransisco Bay Area.
         </SectionMainDescription>
         <SectionMainDescription>
-          Use the arrows to keep exploring or reach out to say hello.
+          {props.size
+            ? "Keep scrolling or reach out to say hello."
+            : "Use the arrows to keep exploring or reach out to say hello."}
         </SectionMainDescription>
 
         <SocialLinks>

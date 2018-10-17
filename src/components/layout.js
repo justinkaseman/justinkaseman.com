@@ -2,7 +2,6 @@ import React from "react";
 import Helmet from "react-helmet";
 
 // import Navigation from "./navigation";
-import { GlobalStyle } from "../styles/styled-components";
 
 import "../styles/layout.css";
 
@@ -22,7 +21,6 @@ const Layout = props => (
       ]}
     />
     {props.children}
-    <GlobalStyle />
   </div>
 );
 

@@ -68,7 +68,7 @@ class IndexPage extends Component {
             <Section
               title={"Random"}
               items={["Big Item", "Some Item"]}
-              index={5}
+              index={4}
               background={"lightblue"}
             />
           </div>

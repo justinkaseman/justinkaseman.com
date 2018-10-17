@@ -15,12 +15,11 @@ class Background extends React.Component {
     switch (this.props.index) {
       case 0:
         t = textures
-          .circles()
-          .radius(10)
-          .fill("transparent")
-          .stroke("rgba(0,0,0,0.13)")
-          .size(30)
-          .strokeWidth(1);
+          .paths()
+          .d("crosses")
+          .lighter()
+          .stroke("rgba(0,0,0,0.1)")
+          .size(30);
         break;
 
       case 1:
@@ -55,29 +54,6 @@ class Background extends React.Component {
           .circles()
           .lighter()
           .fill("rgba(0,0,0,0.3)");
-        break;
-
-      case 5:
-        // t = textures.paths()
-        //   .d("hexagons")
-        //   .lighter()
-        //   .stroke("rgba(0,0,0,0.1)")
-        //   .size(20)
-        t = textures
-          .paths()
-          .d("squares")
-          .lighter()
-          .stroke("rgba(0,0,0,0.08)");
-
-        break;
-
-      case 6:
-        t = textures
-          .paths()
-          .d("crosses")
-          .lighter()
-          .stroke("rgba(255,255,255,0.1)")
-          .size(20);
         break;
     }
 

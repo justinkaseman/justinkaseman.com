@@ -14,9 +14,9 @@ const spacing = {
 };
 
 const fontsize = {
-  extralarge: "4em",
+  extralarge: "3em",
   large: "1.9em",
-  medium: "1.5em",
+  medium: "1.7em",
   small: "1em",
   extrasmall: "0.6em",
   tiny: "0.4em",
@@ -370,21 +370,22 @@ export const ArrowText = styled.span`
 // Section
 
 export const SectionContainer = styled.div`
+  position: relative;
   flex: 1;
   display: flex;
   align-items: center;
-  position: relative;
-${small`
-padding: 10px 10px 10px 10px;
-`}
-${medium`
-padding: 20px 100px 20px 100px;
-min-height: 100vh;
-`}
-${large`
-padding: 40px 160px 40px 160px;
-min-height: 100vh;
-`}
+
+  ${small`
+    padding: 10px 10px 10px 10px;
+  `}
+  ${medium`
+    padding: 20px 100px 20px 100px;
+    min-height: 100vh;
+  `}
+  ${large`
+    padding: 40px 150px 40px 150px;
+    min-height: 100vh;
+  `}
 `;
 
 export const SectionContents = styled.div`
@@ -417,6 +418,21 @@ export const SectionMainTitle = styled.h1`
   color: #fee;
   text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
     0 0 0.1em #ff4444, 0 10px 3px #000;
+  pointer-events: none;
+
+  &:after {
+    position: absolute;
+    z-index: -10;
+    content: "";
+    font-family: Sullivan Fill;
+    top: 40px;
+    left: 0;
+    height: 40%;
+    width: 100%;
+    color: white;
+    background: grey;
+  }
+
   > span {
     animation: ${blink} linear infinite 4s;
   }
@@ -438,14 +454,15 @@ export const SectionMainTitle = styled.h1`
 `;
 
 export const SectionMainDescription = styled.body`
-  padding-top: 20px;
+  padding: 20px 0;
   font-weight: 20;
   width: 100%;
   line-height: 30px;
   font-family: Monserrat;
 
   ${small`
-    font-size: ${fontsize.small};
+    padding: 20px 40px;
+    font-size: ${fontsize.medium};
   `}
   ${medium`
     font-size: ${fontsize.medium};
@@ -456,32 +473,37 @@ export const SectionMainDescription = styled.body`
 `;
 
 export const SectionTitle = styled.h1`
-  font-size: ${fontsize.extralarge};
-  width: 50%;
+  ${small`
+    font-size: ${fontsize.medium};
+  `}
+  ${medium`
+    font-size: ${fontsize.large};
+  `}
+  ${large`
+    font-size: ${fontsize.extralarge};
+  `}
 `;
 
-export const SectionDescription = styled.h2`
-  width: 50%;
-`;
+export const SectionDescription = styled.h2``;
 
 export const IconContainer = styled.div`
-  height: ${props => (props.height ? props.height : 80)}px;
-  width: ${props => (props.width ? props.width : 80)}px;
+  height: ${props => (props.height ? props.height : 77)}px;
+  width: ${props => (props.width ? props.width : 77)}px;
   position: absolute;
   left: 50%;
-  margin-left: ${props => (props.width ? "-46%" : "-80px")};
-  margin-top: ${props => (props.height ? -props.height + 36 : -80)}px;
+  margin-left: ${props => (props.width ? "-46%" : "-52%")};
+  margin-top: ${props => (props.height ? -props.height + 36 : 40)}px;
   top: 0;
 
   ${small`
-height: 50px;
-width: 50px;
-position: absolute;
-left: 0;
-margin-left: -44px;
-margin-top: -25px;
-top: 50%;
-`};
+    height: ${props => (props.height ? props.height - 80 : 50)}px;
+    width: ${props => (props.width ? props.width - 80 : 50)}px; 
+    position: absolute;
+    left: 0;
+    margin-left: -46px;
+    margin-top: ${props => (props.height ? "-50px" : "-25px")};
+    top: 50%;
+  `};
 `;
 
 export const Icon = styled.img`
@@ -489,11 +511,12 @@ export const Icon = styled.img`
   height: ${props => (props.height ? props.height : 80)}px;
   width: ${props => (props.width ? props.width : 80)}px;
   background: white;
+  pointer-events: none;
 
   ${small`
-height: 55px;
-width: 55px;
-`};
+  height: ${props => (props.height ? 90 : 55)}px;
+  width: ${props => (props.width ? 88 : 55)}px;
+  `};
 `;
 
 export const SectionItems = styled.div`
@@ -527,7 +550,7 @@ export const Item = styled.div`
 export const SocialLinks = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 10px;
 
   ${medium`
   margin-top: 14px;
@@ -547,7 +570,17 @@ export const Social = styled.li`
     }
   }
 
+  ${small`
+  margin: 0 10px;
+`};
+
   ${medium`
   margin: 0 1%;
   `};
+`;
+
+export const SectionBody = styled.p`
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 `;

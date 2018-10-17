@@ -9,7 +9,9 @@ const AboutPage = props => (
   <React.Fragment>
     <Section
       title={"About"}
-      items={["Big Item"]}
+      body={
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi exercitationem quasi, labore vero aperiam debitis recusandae! Pariatur culpa necessitatibus, architecto tempora aperiam laboriosam, doloremque, perspiciatis laborum at nihil consectetur! Facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi exercitationem quasi, labore vero aperiam debitis recusandae! Pariatur culpa necessitatibus, architecto tempora aperiam laboriosam, doloremque, perspiciatis laborum at nihil consectetur! Facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi exercitationem quasi, labore vero aperiam debitis recusandae! Pariatur culpa necessitatibus, architecto tempora aperiam laboriosam, doloremque, perspiciatis laborum at nihil consectetur! Facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi exercitationem quasi, labore vero aperiam debitis recusandae! Pariatur culpa necessitatibus, architecto tempora aperiam laboriosam, doloremque, perspiciatis laborum at nihil consectetur! Facilis."
+      }
       index={1}
       background={"pink"}
     />

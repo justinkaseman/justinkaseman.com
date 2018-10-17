@@ -1,5 +1,4 @@
 import React from "react";
-import posed from "react-pose";
 
 import Background from "./background.js";
 import Sketchy from "./sketchy.js";
@@ -7,7 +6,6 @@ import Sketchy from "./sketchy.js";
 import {
   SectionContainer,
   SectionContents,
-  SectionHeader,
   SectionMainTitle,
   SectionMainDescription,
   Icon,
@@ -22,30 +20,28 @@ const SectionMain = props => {
   return (
     <SectionContainer style={{ backgroundColor: props.background }}>
       <Background index={props.index} />{" "}
-      <SectionContents>
+      <SectionContents style={{ marginTop: "30px" }}>
         <Sketchy offSetLeft={40} />
 
-        <SectionHeader>
-          <IconContainer height={170} width={168}>
-            <Sketchy offSetBottom={2} offSetLeft={2} />
-            <Icon
-              src={jkhead}
-              alt={"justin kaseman's head in black and white"}
-              height={168}
-              width={168}
-            />
-            <SectionMainTitle>
-              Just <span>i</span>n Kase man
-            </SectionMainTitle>
-          </IconContainer>
-        </SectionHeader>
+        <IconContainer height={170} width={168}>
+          <Sketchy offSetBottom={2} offSetLeft={2} />
+          <Icon
+            src={jkhead}
+            alt={"justin kaseman's head in black and white"}
+            height={168}
+            width={168}
+          />
+          <SectionMainTitle>
+            Just <span>i</span>n Kase man
+          </SectionMainTitle>
+        </IconContainer>
 
-        <SectionMainDescription>
-          Hi there. I'm <span style={{ fontWeight: 700 }}>Justin Kaseman</span>,
-          a Software Engineer in the San Fransisco Bay Area.
+        <SectionMainDescription style={{ marginTop: "16px" }}>
+          I'm <span style={{ fontWeight: 700 }}>Justin Kaseman</span>, a
+          Software Engineer in the San Fransisco Bay Area.
         </SectionMainDescription>
         <SectionMainDescription>
-          Reach out to say hello or use the arrows to keep exploring.
+          Use the arrows to keep exploring or reach out to say hello.
         </SectionMainDescription>
 
         <SocialLinks>

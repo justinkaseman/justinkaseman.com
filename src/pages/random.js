@@ -10,8 +10,14 @@ const RandomPage = props => {
     <React.Fragment>
       <Section
         title={"Random"}
-        items={["Big Item", "Some Item"]}
-        index={5}
+        description={"Some other things I enjoy include:"}
+        items={[
+          { title: "Weight Lifting" },
+          { title: "Hiking" },
+          { title: "Piano" },
+          { title: "Magic the Gathering" },
+        ]}
+        index={4}
         background={"lightblue"}
       />
       <NavigationArrows right={"/"} rightText={"back"} />

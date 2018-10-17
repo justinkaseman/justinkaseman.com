@@ -93,9 +93,9 @@ const Section = props => {
               <p
                 key={index + "body"}
                 style={{
-                  fontFamily: "Federo Regular",
                   paddingBottom: "10px",
                   textIndent: "20px",
+                  fontSize: "1.1em",
                 }}
               >
                 {item}

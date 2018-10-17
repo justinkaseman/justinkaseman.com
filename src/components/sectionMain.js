@@ -37,8 +37,8 @@ const SectionMain = props => {
         </IconContainer>
 
         <SectionMainDescription style={{ marginTop: "16px" }}>
-          Hey there, I'm <span style={{ fontWeight: 900 }}>Justin Kaseman</span>
-          , a Software Engineer in the San Fransisco Bay Area.
+          I'm <span style={{ fontWeight: 900 }}>Justin Kaseman</span>, a
+          Software Engineer in the San Fransisco Bay Area.
         </SectionMainDescription>
         <SectionMainDescription>
           {props.size

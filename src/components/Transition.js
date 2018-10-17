@@ -4,7 +4,7 @@ import posed, { PoseGroup } from "react-pose";
 import Layout from "./Layout";
 import { DefaultPose } from "./poses";
 
-export const wrapPageElement = ({ element, props }) => {
+const Transition = ({ element, props }) => {
   const { key } = props.location;
   const { pose, transitionComponent } = element.props;
 
@@ -22,3 +22,5 @@ export const wrapPageElement = ({ element, props }) => {
     </Layout>
   );
 };
+
+export default Transition;

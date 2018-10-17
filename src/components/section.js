@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 
 import Background from "./background.js";
 import Sketchy from "./sketchy.js";
@@ -14,7 +13,6 @@ import {
   SectionDescription,
   SectionItems,
   Item,
-  ItemLink,
   ItemTitle,
   ItemIcon,
   ItemIconAlt,
@@ -45,7 +43,7 @@ const Section = props => {
         {props.items ? (
           <SectionItems>
             {props.items.map((item, index) => (
-              <Item key={index}>
+              <Item key={index + "items"}>
                 <a
                   href={item.url}
                   style={{
@@ -85,8 +83,8 @@ const Section = props => {
 
         {props.body ? (
           <SectionBody>
-            {props.body.map(item => (
-              <p>{item}</p>
+            {props.body.map((item, index) => (
+              <p key={index + "body"}>{item}</p>
             ))}
           </SectionBody>
         ) : null}

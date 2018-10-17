@@ -1,35 +1,62 @@
 import React, { Component } from "react";
 import { navigate } from "gatsby";
 
-import { FromRight } from "../components/poses";
+// import { FromRight } from "../components/poses";
 
 import Section from "../components/section";
 import NavigationArrows from "../components/navigationArrows";
 
-const RandomPage = props => {
-  return (
-    <React.Fragment>
-      <Section
-        title={"Random"}
-        description={"Some other things I enjoy include:"}
-        items={[
-          { title: "💪 Weight Lifting" },
-          { title: "⛰ Hiking & Backpacking" },
-          { title: "🎹 Piano" },
-          { title: "🂠 Magic the Gathering" },
-          { title: "🗑 Disc Golf" },
-          { title: "🌟 Self Improvement" },
-        ]}
-        index={4}
-        background={"#8fcadd"}
-      />
-      <NavigationArrows right={"/"} rightText={"back"} />
-    </React.Fragment>
-  );
-};
+class RandomPage extends Component {
+  constructor(props) {
+    super(props);
+    this.checkSize = this.checkSize.bind(this);
+  }
 
-RandomPage.defaultProps = {
-  transitionComponent: FromRight,
-};
+  componentDidMount() {
+    this.checkSize();
+    window.addEventListener("resize", this.checkSize);
+    window.addEventListener("keydown", this.onKeyDown);
+  }
+
+  checkSize() {
+    const currentSize = window.innerWidth;
+    if (currentSize < 641) navigate("/");
+  }
+
+  onKeyDown(e) {
+    if (e.key === "ArrowRight") navigate("/");
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.checkSize);
+    window.removeEventListener("keydown", this.onKeyDown);
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <Section
+          title={"Random"}
+          description={"Some other things I enjoy include:"}
+          items={[
+            { title: "💪 Weight Lifting" },
+            { title: "⛰ Hiking & Backpacking" },
+            { title: "🎹 Piano" },
+            { title: "🂠 Magic the Gathering" },
+            { title: "🗑 Disc Golf" },
+            { title: "🌟 Self Improvement" },
+          ]}
+          index={4}
+          background={"#8fcadd"}
+        />
+        <NavigationArrows right={"/"} rightText={"back"} />
+      </React.Fragment>
+    );
+  }
+}
+
+// RandomPage.defaultProps = {
+//   transitionComponent: FromRight,
+// };
 
 export default RandomPage;

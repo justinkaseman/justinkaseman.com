@@ -13,8 +13,9 @@ const navigationArrows = props => {
             {props.upText
               ? props.upText
                   .split("")
-                  .map(letter => (
+                  .map((letter, index) => (
                     <span
+                      key={props.upText + index}
                       style={{
                         transform: "rotate(-90deg)",
                       }}
@@ -33,7 +34,11 @@ const navigationArrows = props => {
           &larr;
           <ArrowText length={props.leftText.length} direction={"left"}>
             {props.leftText
-              ? props.leftText.split("").map(letter => <span>{letter}</span>)
+              ? props.leftText
+                  .split("")
+                  .map((letter, index) => (
+                    <span key={props.leftText + index}>{letter}</span>
+                  ))
               : null}
           </ArrowText>
         </Arrow>
@@ -46,8 +51,9 @@ const navigationArrows = props => {
             {props.downText
               ? props.downText
                   .split("")
-                  .map(letter => (
+                  .map((letter, index) => (
                     <span
+                      key={props.downText + index}
                       style={{
                         transform: "rotate(-90deg)",
                       }}
@@ -66,7 +72,11 @@ const navigationArrows = props => {
           &rarr;{" "}
           <ArrowText length={props.rightText.length} direction={"right"}>
             {props.rightText
-              ? props.rightText.split("").map(letter => <span>{letter}</span>)
+              ? props.rightText
+                  .split("")
+                  .map((letter, index) => (
+                    <span key={props.rightText + index}>{letter}</span>
+                  ))
               : null}
           </ArrowText>
         </Arrow>

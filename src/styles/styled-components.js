@@ -43,14 +43,14 @@ const large = (...args) => css`
 // Colors
 
 const orangered = "#EB613D";
-const blue = "#0000ff";
+// const blue = "#0000ff";
 const black = "#282B2E";
 const white = "#ffffff";
-const grey = "#BBC0C6";
+// const grey = "#BBC0C6";
 
 // Animations
 
-const easeOutCubic = "cubic-bezier(0.215, 0.610, 0.355, 1.000)";
+// const easeOutCubic = "cubic-bezier(0.215, 0.610, 0.355, 1.000)";
 
 const blink = keyframes`
   85.5% {

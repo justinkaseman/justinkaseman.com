@@ -5,8 +5,6 @@ import Section from "../components/section";
 import SectionMain from "../components/sectionMain";
 import NavigationArrows from "../components/navigationArrows";
 
-import { CatTransition } from "../components/poses";
-
 class IndexPage extends Component {
   constructor(props) {
     super(props);
@@ -175,9 +173,5 @@ class IndexPage extends Component {
     );
   }
 }
-
-IndexPage.defaultProps = {
-  transitionComponent: CatTransition,
-};
 
 export default IndexPage;

@@ -55,6 +55,9 @@ class Background extends React.Component {
           .lighter()
           .fill("rgba(0,0,0,0.3)");
         break;
+
+      default:
+        break;
     }
 
     d3svg.call(t);

@@ -1,12 +1,37 @@
 import React, { Component } from "react";
 import { navigate } from "gatsby";
 
-import { FromLeft } from "../components/poses";
+// import { FromLeft } from "../components/poses";
 
 import Section from "../components/section";
 import NavigationArrows from "../components/navigationArrows";
 
 class ProjectsPage extends Component {
+  constructor(props) {
+    super(props);
+    this.checkSize = this.checkSize.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.checkSize);
+    window.addEventListener("keydown", this.onKeyDown);
+    this.checkSize();
+  }
+
+  checkSize() {
+    const currentSize = window.innerWidth;
+    if (currentSize < 641) navigate("/");
+  }
+
+  onKeyDown(e) {
+    if (e.key === "ArrowLeft") navigate("/");
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.checkSize);
+    window.removeEventListener("keydown", this.onKeyDown);
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -56,8 +81,8 @@ class ProjectsPage extends Component {
   }
 }
 
-ProjectsPage.defaultProps = {
-  transitionComponent: FromLeft,
-};
+// ProjectsPage.defaultProps = {
+//   transitionComponent: FromLeft,
+// };
 
 export default ProjectsPage;

@@ -212,7 +212,7 @@ COMPONENTS
 
 //Navigation
 
-export const NavigationModal = styled.div`
+export const NavigationModal = styled.nav`
   display: flex;
   position: fixed;
   z-index: 10;
@@ -231,7 +231,7 @@ export const NavigationModal = styled.div`
   `};
 `;
 
-export const NavigationMap = styled.div`
+export const NavigationMap = styled.nav`
   position: fixed;
   background: red;
   right: 1%;
@@ -272,7 +272,7 @@ export const NavigationSubButton = styled.button`
   }
 `;
 
-export const Arrow = styled.div`
+export const Arrow = styled.nav`
   height: 1px;
   width: 1px;
   position: fixed;
@@ -388,7 +388,7 @@ export const SectionContainer = styled.div`
   `}
 `;
 
-export const SectionContents = styled.div`
+export const SectionContents = styled.section`
   position: relative;
   z-index: 5;
   background: ${white};
@@ -406,7 +406,7 @@ export const SectionContents = styled.div`
   `}
 `;
 
-export const SectionHeader = styled.div`
+export const SectionHeader = styled.header`
   background: ${white};
 `;
 
@@ -453,7 +453,7 @@ export const SectionMainTitle = styled.h1`
   `};
 `;
 
-export const SectionMainDescription = styled.body`
+export const SectionMainDescription = styled.main`
   padding: 20px 0;
   font-weight: 20;
   width: 100%;
@@ -519,7 +519,7 @@ export const Icon = styled.img`
   `};
 `;
 
-export const SectionItems = styled.div`
+export const SectionItems = styled.main`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -547,7 +547,7 @@ export const Item = styled.div`
   padding: 5px;
 `;
 
-export const SocialLinks = styled.div`
+export const SocialLinks = styled.section`
   display: flex;
   justify-content: center;
   margin-top: 10px;
@@ -579,7 +579,7 @@ export const Social = styled.li`
   `};
 `;
 
-export const SectionBody = styled.p`
+export const SectionBody = styled.article`
   display: flex;
   justify-content: center;
   margin-top: 10px;

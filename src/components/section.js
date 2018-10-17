@@ -48,7 +48,11 @@ const Section = props => {
               <Item key={index}>
                 <a
                   href={item.url}
-                  style={{ textDecoration: "none", zIndex: "-1" }}
+                  style={{
+                    textDecoration: "none",
+                    zIndex: "-1",
+                    color: "#343434",
+                  }}
                 >
                   <div style={{ display: "flex", alignItems: "center" }}>
                     {item.image ? (
@@ -63,10 +67,16 @@ const Section = props => {
                     ) : null}
                     <ItemTitle>{item.title}</ItemTitle>
                   </div>
-                  <p style={{ margin: "0 5%", fontFamily: "-apple-system" }}>
-                    {item.description}
-                  </p>
-                  <p style={{ margin: "2% 5%" }}>{item.technology}</p>
+                  {item.description ? (
+                    <p style={{ margin: "0 5%", fontFamily: "-apple-system" }}>
+                      {item.description}
+                    </p>
+                  ) : null}
+                  {item.technology ? (
+                    <p style={{ margin: "2% 5%", textAlign: "center" }}>
+                      {item.technology}
+                    </p>
+                  ) : null}
                 </a>
               </Item>
             ))}

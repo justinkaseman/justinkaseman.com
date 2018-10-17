@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Component } from "react";
+import { navigate } from "gatsby";
 
 import posed from "react-pose";
 import { FromTop } from "../components/poses";

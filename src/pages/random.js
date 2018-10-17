@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Component } from "react";
+import { navigate } from "gatsby";
 
 import { FromRight } from "../components/poses";
 
@@ -20,7 +21,7 @@ const RandomPage = props => {
           { title: "🌟 Self Improvement" },
         ]}
         index={4}
-        background={"lightblue"}
+        background={"#8fcadd"}
       />
       <NavigationArrows right={"/"} rightText={"back"} />
     </React.Fragment>

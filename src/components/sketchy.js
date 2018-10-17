@@ -22,8 +22,8 @@ class Sketchy extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener("resize", this.resize);
     this.resize();
+    window.addEventListener("resize", this.resize);
   }
 
   resize() {

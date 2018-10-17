@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
+import { navigate } from "gatsby";
+
 import { FromBottom } from "../components/poses";
 
 import NavigationArrows from "../components/navigationArrows";
-
 import Section from "../components/section";
 
 const AboutPage = props => (

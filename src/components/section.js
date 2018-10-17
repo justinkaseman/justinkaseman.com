@@ -28,7 +28,7 @@ const Section = props => {
 
         {props.image ? (
           <IconContainer>
-            <Sketchy offSetBottom={6} offSetLeft={2} />
+            <Sketchy offSetBottom={4} offSetLeft={2} />
             <Icon src={props.image} alt={props.alt} />
           </IconContainer>
         ) : null}

@@ -398,7 +398,7 @@ export const SectionMainTitle = styled.h1`
 `;
 
 export const SectionMainDescription = styled.p`
-  padding: 20px 0;
+  margin-top: 60px;
   font-weight: 20;
   width: 100%;
   line-height: 30px;
@@ -410,6 +410,7 @@ export const SectionMainDescription = styled.p`
   `}
   ${medium`
     font-size: ${fontsize.medium};
+    margin-top: 30px;
   `}
   ${large`
     font-size: ${fontsize.large};

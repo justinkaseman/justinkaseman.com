@@ -4,6 +4,6 @@
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
 
-import Transition from "./src/components/transition";
+// import Transition from "./src/components/transition";
 
-export const wrapPageElement = Transition;
+// export const wrapPageElement = Transition;

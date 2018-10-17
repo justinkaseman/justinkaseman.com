@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { navigate } from "gatsby";
+import Layout from "../components/layout";
 
 import Section from "../components/section";
 import SectionMain from "../components/sectionMain";
@@ -47,7 +48,7 @@ class IndexPage extends Component {
 
   render() {
     return (
-      <div>
+      <Layout>
         {this.state.screenSize === "Mobile" ? (
           <div>
             <SectionMain index={0} background={"#cecece"} />
@@ -169,7 +170,7 @@ class IndexPage extends Component {
             />
           </div>
         )}
-      </div>
+      </Layout>
     );
   }
 }

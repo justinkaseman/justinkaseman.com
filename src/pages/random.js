@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { navigate } from "gatsby";
 
+import Layout from "../components/layout";
+
 // import { FromRight } from "../components/poses";
 
 import Section from "../components/section";
@@ -34,7 +36,7 @@ class RandomPage extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <Layout>
         <Section
           title={"Random"}
           description={"Some other things I enjoy include:"}
@@ -50,7 +52,7 @@ class RandomPage extends Component {
           background={"#8fcadd"}
         />
         <NavigationArrows right={"/"} rightText={"back"} />
-      </React.Fragment>
+      </Layout>
     );
   }
 }

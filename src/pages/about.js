@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { navigate } from "gatsby";
+import Layout from "../components/layout";
 
 // import { FromBottom } from "../components/poses";
 
@@ -34,7 +35,7 @@ class AboutPage extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <Layout>
         <Section
           title={"About"}
           body={[
@@ -45,7 +46,7 @@ class AboutPage extends Component {
           background={"pink"}
         />
         <NavigationArrows down={"/"} downText="B A C K" />
-      </React.Fragment>
+      </Layout>
     );
   }
 }

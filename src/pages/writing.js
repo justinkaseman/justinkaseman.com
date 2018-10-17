@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { navigate } from "gatsby";
 
+import Layout from "../components/layout";
+
 // import { FromTop } from "../components/poses";
 
 import Section from "../components/section";
@@ -34,7 +36,7 @@ class WritingPage extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <Layout>
         <Section
           title={"Writing"}
           items={[
@@ -75,7 +77,7 @@ class WritingPage extends Component {
           background={"violet"}
         />
         <NavigationArrows up={"/"} upText="B A C K" />
-      </React.Fragment>
+      </Layout>
     );
   }
 }

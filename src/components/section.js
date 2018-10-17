@@ -84,7 +84,12 @@ const Section = props => {
         {props.body ? (
           <SectionBody>
             {props.body.map((item, index) => (
-              <p key={index + "body"}>{item}</p>
+              <p
+                key={index + "body"}
+                style={{ fontFamily: "Federo Regular", paddingBottom: "10px" }}
+              >
+                {item}
+              </p>
             ))}
           </SectionBody>
         ) : null}

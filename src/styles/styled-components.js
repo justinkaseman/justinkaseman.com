@@ -436,7 +436,7 @@ export const SectionMainDescription = styled.main`
   font-weight: 20;
   width: 100%;
   line-height: 30px;
-  font-family: Federo Regular;
+  font-family: "Federo Regular";
 
   ${small`
     padding: 20px 40px;

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { navigate } from "gatsby";
 import Layout from "../components/layout";
+
+import { navigate } from "gatsby";
 
 import Section from "../components/section";
 import SectionMain from "../components/sectionMain";

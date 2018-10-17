@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { navigate } from "gatsby";
 import Layout from "../components/layout";
+
+import { navigate } from "gatsby";
 
 // import { FromBottom } from "../components/poses";
 

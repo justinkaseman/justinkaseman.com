@@ -529,6 +529,19 @@ export const ItemTitle = styled.h3`
   `};
 `;
 
+export const ItemDescription = styled.p`
+  margin: 0 5%;
+  font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
+
+  ${medium`
+  margin: 0 20px;
+  font-size: 1.2em;
+  `};
+  ${large`
+  min-height: 100px;
+  `};
+`;
+
 export const SectionBody = styled.article`
   display: flex;
   justify-content: center;

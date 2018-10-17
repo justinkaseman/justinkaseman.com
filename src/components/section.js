@@ -16,6 +16,7 @@ import {
   ItemTitle,
   ItemIcon,
   ItemIconAlt,
+  ItemDescription,
   SectionBody,
 } from "../styles/styled-components.js";
 
@@ -66,15 +67,7 @@ const Section = props => {
                     <ItemTitle>{item.title}</ItemTitle>
                   </div>
                   {item.description ? (
-                    <p
-                      style={{
-                        margin: "0 5%",
-                        fontFamily:
-                          "Lucida Sans Unicode, Lucida Grande, sans-serif",
-                      }}
-                    >
-                      {item.description}
-                    </p>
+                    <ItemDescription>{item.description}</ItemDescription>
                   ) : null}
                   {item.technology ? (
                     <p style={{ margin: "2% 5%", textAlign: "center" }}>

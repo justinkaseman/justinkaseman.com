@@ -1,51 +1,29 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import React from "react";
+import Helmet from "react-helmet";
 
-import Header from './header'
-import './layout.css'
+// import Navigation from "./navigation";
+import { GlobalStyle } from "../styles/styled-components";
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: '0 auto',
-            maxWidth: 960,
-            padding: '0px 1.0875rem 1.45rem',
-            paddingTop: 0,
-          }}
-        >
-          {children}
-        </div>
-      </>
-    )}
-  />
-)
+import "../styles/layout.css";
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+const Layout = props => (
+  <div>
+    <Helmet
+      title="Justin Kaseman"
+      meta={[
+        {
+          name: `description`,
+          content: `Hey, I'm Justin Kaseman, software engineer. I like creating stuff, solving problems, and being productive.`,
+        },
+        {
+          name: `keywords`,
+          content: `web developer, portfolio, software engineer, personal website, justin, kaseman`,
+        },
+      ]}
+    />
+    {props.children}
+    <GlobalStyle />
+  </div>
+);
 
-export default Layout
+export default Layout;

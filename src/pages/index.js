@@ -57,7 +57,7 @@ class IndexPage extends Component {
               title={"About"}
               body={[
                 "I’m a San Fransisco Bay Area, native born and raised. My background is in health and fitness which grew from my own body transformation in which I lost 100lbs. This taught me my strongest life lesson: you can do anything I set my mind to. It led me down the path of getting my BSc. in Exercise Physiology. While in university, I opened my own independent personal training business. I needed a website to advertise myself, so I decided to build my own.. and that was it, I was addicted.",
-                "After graduation, I spent the next 6 months engrossed self-studying. I enrolled in Lambda School, a full time intensive 7.5 month long Computer Science Academy. I finished with honors along with 6 weeks of TAing for the Computer Science curriculum (Data Structures & Algorithms, C lang, & OS/Processes). Software Engineering has given me an outlet to fulfill my greatest passions: creating, problem-solving, lifelong learning.",
+                "After graduation, I spent the next 6 months engrossed self-studying. I enrolled in Lambda School, a full time intensive 7.5 month long Computer Science Academy. I finished with honors along with 6 weeks of TAing for the Computer Science curriculum (Data Structures & Algorithms, C lang, & OS/Processes). Software Engineering has given me an outlet to fulfill my greatest passions: creating stuff, solving problems, and lifelong learning.",
               ]}
               index={1}
               background={"pink"}
@@ -70,7 +70,7 @@ class IndexPage extends Component {
                   image:
                     "https://raw.githubusercontent.com/Lambda-School-Labs/CS10-employee-shift/master/front-end/public/favicon.ico",
                   description:
-                    "Easy work schedule shift management. Built with small business users in mind 💙",
+                    "Easy work schedule shift management. Built with small business users in mind. 💙",
                   technology: "PostgreSQL • Django • React • Redux",
                   url: "https://www.myshifts.app/",
                 },
@@ -94,7 +94,7 @@ class IndexPage extends Component {
                 {
                   title: "Justin Kaseman.com",
                   image: "",
-                  description: "Check this site out on GitHub",
+                  description: "Check this site out on GitHub!",
                   technology: "Gatsby using GraphQL",
                   url: "https://github.com/Jkasem/justinkaseman.com",
                 },
@@ -110,7 +110,7 @@ class IndexPage extends Component {
                     "Lambda School: the Personal Trainer of Computer Science fitness",
                   image:
                     "https://cdn-images-1.medium.com/max/800/1*HsMuYhtpUdRqWTudC8DWQw.png",
-                  description: "Tales of a quarter-life crisis career switch",
+                  description: "Tales of a quarter-life crisis career switch.",
                   url:
                     "https://medium.com/@justinkaseman/coding-bootcamps-the-personal-trainers-of-computer-science-fitness-43909bbe47be",
                 },
@@ -119,7 +119,7 @@ class IndexPage extends Component {
                   image:
                     "https://miro.medium.com/max/728/1*YuF6cg0QfqCnpI_d1YBmWg.png",
                   description:
-                    "Ever wondered what non-traditional schooling is like? A recap of my first third of Lambda School",
+                    "Ever wondered what non-traditional schooling is like? A recap of my first third of Lambda School.",
                   url:
                     "https://medium.com/@justinkaseman/lambda-school-cs-front-end-recap-48646fc11e2c",
                 },

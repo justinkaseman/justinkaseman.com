@@ -10,11 +10,11 @@ const Layout = props => (
       meta={[
         {
           name: `description`,
-          content: `Hey, I'm Justin Kaseman, software engineer. I like creating stuff, solving problems, and being productive.`,
+          content: `Hey, I'm Justin Kaseman, a software engineer in San Fransisco. I like creating stuff, solving problems, and lifelong learning.`,
         },
         {
           name: `keywords`,
-          content: `web developer, portfolio, software engineer, personal website, justin, kaseman`,
+          content: `web developer, portfolio, software engineer, personal website, justin, kaseman, full stack, front end, back end, san fransisco, oakland`,
         },
       ]}
     />

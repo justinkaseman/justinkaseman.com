@@ -45,7 +45,7 @@ class WritingPage extends Component {
                 "Lambda School: the Personal Trainer of Computer Science fitness",
               image:
                 "https://cdn-images-1.medium.com/max/800/1*HsMuYhtpUdRqWTudC8DWQw.png",
-              description: "Tales of a quarter-life crisis career switch",
+              description: "Tales of a quarter-life crisis career switch.",
               url:
                 "https://medium.com/@justinkaseman/coding-bootcamps-the-personal-trainers-of-computer-science-fitness-43909bbe47be",
             },
@@ -54,7 +54,7 @@ class WritingPage extends Component {
               image:
                 "https://miro.medium.com/max/728/1*YuF6cg0QfqCnpI_d1YBmWg.png",
               description:
-                "Ever wondered what non-traditional schooling is like? A recap of my first third of Lambda School",
+                "Ever wondered what non-traditional schooling is like? A recap of my first third of Lambda School.",
               url:
                 "https://medium.com/@justinkaseman/lambda-school-cs-front-end-recap-48646fc11e2c",
             },

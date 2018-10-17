@@ -15,7 +15,7 @@ const spacing = {
 
 const fontsize = {
   extralarge: "3em",
-  large: "1.9em",
+  large: "2.2em",
   medium: "1.7em",
   small: "1em",
   extrasmall: "0.6em",
@@ -115,9 +115,9 @@ export const TextureContainer = styled.div`
 `;
 
 export const SketchyContainer = styled.div`
-  width: calc(100% + ${props => (props.offSetLeft ? props.offSetLeft : 4)}px);
+  width: calc(100% + ${props => (props.offSetLeft ? props.offSetLeft : 0)}px);
   height: calc(
-    101% + ${props => (props.offSetBottom ? props.offSetBottom : 0)}px
+    100% + ${props => (props.offSetBottom ? props.offSetBottom : 0)}px
   );
   position: absolute;
   top: 0;
@@ -223,7 +223,7 @@ export const Arrow = styled.nav`
   cursor: pointer;
   z-index: 15;
   font-family: Sullivan Regular;
-  font-size: 8rem;
+  font-size: 130px;
   transition: color 0.4s;
     
   ${props =>
@@ -278,6 +278,8 @@ export const Arrow = styled.nav`
   }
 
   ${medium`
+  ${props =>
+    props.up ? "top: 0; margin-top: 44px; margin-left: 8px; left: 50%;" : null}
   ${props =>
     props.left
       ? "left: 0; margin-left: 10px; margin-top: -10px; top: 50%;"
@@ -358,7 +360,7 @@ export const SectionMainTitle = styled.h1`
   position: absolute;
   font-family: Triumph Wheels;
   font-weight: 500;
-  font-size: 7em;
+  font-size: 125px;
   color: #fee;
   text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
     0 0 0.1em #ff4444, 0 10px 3px #000;
@@ -383,11 +385,11 @@ export const SectionMainTitle = styled.h1`
 
   @media screen and (max-width: 900px) {
     visibility: hidden;
+    font-size: 80px;
   }
-
   ${medium`
     top: 42px;
-    font-size: 6em;
+    font-size: 105px;
     right: -520px;
     width: 540px;
   `} ${large`
@@ -499,13 +501,13 @@ export const ItemIcon = styled.img`
   width: 70px;
   height: 70px;
   margin-right: 10px;
-  border-radius: 10%;
+  border-radius: 50%;
   margin-bottom: 20px;
 
   ${medium`
   width: 50px;
   height: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   `};
 `;
 
@@ -515,8 +517,7 @@ export const ItemIconAlt = styled.h2`
   margin-right: 10px;
 
   ${medium`
-  font-size: 1.6rem;
-  margin-bottom: 10px;
+  font-size: 2rem;
   `};
 `;
 
@@ -524,7 +525,20 @@ export const ItemTitle = styled.h3`
   padding: 10px;
 
   ${medium`
-  font-size: 1em;
+  font-size: 1.2em;
+  `};
+`;
+
+export const ItemDescription = styled.p`
+  margin: 0 5%;
+  font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
+
+  ${medium`
+  margin: 0 20px;
+  font-size: 1.2em;
+  `};
+  ${large`
+  min-height: 100px;
   `};
 `;
 

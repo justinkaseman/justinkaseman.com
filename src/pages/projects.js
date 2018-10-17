@@ -45,7 +45,7 @@ class ProjectsPage extends Component {
               image:
                 "https://raw.githubusercontent.com/Lambda-School-Labs/CS10-employee-shift/master/front-end/public/favicon.ico",
               description:
-                "Easy work schedule shift management. Built with small business users in mind 💙",
+                "Easy work schedule shift management. Built with small business users in mind. 💙",
               technology: "PostgreSQL • Django • React • Redux",
               url: "https://www.myshifts.app/",
             },
@@ -62,14 +62,14 @@ class ProjectsPage extends Component {
               title: "Wallet Watcher",
               image: "",
               description:
-                "SMS/Email notifications when a specified Ethereum address' balance changes. \n 3rd Place Lambda Hackathon Winner.",
+                "SMS/Email notifications when a specified Ethereum address' balance changes. 3rd Place Lambda Hackathon Winner.",
               technology: "MongoDB • Express • React • Node",
               url: "https://youtu.be/DmIB3gslWdg",
             },
             {
               title: "Justin Kaseman.com",
               image: "",
-              description: "Check this site out on GitHub",
+              description: "Check this site out on GitHub!",
               technology: "Gatsby using GraphQL",
               url: "https://github.com/Jkasem/justinkaseman.com",
             },

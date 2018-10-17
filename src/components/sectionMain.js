@@ -37,7 +37,8 @@ const SectionMain = props => {
         </IconContainer>
 
         <SectionMainDescription>
-          I'm Justin Kaseman, a Software Engineer in the San Fransisco Bay Area.
+          I‎’m Justin Kaseman, a Software Engineer in the San Fransisco Bay
+          Area.
           <br />
           <br />
           {props.size

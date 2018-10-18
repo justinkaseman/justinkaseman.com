@@ -219,18 +219,18 @@ export const Arrow = styled.nav`
   transition: color 0.4s;
     
   ${props =>
-    props.up ? "top: 0; margin-top: 44px; margin-left: 8px; left: 50%;" : null}
+    props.up ? "top: 0; margin-top: 3%; margin-left: 0.5%; left: 50%;" : null}
   ${props =>
     props.left
-      ? "left: 0; margin-left: 40px; margin-top: -10px; top: 50%;"
+      ? "left: 0; margin-left: 2.5%; margin-top: -10px; top: 50%;"
       : null}
   ${props =>
     props.down
-      ? "bottom: 0; margin-bottom: 140px; margin-left: 8px; left: 50%;"
+      ? "bottom: 0; margin-bottom: 8.5%; margin-left: 8px; left: 50%;"
       : null}
   ${props =>
     props.right
-      ? "right: 0; margin-right: 120px; margin-top: -10px; top: 50%;"
+      ? "right: 0; margin-right: 8%; margin-top: -10px; top: 50%;"
       : null}
 
   ${props =>
@@ -353,7 +353,6 @@ export const SectionMainTitle = styled.h1`
   position: absolute;
   font-family: Triumph Wheels;
   font-weight: 500;
-  font-size: 125px;
   color: #fee;
   text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
     0 0 0.1em #ff4444, 0 10px 3px #000;
@@ -369,7 +368,7 @@ export const SectionMainTitle = styled.h1`
     height: 40%;
     width: 100%;
     color: ${white};
-    background: grey;
+    background: #a8a8a8;
   }
 
   > span {
@@ -378,17 +377,17 @@ export const SectionMainTitle = styled.h1`
 
   @media screen and (max-width: 900px) {
     visibility: hidden;
-    font-size: 80px;
   }
   ${medium`
-    top: 42px;
+  top: 22%;
     font-size: 105px;
-    right: -520px;
-    width: 540px;
+    left: 84%;
+    width: 330%;
   `} ${large`
-    top: 30px;
-    right: -620px;
-    width: 640px;
+  font-size: 125px;
+    top: 16%;
+    left: 84%;
+    width: 390%;
   `};
 `;
 

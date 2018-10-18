@@ -226,7 +226,7 @@ export const Arrow = styled.nav`
       : null}
   ${props =>
     props.down
-      ? "bottom: 0; margin-bottom: 145px; margin-left: 7px; left: 50%;"
+      ? "bottom: 0; margin-bottom: 120px; margin-left: 7px; left: 50%;"
       : null}
   ${props =>
     props.right
@@ -295,7 +295,7 @@ export const ArrowText = styled.span`
   height: ${props => (props.length % 2 === 1 ? "380px" : "540px")};
   ${props => (props.direction === "left" ? "right: 8px;" : null)}
   ${props => (props.direction === "up" ? "left: -34px;" : null)}
-  ${props => (props.direction === "down" ? "left: 94px;" : null)}
+  ${props => (props.direction === "down" ? "left: 76px;" : null)}
   ${props => (props.direction === "right" ? "left: 92px;" : null)}
   font-size: 54px;
 
@@ -381,11 +381,11 @@ export const SectionMainTitle = styled.h1`
   }
   ${medium`
     top: 22%;
-    font-size: 105px;
+    font-size: 95px;
     left: 84%;
     width: 330%;
   `} ${large`
-    font-size: 125px;
+    font-size: 115px;
     top: 16%;
     left: 84%;
     width: 390%;
@@ -432,6 +432,15 @@ export const IconContainer = styled.div`
   margin-top: ${props => (props.height ? -props.height + 36 : 40)}px;
   top: 0;
 
+  ${props =>
+    props.height && props.width
+      ? `@media screen and (max-width: 900px) {
+    height: 140px;
+    width: 144px;
+    left: 0;
+    margin-left: -30px;
+  }`
+      : null};
   ${small`
     height: ${props => (props.height ? props.height - 80 : 50)}px;
     width: ${props => (props.width ? props.width - 80 : 50)}px; 
@@ -450,6 +459,14 @@ export const Icon = styled.img`
   background: ${white};
   pointer-events: none;
 
+  ${props =>
+    props.height && props.width
+      ? `@media screen and (max-width: 900px) {
+    height: 140px;
+    width: 144px;
+    
+  }`
+      : null};
   ${small`
   height: ${props => (props.height ? 90 : 55)}px;
   width: ${props => (props.width ? 88 : 55)}px;

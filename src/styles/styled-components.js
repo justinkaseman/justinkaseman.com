@@ -96,6 +96,7 @@ export const Layout = styled.div`
 
 export const Wrapper = styled.div`
   min-height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -115,27 +116,18 @@ export const TextureContainer = styled.div`
 `;
 
 export const SketchyContainer = styled.div`
-  width: calc(100% + ${props => (props.offSetLeft ? props.offSetLeft : 0)}px);
+  width: calc(100% + ${props => (props.offSetLeft ? props.offSetLeft : 7)}px);
   height: calc(
-    100% + ${props => (props.offSetBottom ? props.offSetBottom : 0)}px
+    100% + ${props => (props.offSetBottom ? props.offSetBottom : 7)}px
   );
   position: absolute;
-  top: 0;
-  left: 0;
+  top: ${props => (props.offSetBottom ? -props.offSetBottom + 2 : -2)}px;
+  left: ${props => (props.offSetLeft ? -props.offSetLeft + 2 : -2)}px;
   z-index: -1;
 
   svg {
-    position: absolute;
-    top: -2px;
-    bottom: 0px;
-    right: 0px;
-    left: -${props => (props.offSetLeft ? props.offSetLeft : 3)}px;
-    height: calc(
-      102% + ${props => (props.offSetBottom ? props.offSetBottom : 0)}px
-    );
-    width: calc(
-      100% + ${props => (props.offSetLeft ? props.offSetLeft : 10)}px
-    );
+    height: 100%;
+    width: 100%;
   }
 `;
 
@@ -341,6 +333,7 @@ export const SectionContents = styled.section`
   box-shadow: 8px 8px rgba(0, 0, 0, 0.15);
   border-left: 40px solid #eee;
   width: 100%;
+
   ${small`
     padding: ${spacing.half} ${spacing.half};
   `}
@@ -405,18 +398,15 @@ export const SectionMainDescription = styled.p`
   width: 100%;
   line-height: 30px;
   font-family: "Federo Regular";
+  font-size: ${fontsize.large};
 
   ${small`
     padding: 20px 40px;
     font-size: ${fontsize.medium};
-  `}
-  ${medium`
+  `} ${medium`
     font-size: ${fontsize.medium};
     margin-top: 30px;
-  `}
-  ${large`
-    font-size: ${fontsize.large};
-  `}
+  `};
 `;
 
 export const SectionTitle = styled.h1`

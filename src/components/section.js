@@ -25,7 +25,7 @@ const Section = props => {
     <SectionContainer style={{ backgroundColor: props.background }}>
       <Background index={props.index} />{" "}
       <SectionContents>
-        <Sketchy offSetLeft={40} />
+        <Sketchy offSetLeft={44} />
 
         {props.image ? (
           <IconContainer>

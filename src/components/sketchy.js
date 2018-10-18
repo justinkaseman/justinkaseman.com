@@ -28,8 +28,14 @@ class Sketchy extends Component {
 
   resize() {
     const parent = this.div;
-    if (parent.offsetHeight && parent.offsetWidth)
-      this.setState({ width: parent.offsetWidth, height: parent.offsetHeight });
+    if (parent.offsetHeight && parent.offsetWidth) {
+      const width = parent.offsetWidth - 3;
+      const height = parent.offsetHeight - 3;
+      this.setState({
+        width,
+        height,
+      });
+    }
   }
 
   componentWillUnmount() {
@@ -40,7 +46,7 @@ class Sketchy extends Component {
     const { width, height } = this.state;
     const node = ReactFauxDOM.createElement("svg");
     const roughSvg = rough.svg(node);
-    const fill = roughSvg.rectangle(1, 1, width, height);
+    const fill = roughSvg.rectangle(0, 0, width, height);
     node.appendChild(fill);
     return (
       <SketchyContainer

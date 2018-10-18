@@ -30,7 +30,8 @@ const small = (...args) => css`
   }
 `;
 const medium = (...args) => css`
-  @media screen and (min-width: 641px) and (max-width: 1200px) {
+  @media screen and (min-width: 641px) and (max-width: 1200px),
+    screen and (max-height: 768px) {
     ${css(...args)};
   }
 `;

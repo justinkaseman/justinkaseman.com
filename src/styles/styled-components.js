@@ -30,7 +30,8 @@ const small = (...args) => css`
   }
 `;
 const medium = (...args) => css`
-  @media screen and (min-width: 641px) and (max-width: 1200px) {
+  @media screen and (min-width: 641px) and (max-width: 1200px),
+    screen and (max-height: 768px) {
     ${css(...args)};
   }
 `;
@@ -215,22 +216,22 @@ export const Arrow = styled.nav`
   cursor: pointer;
   z-index: 15;
   font-family: Sullivan Regular;
-  font-size: 130px;
   transition: color 0.4s;
+  font-size: 110px;
     
   ${props =>
-    props.up ? "top: 0; margin-top: 3%; margin-left: 0.5%; left: 50%;" : null}
+    props.up ? "top: 0; margin-top: 54px; margin-left: 7px; left: 50%;" : null}
   ${props =>
     props.left
-      ? "left: 0; margin-left: 2.5%; margin-top: -10px; top: 50%;"
+      ? "left: 0; margin-left: 46px; margin-top: -10px; top: 50%;"
       : null}
   ${props =>
     props.down
-      ? "bottom: 0; margin-bottom: 8.5%; margin-left: 8px; left: 50%;"
+      ? "bottom: 0; margin-bottom: 120px; margin-left: 7px; left: 50%;"
       : null}
   ${props =>
     props.right
-      ? "right: 0; margin-right: 8%; margin-top: -10px; top: 50%;"
+      ? "right: 0; margin-right: 124px; margin-top: -10px; top: 50%;"
       : null}
 
   ${props =>
@@ -251,6 +252,7 @@ export const Arrow = styled.nav`
       height: 0;
       width: 0;
       color: ${white};
+      font-size: 110px;
     }`
         : `&:after {
         position: absolute;
@@ -262,6 +264,7 @@ export const Arrow = styled.nav`
         height: 0;
         width: 0;
         color: ${white};
+        font-size: 110px;
       }`}
 
     &:hover {
@@ -270,8 +273,7 @@ export const Arrow = styled.nav`
   }
 
   ${medium`
-  ${props =>
-    props.up ? "top: 0; margin-top: 44px; margin-left: 8px; left: 50%;" : null}
+
   ${props =>
     props.left
       ? "left: 0; margin-left: 10px; margin-top: -10px; top: 50%;"
@@ -291,13 +293,12 @@ export const ArrowText = styled.span`
   position: absolute;
   top: ${props =>
     props.direction === "up" || props.direction === "down" ? "-180" : "-260"}px;
-  height: ${props => (props.length % 2 === 1 ? "50vh" : "70vh")};
-  height: ${props => (props.length % 2 === 1 ? "50vh" : "70vh")};
+  height: ${props => (props.length % 2 === 1 ? "380px" : "540px")};
   ${props => (props.direction === "left" ? "right: 8px;" : null)}
-  ${props => (props.direction === "up" ? "left: -30px;" : null)}
-  ${props => (props.direction === "down" ? "left: 94px;" : null)}
+  ${props => (props.direction === "up" ? "left: -34px;" : null)}
+  ${props => (props.direction === "down" ? "left: 76px;" : null)}
   ${props => (props.direction === "right" ? "left: 92px;" : null)}
-  font-size: ${fontsize.tiny};
+  font-size: 54px;
 
   ${medium`
   ${props => (props.direction === "left" ? "right: -24px;" : null)}
@@ -357,6 +358,7 @@ export const SectionMainTitle = styled.h1`
   text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
     0 0 0.1em #ff4444, 0 10px 3px #000;
   pointer-events: none;
+  margin-bottom: 0;
 
   &:after {
     position: absolute;
@@ -369,6 +371,7 @@ export const SectionMainTitle = styled.h1`
     width: 100%;
     color: ${white};
     background: #a8a8a8;
+    box-sizing: content-box;
   }
 
   > span {
@@ -379,12 +382,12 @@ export const SectionMainTitle = styled.h1`
     visibility: hidden;
   }
   ${medium`
-  top: 22%;
-    font-size: 105px;
+    top: 22%;
+    font-size: 95px;
     left: 84%;
     width: 330%;
   `} ${large`
-  font-size: 125px;
+    font-size: 115px;
     top: 16%;
     left: 84%;
     width: 390%;
@@ -397,7 +400,7 @@ export const SectionMainDescription = styled.p`
   width: 100%;
   line-height: 30px;
   font-family: "Federo Regular";
-  font-size: ${fontsize.large};
+  font-size: ${fontsize.medium};
 
   ${small`
     padding: 20px 40px;
@@ -413,10 +416,10 @@ export const SectionTitle = styled.h1`
     font-size: ${fontsize.medium};
   `}
   ${medium`
-    font-size: ${fontsize.large};
+    font-size: ${fontsize.medium};
   `}
   ${large`
-    font-size: ${fontsize.extralarge};
+    font-size: ${fontsize.large};
   `}
 `;
 
@@ -431,6 +434,15 @@ export const IconContainer = styled.div`
   margin-top: ${props => (props.height ? -props.height + 36 : 40)}px;
   top: 0;
 
+  ${props =>
+    props.height && props.width
+      ? `@media screen and (max-width: 900px) {
+    height: 140px;
+    width: 144px;
+    left: 0;
+    margin-left: -30px;
+  }`
+      : null};
   ${small`
     height: ${props => (props.height ? props.height - 80 : 50)}px;
     width: ${props => (props.width ? props.width - 80 : 50)}px; 
@@ -449,6 +461,14 @@ export const Icon = styled.img`
   background: ${white};
   pointer-events: none;
 
+  ${props =>
+    props.height && props.width
+      ? `@media screen and (max-width: 900px) {
+    height: 140px;
+    width: 144px;
+    
+  }`
+      : null};
   ${small`
   height: ${props => (props.height ? 90 : 55)}px;
   width: ${props => (props.width ? 88 : 55)}px;

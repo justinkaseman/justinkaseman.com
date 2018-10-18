@@ -190,12 +190,12 @@ html {
 * {
   box-sizing: inherit;
 }
-*:before {
+/* *:before {
   box-sizing: inherit;
 }
 *:after {
   box-sizing: inherit;
-}
+} */
 body {
   color: hsla(0, 0%, 0%, 0.8);
   font-family: "Federo Regular", "Lucida Sans Unicode", "Lucida Grande",

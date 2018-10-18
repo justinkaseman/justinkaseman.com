@@ -370,6 +370,7 @@ export const SectionMainTitle = styled.h1`
     width: 100%;
     color: ${white};
     background: #a8a8a8;
+    box-sizing: content-box;
   }
 
   > span {

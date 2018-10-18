@@ -20,7 +20,7 @@ const SectionMain = props => {
   return (
     <SectionContainer style={{ backgroundColor: props.background }}>
       <Background index={props.index} />{" "}
-      <SectionContents style={{ marginTop: "10%" }}>
+      <SectionContents style={{ marginTop: "8%" }}>
         <Sketchy offSetLeft={44} />
 
         <IconContainer height={170} width={168}>

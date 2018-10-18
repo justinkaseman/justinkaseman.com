@@ -215,22 +215,22 @@ export const Arrow = styled.nav`
   cursor: pointer;
   z-index: 15;
   font-family: Sullivan Regular;
-  font-size: 130px;
   transition: color 0.4s;
+  font-size: 130px;
     
   ${props =>
-    props.up ? "top: 0; margin-top: 3%; margin-left: 0.5%; left: 50%;" : null}
+    props.up ? "top: 0; margin-top: 54px; margin-left: 7px; left: 50%;" : null}
   ${props =>
     props.left
-      ? "left: 0; margin-left: 2.5%; margin-top: -10px; top: 50%;"
+      ? "left: 0; margin-left: 46px; margin-top: -10px; top: 50%;"
       : null}
   ${props =>
     props.down
-      ? "bottom: 0; margin-bottom: 8.5%; margin-left: 8px; left: 50%;"
+      ? "bottom: 0; margin-bottom: 145px; margin-left: 7px; left: 50%;"
       : null}
   ${props =>
     props.right
-      ? "right: 0; margin-right: 8%; margin-top: -10px; top: 50%;"
+      ? "right: 0; margin-right: 124px; margin-top: -10px; top: 50%;"
       : null}
 
   ${props =>
@@ -251,6 +251,7 @@ export const Arrow = styled.nav`
       height: 0;
       width: 0;
       color: ${white};
+      font-size: 130px;
     }`
         : `&:after {
         position: absolute;
@@ -262,6 +263,7 @@ export const Arrow = styled.nav`
         height: 0;
         width: 0;
         color: ${white};
+        font-size: 130px;
       }`}
 
     &:hover {
@@ -270,8 +272,7 @@ export const Arrow = styled.nav`
   }
 
   ${medium`
-  ${props =>
-    props.up ? "top: 0; margin-top: 44px; margin-left: 8px; left: 50%;" : null}
+
   ${props =>
     props.left
       ? "left: 0; margin-left: 10px; margin-top: -10px; top: 50%;"
@@ -291,13 +292,12 @@ export const ArrowText = styled.span`
   position: absolute;
   top: ${props =>
     props.direction === "up" || props.direction === "down" ? "-180" : "-260"}px;
-  height: ${props => (props.length % 2 === 1 ? "50vh" : "70vh")};
-  height: ${props => (props.length % 2 === 1 ? "50vh" : "70vh")};
+  height: ${props => (props.length % 2 === 1 ? "380px" : "540px")};
   ${props => (props.direction === "left" ? "right: 8px;" : null)}
-  ${props => (props.direction === "up" ? "left: -30px;" : null)}
+  ${props => (props.direction === "up" ? "left: -34px;" : null)}
   ${props => (props.direction === "down" ? "left: 94px;" : null)}
   ${props => (props.direction === "right" ? "left: 92px;" : null)}
-  font-size: ${fontsize.tiny};
+  font-size: 64px;
 
   ${medium`
   ${props => (props.direction === "left" ? "right: -24px;" : null)}
@@ -357,6 +357,7 @@ export const SectionMainTitle = styled.h1`
   text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
     0 0 0.1em #ff4444, 0 10px 3px #000;
   pointer-events: none;
+  margin-bottom: 0;
 
   &:after {
     position: absolute;
@@ -379,12 +380,12 @@ export const SectionMainTitle = styled.h1`
     visibility: hidden;
   }
   ${medium`
-  top: 22%;
+    top: 22%;
     font-size: 105px;
     left: 84%;
     width: 330%;
   `} ${large`
-  font-size: 125px;
+    font-size: 125px;
     top: 16%;
     left: 84%;
     width: 390%;
@@ -397,7 +398,7 @@ export const SectionMainDescription = styled.p`
   width: 100%;
   line-height: 30px;
   font-family: "Federo Regular";
-  font-size: ${fontsize.large};
+  font-size: ${fontsize.medium};
 
   ${small`
     padding: 20px 40px;

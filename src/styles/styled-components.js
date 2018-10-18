@@ -216,7 +216,7 @@ export const Arrow = styled.nav`
   z-index: 15;
   font-family: Sullivan Regular;
   transition: color 0.4s;
-  font-size: 130px;
+  font-size: 110px;
     
   ${props =>
     props.up ? "top: 0; margin-top: 54px; margin-left: 7px; left: 50%;" : null}
@@ -251,7 +251,7 @@ export const Arrow = styled.nav`
       height: 0;
       width: 0;
       color: ${white};
-      font-size: 130px;
+      font-size: 110px;
     }`
         : `&:after {
         position: absolute;
@@ -263,7 +263,7 @@ export const Arrow = styled.nav`
         height: 0;
         width: 0;
         color: ${white};
-        font-size: 130px;
+        font-size: 110px;
       }`}
 
     &:hover {
@@ -297,7 +297,7 @@ export const ArrowText = styled.span`
   ${props => (props.direction === "up" ? "left: -34px;" : null)}
   ${props => (props.direction === "down" ? "left: 94px;" : null)}
   ${props => (props.direction === "right" ? "left: 92px;" : null)}
-  font-size: 64px;
+  font-size: 54px;
 
   ${medium`
   ${props => (props.direction === "left" ? "right: -24px;" : null)}
@@ -414,10 +414,10 @@ export const SectionTitle = styled.h1`
     font-size: ${fontsize.medium};
   `}
   ${medium`
-    font-size: ${fontsize.large};
+    font-size: ${fontsize.medium};
   `}
   ${large`
-    font-size: ${fontsize.extralarge};
+    font-size: ${fontsize.large};
   `}
 `;
 

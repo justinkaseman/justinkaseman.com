@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import Layout from "../components/layout";
-
-import { navigate } from "gatsby";
-
 import Section from "../components/section";
 import SectionMain from "../components/sectionMain";
 import NavigationArrows from "../components/navigationArrows";
@@ -34,11 +31,16 @@ class IndexPage extends Component {
   }
 
   onKeyDown(e) {
+    window.removeEventListener("keydown", this.onKeyDown);
     if (window.innerWidth > 641) {
-      if (e.key === "ArrowLeft") navigate("/random/");
-      else if (e.key === "ArrowRight") navigate("/projects/");
-      else if (e.key === "ArrowUp") navigate("/about/");
-      else if (e.key === "ArrowDown") navigate("/writing/");
+      if (document.readyState === "complete" && e.key === "ArrowLeft")
+        document.getElementById("leftArrow").click();
+      else if (document.readyState === "complete" && e.key === "ArrowRight")
+        document.getElementById("rightArrow").click();
+      else if (document.readyState === "complete" && e.key === "ArrowUp")
+        document.getElementById("upArrow").click();
+      else if (document.readyState === "complete" && e.key === "ArrowDown")
+        document.getElementById("downArrow").click();
     }
   }
 

@@ -3,8 +3,6 @@ import Layout from "../components/layout";
 
 import { navigate } from "gatsby";
 
-// import { FromBottom } from "../components/poses";
-
 import NavigationArrows from "../components/navigationArrows";
 import Section from "../components/section";
 
@@ -26,7 +24,7 @@ class AboutPage extends Component {
   }
 
   onKeyDown(e) {
-    if (e.key === "ArrowDown") navigate("/");
+    if (e.key === "ArrowDown") document.getElementById("downArrow").click();
   }
 
   componentWillUnmount() {

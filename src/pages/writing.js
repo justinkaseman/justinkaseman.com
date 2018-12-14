@@ -26,7 +26,7 @@ class WritingPage extends Component {
   }
 
   onKeyDown(e) {
-    if (e.key === "ArrowUp") navigate("/");
+    if (e.key === "ArrowUp") navigate("/", { state: { from: `up` } });
   }
 
   componentWillUnmount() {
@@ -36,7 +36,9 @@ class WritingPage extends Component {
 
   render() {
     return (
-      <Layout>
+      <Layout
+        from={this.props.location.state ? this.props.location.state.from : null}
+      >
         <Section
           title={"Writing"}
           items={[

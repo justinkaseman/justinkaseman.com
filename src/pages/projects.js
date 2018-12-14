@@ -3,8 +3,6 @@ import { navigate } from "gatsby";
 
 import Layout from "../components/layout";
 
-// import { FromLeft } from "../components/poses";
-
 import Section from "../components/section";
 import NavigationArrows from "../components/navigationArrows";
 
@@ -26,7 +24,10 @@ class ProjectsPage extends Component {
   }
 
   onKeyDown(e) {
-    if (e.key === "ArrowLeft") navigate("/");
+    if (document.readyState === "complete" && e.key === "ArrowLeft") {
+      console.log(document.readyState);
+      document.getElementById("leftArrow").click();
+    }
   }
 
   componentWillUnmount() {
@@ -36,7 +37,9 @@ class ProjectsPage extends Component {
 
   render() {
     return (
-      <Layout>
+      <Layout
+        from={this.props.location.state ? this.props.location.state.from : null}
+      >
         <Section
           title={"Projects"}
           items={[

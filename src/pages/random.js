@@ -17,7 +17,7 @@ class RandomPage extends Component {
   componentDidMount() {
     this.checkSize();
     window.addEventListener("resize", this.checkSize);
-    window.addEventListener("keydown", this.onKeyDown);
+    setTimeout(() => window.addEventListener("keydown", this.onKeyDown), 1000);
   }
 
   checkSize() {
@@ -26,7 +26,7 @@ class RandomPage extends Component {
   }
 
   onKeyDown(e) {
-    if (e.key === "ArrowRight") navigate("/");
+    if (e.key === "ArrowRight") navigate("/", { state: { from: `right` } });
   }
 
   componentWillUnmount() {
@@ -36,7 +36,9 @@ class RandomPage extends Component {
 
   render() {
     return (
-      <Layout>
+      <Layout
+        from={this.props.location.state ? this.props.location.state.from : null}
+      >
         <Section
           title={"Random"}
           description={"Things that I enjoy"}

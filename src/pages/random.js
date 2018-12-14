@@ -1,14 +1,12 @@
-import React, { Component } from "react";
-import { navigate } from "gatsby";
+import React from "react";
+import { navigate, graphql } from "gatsby";
 
 import Layout from "../components/layout";
-
-// import { FromRight } from "../components/poses";
 
 import Section from "../components/section";
 import NavigationArrows from "../components/navigationArrows";
 
-class RandomPage extends Component {
+class RandomPage extends React.Component {
   constructor(props) {
     super(props);
     this.checkSize = this.checkSize.bind(this);
@@ -35,23 +33,18 @@ class RandomPage extends Component {
   }
 
   render() {
+    const { data } = this.props;
+    const page = data.allDataYaml.edges[0].node.random;
     return (
       <Layout
         from={this.props.location.state ? this.props.location.state.from : null}
       >
         <Section
-          title={"Random"}
-          description={"Things that I enjoy"}
-          items={[
-            { title: "💪 Weight Lifting" },
-            { title: "⛰ Hiking & Backpacking" },
-            { title: "🎹 Piano" },
-            { title: "🂠 Board Games & Magic the Gathering" },
-            { title: "🗑 Disc Golf" },
-            { title: "🌟 Self Improvement" },
-          ]}
-          index={4}
-          background={"#8fcadd"}
+          title={page.title}
+          description={page.description}
+          items={page.items}
+          index={page.index}
+          background={page.background}
         />
         <NavigationArrows right={"/"} rightText={"back"} />
       </Layout>
@@ -59,8 +52,24 @@ class RandomPage extends Component {
   }
 }
 
-// RandomPage.defaultProps = {
-//   transitionComponent: FromRight,
-// };
-
 export default RandomPage;
+
+export const pageQuery = graphql`
+  query {
+    allDataYaml {
+      edges {
+        node {
+          random {
+            title
+            items {
+              title
+            }
+            description
+            index
+            background
+          }
+        }
+      }
+    }
+  }
+`;

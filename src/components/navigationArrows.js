@@ -93,7 +93,7 @@ const navigationArrows = props => {
             onClick={() => navigate(props.right, { state: { from: `right` } })}
             role="link"
           >
-            &rarr;{" "}
+            &rarr;
             <ArrowText length={props.rightText.length} direction={"right"}>
               {props.rightText
                 ? props.rightText

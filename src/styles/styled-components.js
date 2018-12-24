@@ -86,6 +86,15 @@ const blink = keyframes`
   }
 `;
 
+const coolBoxKeyframes = keyframes`
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: 200px;
+  }
+  `;
+
 /* 
 TEMPLATES
 */
@@ -117,13 +126,11 @@ export const TextureContainer = styled.div`
 `;
 
 export const SketchyContainer = styled.div`
-  width: calc(100% + ${props => (props.offSetLeft ? props.offSetLeft : 7)}px);
-  height: calc(
-    100% + ${props => (props.offSetBottom ? props.offSetBottom : 7)}px
-  );
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
   position: absolute;
-  top: ${props => (props.offSetBottom ? -props.offSetBottom + 2 : -2)}px;
-  left: ${props => (props.offSetLeft ? -props.offSetLeft + 2 : -2)}px;
+  top: 0px;
+  left: -1px;
   z-index: -1;
 
   svg {
@@ -218,6 +225,7 @@ export const Arrow = styled.nav`
   font-family: Sullivan Regular;
   transition: color 0.4s;
   font-size: 110px;
+  
     
   ${props =>
     props.up ? "top: 0; margin-top: 54px; margin-left: 7px; left: 50%;" : null}
@@ -332,7 +340,6 @@ export const SectionContents = styled.section`
   z-index: 5;
   background: ${white};
   box-shadow: 8px 8px rgba(0, 0, 0, 0.15);
-  border-left: 40px solid #eee;
   width: 100%;
 
   ${small`

@@ -1,30 +1,26 @@
-import React, { Component } from "react";
-import Layout from "../components/layout";
+import React from "react";
+import { navigate, graphql } from "gatsby";
 
-import { navigate } from "gatsby";
+import Layout from "../components/layout";
 
 import NavigationArrows from "../components/navigationArrows";
 import Section from "../components/section";
 
-class AboutPage extends Component {
-  constructor(props) {
-    super(props);
-    this.checkSize = this.checkSize.bind(this);
-  }
-
+class AboutPage extends React.Component {
   componentDidMount() {
     this.checkSize();
     window.addEventListener("resize", this.checkSize);
     window.addEventListener("keydown", this.onKeyDown);
   }
 
-  checkSize() {
+  checkSize = () => {
     const currentSize = window.innerWidth;
     if (currentSize < 641) navigate("/");
-  }
+  };
 
   onKeyDown(e) {
-    if (e.key === "ArrowDown") document.getElementById("downArrow").click();
+    if (document.readyState === "complete" && e.key === "ArrowDown")
+      document.getElementById("downArrow").click();
   }
 
   componentWillUnmount() {
@@ -50,8 +46,18 @@ class AboutPage extends Component {
   }
 }
 
-// AboutPage.defaultProps = {
-//   transitionComponent: FromBottom,
-// };
-
 export default AboutPage;
+
+export const pageQuery = graphql`
+  query {
+    allDataYaml {
+      edges {
+        node {
+          writing {
+            title
+          }
+        }
+      }
+    }
+  }
+`;

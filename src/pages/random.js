@@ -7,24 +7,20 @@ import Section from "../components/section";
 import NavigationArrows from "../components/navigationArrows";
 
 class RandomPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.checkSize = this.checkSize.bind(this);
-  }
-
   componentDidMount() {
     this.checkSize();
     window.addEventListener("resize", this.checkSize);
     setTimeout(() => window.addEventListener("keydown", this.onKeyDown), 1000);
   }
 
-  checkSize() {
+  checkSize = () => {
     const currentSize = window.innerWidth;
     if (currentSize < 641) navigate("/");
-  }
+  };
 
   onKeyDown(e) {
-    if (e.key === "ArrowRight") navigate("/", { state: { from: `right` } });
+    if (document.readyState === "complete" && e.key === "ArrowRight")
+      document.getElementById("rightArrow").click();
   }
 
   componentWillUnmount() {

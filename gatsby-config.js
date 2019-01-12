@@ -26,12 +26,12 @@ module.exports = {
         layout: false,
       },
     },
-    {
-      resolve: "gatsby-plugin-page-transitions",
-      options: {
-        transitionTime: 1000,
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-page-transitions",
+    //   options: {
+    //     transitionTime: 1000,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

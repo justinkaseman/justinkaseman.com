@@ -284,13 +284,14 @@ export const Arrow = styled.nav`
 
   ${props =>
     props.left
-      ? "left: 0; margin-left: 10px; margin-top: -10px; top: 50%;"
+      ? "left: 0; margin-left: 24px; margin-top: -10px; top: 50%;"
       : null}
   ${props =>
     props.right
       ? "right: 0; margin-right: 98px; margin-top: -10px; top: 50%;"
       : null}
-  } `}
+  } 
+  `}
 `;
 
 export const ArrowText = styled.span`
@@ -309,7 +310,7 @@ export const ArrowText = styled.span`
   font-size: 54px;
 
   ${medium`
-  ${props => (props.direction === "left" ? "right: -24px;" : null)}
+  ${props => (props.direction === "left" ? "right: -8px;" : null)}
   ${props => (props.direction === "right" ? "left: 64px;" : null)}
   `}
 `;
@@ -377,8 +378,9 @@ export const SectionMainTitle = styled.h1`
     height: 40%;
     width: 100%;
     color: ${white};
-    background: #a8a8a8;
+    background: #afafaf;
     box-sizing: content-box;
+    opacity: 0.7;
   }
 
   > span {
@@ -433,8 +435,8 @@ export const SectionTitle = styled.h1`
 export const SectionDescription = styled.h2``;
 
 export const IconContainer = styled.div`
-  height: ${props => (props.height ? props.height : 77)}px;
-  width: ${props => (props.width ? props.width : 77)}px;
+  height: ${props => (props.height ? props.height : 72)}px;
+  width: ${props => (props.width ? props.width : 72)}px;
   position: absolute;
   left: 50%;
   margin-left: ${props => (props.width ? "-46%" : "-52%")};
@@ -444,7 +446,7 @@ export const IconContainer = styled.div`
   ${props =>
     props.height && props.width
       ? `@media screen and (max-width: 900px) {
-    height: 140px;
+    height: 144px;
     width: 144px;
     left: 0;
     margin-left: -30px;

@@ -359,7 +359,7 @@ export const SectionHeader = styled.header`
 
 export const SectionMainTitle = styled.h1`
   position: absolute;
-  font-family: Triumph Wheels;
+  font-family: Triumph Wheels, Arial;
   font-weight: 500;
   color: #fee;
   text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,

@@ -44,7 +44,7 @@ projects:
 random:
   title: Random
   description: "Things that I enjoy"
-  item:
+  items:
     - title: "💪 Weight Lifting"
     - title: "⛰ Hiking & Backpacking"
     - title: "🎹 Piano"

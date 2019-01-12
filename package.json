@@ -1,7 +1,7 @@
 {
   "name": "justin-kaseman",
   "description": "Justin Kaseman's portfolio website",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Justin Kaseman <justinkaseman@live.com>",
   "dependencies": {
     "d3": "^5.7.0",

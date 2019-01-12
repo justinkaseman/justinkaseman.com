@@ -188,38 +188,35 @@ export const pageQuery = graphql`
         node {
           about {
             title
+          }
+          index {
+            title
+          }
+          projects {
+            title
+            project {
+              title
+              image
+              description
+              technology
+              url
+            }
+          }
+          writing {
+            title
+            article {
+              title
+              image
+              description
+              url
+            }
+          }
+          random {
+            title
             items {
               title
             }
           }
-          #   index {
-          #     title
-          #   }
-          #   projects {
-          #     title
-          #     project {
-          #       title
-          #       image
-          #       description
-          #       technology
-          #       url
-          #     }
-          #   }
-          #   writing {
-          #     title
-          #     article {
-          #       title
-          #       image
-          #       description
-          #       url
-          #     }
-          #   }
-          #   random {
-          #     title
-          #     item {
-          #       title
-          #     }
-          #   }
         }
       }
     }

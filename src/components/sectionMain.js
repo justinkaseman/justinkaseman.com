@@ -21,15 +21,15 @@ const SectionMain = props => {
     <SectionContainer style={{ backgroundColor: props.background }}>
       <Background index={props.index} />{" "}
       <SectionContents style={{ marginTop: "8%" }}>
-        <Sketchy offSetLeft={44} />
+        <Sketchy />
 
-        <IconContainer height={170} width={168}>
+        <IconContainer height={168} width={168}>
           <Sketchy />
           <Icon
             src={jkhead}
             alt={"justin kaseman's head in black and white"}
-            height={168}
-            width={168}
+            height={164}
+            width={164}
           />
           <SectionMainTitle>
             Just <span>i</span>n Kase man

@@ -1,5 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
+import PageTransition from "gatsby-plugin-page-transitions";
 
 import "../styles/layout.css";
 
@@ -10,15 +11,15 @@ const Layout = props => (
       meta={[
         {
           name: `description`,
-          content: `Hey, I'm Justin Kaseman, a software engineer in San Fransisco. I like creating stuff, solving problems, and lifelong learning.`,
+          content: `Hey, I'm Justin Kaseman, a software engineer in San Fransisco.`,
         },
         {
           name: `keywords`,
-          content: `web developer, portfolio, software engineer, personal website, justin, kaseman, full stack, front end, back end, san fransisco, oakland`,
+          content: `developer, web, portfolio, software, engineer, personal website, justin, kaseman, full stack, front end, back end, san fransisco, oakland, react, node, gatsby, bay area`,
         },
       ]}
     />
-    {props.children}
+    <PageTransition>{props.children}</PageTransition>
   </div>
 );
 

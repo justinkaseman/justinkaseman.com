@@ -28,7 +28,8 @@ class Sketchy extends Component {
 
   resize() {
     const parent = this.div;
-    if (parent.offsetHeight && parent.offsetWidth) {
+    //parent.offsetHeight && parent.offsetWidth
+    if (parent) {
       const width = parent.offsetWidth - 3;
       const height = parent.offsetHeight - 3;
       this.setState({
@@ -49,13 +50,7 @@ class Sketchy extends Component {
     const fill = roughSvg.rectangle(0, 0, width, height);
     node.appendChild(fill);
     return (
-      <SketchyContainer
-        ref={this.setDivRef}
-        offSetLeft={this.props.offSetLeft}
-        offSetBottom={this.props.offSetBottom}
-      >
-        {node.toReact()}
-      </SketchyContainer>
+      <SketchyContainer ref={this.setDivRef}>{node.toReact()}</SketchyContainer>
     );
   }
 }

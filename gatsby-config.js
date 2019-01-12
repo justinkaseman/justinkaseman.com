@@ -1,8 +1,12 @@
 module.exports = {
   siteMetadata: {
     title: "Justin Kaseman",
+    author: "Justin Kaseman",
+    description: "Justin Kaseman - Software Engineer.",
+    siteUrl: "https://justinkaseman.com/",
   },
   plugins: [
+    "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -15,7 +19,26 @@ module.exports = {
         icon: "src/images/favicon.png",
       },
     },
-    "gatsby-plugin-react-helmet",
     "gatsby-plugin-offline",
+    {
+      resolve: "gatsby-plugin-transition-link",
+      options: {
+        layout: false,
+      },
+    },
+    // {
+    //   resolve: "gatsby-plugin-page-transitions",
+    //   options: {
+    //     transitionTime: 1000,
+    //   },
+    // },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "data",
+        path: `${__dirname}/src/data`,
+      },
+    },
+    `gatsby-transformer-yaml`,
   ],
 };

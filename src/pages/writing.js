@@ -1,32 +1,26 @@
-import React, { Component } from "react";
+import React from "react";
+import { navigate, graphql } from "gatsby";
+
 import Layout from "../components/layout";
-
-import { navigate } from "gatsby";
-
-// import { FromTop } from "../components/poses";
 
 import Section from "../components/section";
 import NavigationArrows from "../components/navigationArrows";
 
-class WritingPage extends Component {
-  constructor(props) {
-    super(props);
-    this.checkSize = this.checkSize.bind(this);
-  }
-
+class WritingPage extends React.Component {
   componentDidMount() {
     this.checkSize();
     window.addEventListener("resize", this.checkSize);
     window.addEventListener("keydown", this.onKeyDown);
   }
 
-  checkSize() {
+  checkSize = () => {
     const currentSize = window.innerWidth;
     if (currentSize < 641) navigate("/");
-  }
+  };
 
   onKeyDown(e) {
-    if (e.key === "ArrowUp") navigate("/");
+    if (document.readyState === "complete" && e.key === "ArrowUp")
+      document.getElementById("upArrow").click();
   }
 
   componentWillUnmount() {
@@ -36,7 +30,9 @@ class WritingPage extends Component {
 
   render() {
     return (
-      <Layout>
+      <Layout
+        from={this.props.location.state ? this.props.location.state.from : null}
+      >
         <Section
           title={"Writing"}
           items={[
@@ -82,8 +78,18 @@ class WritingPage extends Component {
   }
 }
 
-// WritingPage.defaultProps = {
-//   transitionComponent: FromTop,
-// };
-
 export default WritingPage;
+
+export const pageQuery = graphql`
+  query {
+    allDataYaml {
+      edges {
+        node {
+          writing {
+            title
+          }
+        }
+      }
+    }
+  }
+`;

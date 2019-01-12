@@ -1,32 +1,27 @@
-import React, { Component } from "react";
-import { navigate } from "gatsby";
+import React from "react";
+import { navigate, graphql } from "gatsby";
 
 import Layout from "../components/layout";
-
-// import { FromLeft } from "../components/poses";
 
 import Section from "../components/section";
 import NavigationArrows from "../components/navigationArrows";
 
-class ProjectsPage extends Component {
-  constructor(props) {
-    super(props);
-    this.checkSize = this.checkSize.bind(this);
-  }
-
+class ProjectsPage extends React.Component {
   componentDidMount() {
     window.addEventListener("resize", this.checkSize);
     window.addEventListener("keydown", this.onKeyDown);
     this.checkSize();
   }
 
-  checkSize() {
+  checkSize = () => {
     const currentSize = window.innerWidth;
     if (currentSize < 641) navigate("/");
-  }
+  };
 
   onKeyDown(e) {
-    if (e.key === "ArrowLeft") navigate("/");
+    if (document.readyState === "complete" && e.key === "ArrowLeft") {
+      document.getElementById("leftArrow").click();
+    }
   }
 
   componentWillUnmount() {
@@ -36,7 +31,9 @@ class ProjectsPage extends Component {
 
   render() {
     return (
-      <Layout>
+      <Layout
+        from={this.props.location.state ? this.props.location.state.from : null}
+      >
         <Section
           title={"Projects"}
           items={[
@@ -83,8 +80,18 @@ class ProjectsPage extends Component {
   }
 }
 
-// ProjectsPage.defaultProps = {
-//   transitionComponent: FromLeft,
-// };
-
 export default ProjectsPage;
+
+export const pageQuery = graphql`
+  query {
+    allDataYaml {
+      edges {
+        node {
+          writing {
+            title
+          }
+        }
+      }
+    }
+  }
+`;

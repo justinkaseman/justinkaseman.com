@@ -1,3 +1,7 @@
+/* 
+Currently unused 
+*/
+
 import React, { Component } from "react";
 import { Link } from "gatsby";
 import Sketchy from "./sketchy.js";
@@ -9,10 +13,6 @@ import {
 } from "../styles/styled-components.js";
 
 import map from "../images/iconmonstr-map-10.png";
-
-/* 
-Currently unused 
-*/
 
 class Navigation extends Component {
   state = {

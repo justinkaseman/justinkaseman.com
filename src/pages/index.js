@@ -1,21 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
+import { graphql } from "gatsby";
+
 import Layout from "../components/layout";
-
-import { navigate } from "gatsby";
-
 import Section from "../components/section";
 import SectionMain from "../components/sectionMain";
 import NavigationArrows from "../components/navigationArrows";
 
-class IndexPage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      screenSize: "",
-    };
-
-    this.checkSize = this.checkSize.bind(this);
-  }
+class IndexPage extends React.Component {
+  state = {
+    screenSize: "",
+  };
 
   componentDidMount() {
     window.addEventListener("resize", this.checkSize);
@@ -23,7 +17,7 @@ class IndexPage extends Component {
     this.checkSize();
   }
 
-  checkSize() {
+  checkSize = () => {
     const currentSize = window.innerWidth;
     let newSize;
     if (currentSize < 641) newSize = "Mobile";
@@ -31,14 +25,19 @@ class IndexPage extends Component {
     // else if (currentSize > 1200) newSize = "Desktop";
     if (this.state.screenSize !== newSize)
       this.setState({ screenSize: newSize });
-  }
+  };
 
   onKeyDown(e) {
+    window.removeEventListener("keydown", this.onKeyDown);
     if (window.innerWidth > 641) {
-      if (e.key === "ArrowLeft") navigate("/random/");
-      else if (e.key === "ArrowRight") navigate("/projects/");
-      else if (e.key === "ArrowUp") navigate("/about/");
-      else if (e.key === "ArrowDown") navigate("/writing/");
+      if (document.readyState === "complete" && e.key === "ArrowLeft")
+        document.getElementById("leftArrow").click();
+      else if (document.readyState === "complete" && e.key === "ArrowRight")
+        document.getElementById("rightArrow").click();
+      else if (document.readyState === "complete" && e.key === "ArrowUp")
+        document.getElementById("upArrow").click();
+      else if (document.readyState === "complete" && e.key === "ArrowDown")
+        document.getElementById("downArrow").click();
     }
   }
 
@@ -48,6 +47,9 @@ class IndexPage extends Component {
   }
 
   render() {
+    const { data } = this.props;
+    const page = data.allDataYaml.edges[0].node;
+    console.log(page);
     return (
       <Layout>
         {this.state.screenSize === "Mobile" ? (
@@ -178,3 +180,45 @@ class IndexPage extends Component {
 }
 
 export default IndexPage;
+
+export const pageQuery = graphql`
+  query {
+    allDataYaml {
+      edges {
+        node {
+          about {
+            title
+          }
+          index {
+            title
+          }
+          projects {
+            title
+            project {
+              title
+              image
+              description
+              technology
+              url
+            }
+          }
+          writing {
+            title
+            article {
+              title
+              image
+              description
+              url
+            }
+          }
+          random {
+            title
+            items {
+              title
+            }
+          }
+        }
+      }
+    }
+  }
+`;

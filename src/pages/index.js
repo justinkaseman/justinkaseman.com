@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import Img from "gatsby-image";
 
 import Layout from "../components/layout";
 import Section from "../components/section";
@@ -49,12 +50,16 @@ class IndexPage extends React.Component {
   render() {
     const { data } = this.props;
     const page = data.allDataYaml.edges[0].node;
-    console.log(page);
     return (
       <Layout>
         {this.state.screenSize === "Mobile" ? (
           <div>
-            <SectionMain index={0} background={"#cecece"} size={true} />
+            <SectionMain
+              index={0}
+              background={"#cecece"}
+              size={true}
+              image={() => <Img fluid={data.image.childImageSharp.fluid} />}
+            />
             <Section
               title={"About"}
               body={[
@@ -161,7 +166,11 @@ class IndexPage extends React.Component {
           </div>
         ) : (
           <div>
-            <SectionMain index={0} background={"#cecece"} />
+            <SectionMain
+              index={0}
+              background={"#cecece"}
+              image={() => <Img fluid={data.image.childImageSharp.fluid} />}
+            />
             <NavigationArrows
               up={"/about"}
               upText={"ABOUT"}
@@ -217,6 +226,13 @@ export const pageQuery = graphql`
               title
             }
           }
+        }
+      }
+    }
+    image: file(relativePath: { eq: "jkhead2.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

@@ -26,12 +26,6 @@ module.exports = {
         layout: false,
       },
     },
-    // {
-    //   resolve: "gatsby-plugin-page-transitions",
-    //   options: {
-    //     transitionTime: 1000,
-    //   },
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -39,6 +33,15 @@ module.exports = {
         path: `${__dirname}/src/data`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "images",
+        path: `${__dirname}/src/images`,
+      },
+    },
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     `gatsby-transformer-yaml`,
   ],
 };

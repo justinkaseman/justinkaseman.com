@@ -43,5 +43,24 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     `gatsby-transformer-yaml`,
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["Open Sans Condensed:300,700"],
+          urls: ["/fonts/fonts.css"],
+        },
+        custom: {
+          families: [
+            "Triumph Wheels",
+            "Federo Regular",
+            "Sullivan Fill",
+            "Sullivan Bevel",
+            "Sullivan Regular",
+          ],
+          urls: ["/fonts/fonts.css"],
+        },
+      },
+    },
   ],
 };

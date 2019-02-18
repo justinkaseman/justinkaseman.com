@@ -19,13 +19,15 @@ const SectionMain = props => {
       <Background index={props.index} />
       <SectionContents style={{ marginTop: "8%" }}>
         <Sketchy />
-        <IconContainer height={168} width={168}>
+
+        <IconContainer height={150} width={150}>
           <Sketchy />
           {props.image()}
-          <SectionMainTitle>
-            Just <span>i</span>n Kase man
-          </SectionMainTitle>
         </IconContainer>
+
+        <SectionMainTitle>
+          Just <span>i</span>n Kase man
+        </SectionMainTitle>
 
         <SectionMainDescription>
           I‎’m Justin Kaseman, a Software Engineer in the San Fransisco Bay

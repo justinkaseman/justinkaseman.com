@@ -25,13 +25,12 @@ const fontsize = {
 // Media Queries
 
 const small = (...args) => css`
-  @media screen and (max-width: 640px) {
+  @media screen and (min-width: 230px) {
     ${css(...args)};
   }
 `;
 const medium = (...args) => css`
-  @media screen and (min-width: 641px) and (max-width: 1200px),
-    screen and (max-height: 768px) {
+  @media screen and (min-width: 641px) and (max-height: 768px) {
     ${css(...args)};
   }
 `;
@@ -366,7 +365,10 @@ export const SectionMainTitle = styled.h1`
   text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
     0 0 0.1em #ff4444, 0 10px 3px #000;
   pointer-events: none;
-  margin-bottom: 0;
+  top: -90px;
+  font-size: 95px;
+  width: 70%;
+  left: 180px;
 
   &:after {
     position: absolute;
@@ -390,16 +392,10 @@ export const SectionMainTitle = styled.h1`
   @media screen and (max-width: 900px) {
     visibility: hidden;
   }
-  ${medium`
-    top: 22%;
-    font-size: 95px;
-    left: 84%;
-    width: 330%;
-  `} ${large`
+
+  ${large`
     font-size: 115px;
-    top: 16%;
-    left: 84%;
-    width: 390%;
+    top: -100px;
   `};
 `;
 
@@ -413,9 +409,7 @@ export const SectionMainDescription = styled.p`
 
   ${small`
     padding: 20px 40px;
-    font-size: ${fontsize.medium};
   `} ${medium`
-    font-size: ${fontsize.medium};
     margin-top: 30px;
   `};
 `;
@@ -435,53 +429,27 @@ export const SectionTitle = styled.h1`
 export const SectionDescription = styled.h2``;
 
 export const IconContainer = styled.div`
+  height: ${props => (props.height ? props.height : 22)}px;
+  width: ${props => (props.width ? props.width : 22)}px;
+  position: absolute;
+  left: 35%;
+  margin-top: -80px;
+
+  ${medium`
   height: ${props => (props.height ? props.height : 72)}px;
   width: ${props => (props.width ? props.width : 72)}px;
   position: absolute;
-  left: 50%;
-  margin-left: ${props => (props.width ? "-46%" : "-52%")};
-  margin-top: ${props => (props.height ? -props.height + 36 : 40)}px;
-  top: 0;
+  left: -8%;
+  top: 4%;
+`}
 
-  ${props =>
-    props.height && props.width
-      ? `@media screen and (max-width: 900px) {
-    height: 144px;
-    width: 144px;
-    left: 0;
-    margin-left: -30px;
-  }`
-      : null};
-  ${small`
-    height: ${props => (props.height ? props.height - 80 : 50)}px;
-    width: ${props => (props.width ? props.width - 80 : 50)}px; 
+  @media screen and (min-width: 900px) {
+    height: ${props => (props.height ? props.height : 72)}px;
+    width: ${props => (props.width ? props.width : 72)}px;
     position: absolute;
-    left: 0;
-    margin-left: -46px;
-    margin-top: ${props => (props.height ? "-50px" : "-25px")};
-    top: 50%;
-  `};
-`;
-
-export const Icon = styled.img`
-  position: absolute;
-  height: ${props => (props.height ? props.height : 80)}px;
-  width: ${props => (props.width ? props.width : 80)}px;
-  background: ${white};
-  pointer-events: none;
-
-  ${props =>
-    props.height && props.width
-      ? `@media screen and (max-width: 900px) {
-    height: 140px;
-    width: 144px;
-    
-  }`
-      : null};
-  ${small`
-  height: ${props => (props.height ? 90 : 55)}px;
-  width: ${props => (props.width ? 88 : 55)}px;
-  `};
+    left: 5%;
+    top: -10%;
+  }
 `;
 
 export const SectionItems = styled.main`

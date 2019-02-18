@@ -58,7 +58,16 @@ class IndexPage extends React.Component {
               index={0}
               background={"#cecece"}
               size={true}
-              image={() => <Img fluid={data.image.childImageSharp.fluid} />}
+              image={() => (
+                <Img
+                  fluid={data.image.childImageSharp.fluid}
+                  style={{
+                    height: "98%",
+                    width: "98%",
+                    marginTop: "2px",
+                  }}
+                />
+              )}
             />
             <Section
               title={"About"}
@@ -169,7 +178,16 @@ class IndexPage extends React.Component {
             <SectionMain
               index={0}
               background={"#cecece"}
-              image={() => <Img fluid={data.image.childImageSharp.fluid} />}
+              image={() => (
+                <Img
+                  fluid={data.image.childImageSharp.fluid}
+                  style={{
+                    height: "98%",
+                    width: "98%",
+                    marginTop: "2px",
+                  }}
+                />
+              )}
             />
             <NavigationArrows
               up={"/about"}

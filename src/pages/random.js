@@ -29,18 +29,23 @@ class RandomPage extends React.Component {
   }
 
   render() {
-    const { data } = this.props;
-    const page = data.allDataYaml.edges[0].node.random;
+    const {
+      title,
+      description,
+      items,
+      texture,
+      background,
+    } = this.props.data.allDataYaml.edges[0].node.random;
     return (
       <Layout
         from={this.props.location.state ? this.props.location.state.from : null}
       >
         <Section
-          title={page.title}
-          description={page.description}
-          items={page.items}
-          index={page.index}
-          background={page.background}
+          title={title}
+          description={description}
+          items={items}
+          index={texture}
+          background={background}
         />
         <NavigationArrows right={"/"} rightText={"back"} />
       </Layout>
@@ -61,8 +66,8 @@ export const pageQuery = graphql`
               title
             }
             description
-            index
             background
+            texture
           }
         }
       }

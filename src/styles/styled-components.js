@@ -552,7 +552,7 @@ export const Social = styled.li`
   margin: 0 40px;
 
   > a {
-    fill: #343434;
+    fill: #4e4e4e;
     &:hover {
       fill: black;
     }

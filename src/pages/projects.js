@@ -30,49 +30,21 @@ class ProjectsPage extends React.Component {
   }
 
   render() {
+    const {
+      title,
+      items,
+      texture,
+      background,
+    } = this.props.data.allDataYaml.edges[0].node.projects;
     return (
       <Layout
         from={this.props.location.state ? this.props.location.state.from : null}
       >
         <Section
-          title={"Projects"}
-          items={[
-            {
-              title: "myShifts.app",
-              image:
-                "https://raw.githubusercontent.com/Lambda-School-Labs/CS10-employee-shift/master/front-end/public/favicon.ico",
-              description:
-                "Easy work schedule shift management. Built with small business users in mind. 💙",
-              technology: "PostgreSQL • Django • React • Redux",
-              url: "https://www.myshifts.app/",
-            },
-            {
-              title: "Crypto Gym",
-              image:
-                "https://raw.githubusercontent.com/helios-coop/cryptogym/master/client/public/favicon.ico",
-              description:
-                "An interactive code training platform to help bring web developers into the blockchain age.",
-              technology: "MongoDB • Express • React • Node",
-              url: "https://cryptogym.netlify.com/",
-            },
-            {
-              title: "Wallet Watcher",
-              image: "",
-              description:
-                "SMS/Email notifications when a specified Ethereum address' balance changes. 3rd Place Lambda Hackathon Winner.",
-              technology: "MongoDB • Express • React • Node",
-              url: "https://youtu.be/DmIB3gslWdg",
-            },
-            {
-              title: "Justin Kaseman.com",
-              image: "",
-              description: "Check this site out on GitHub!",
-              technology: "Gatsby using GraphQL",
-              url: "https://github.com/Jkasem/justinkaseman.com",
-            },
-          ]}
-          index={2}
-          background={"#b2f3b2"}
+          title={title}
+          items={items}
+          index={texture}
+          background={background}
         />
         <NavigationArrows left={"/"} leftText="BACK" />
       </Layout>
@@ -87,8 +59,17 @@ export const pageQuery = graphql`
     allDataYaml {
       edges {
         node {
-          writing {
+          projects {
+            texture
             title
+            items {
+              title
+              image
+              description
+              technology
+              url
+            }
+            background
           }
         }
       }

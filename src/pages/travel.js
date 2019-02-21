@@ -44,22 +44,22 @@ class TravelPage extends React.Component {
 
 export default TravelPage;
 
-export const pageQuery = graphql`
-  query {
-    allDataYaml {
-      edges {
-        node {
-          random {
-            title
-            items {
-              title
-            }
-            description
-            index
-            background
-          }
-        }
-      }
-    }
-  }
-`;
+// export const pageQuery = graphql`
+//   query {
+//     allDataYaml {
+//       edges {
+//         node {
+//           random {
+//             title
+//             items {
+//               title
+//             }
+//             description
+//             texture
+//             background
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;

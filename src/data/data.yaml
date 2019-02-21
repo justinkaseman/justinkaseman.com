@@ -1,17 +1,22 @@
 about:
   title: About
-  dog: I’m a San Fransisco Bay Area native born and raised. My background is in health and fitness which grew from my own body transformation in which I lost 100lbs. This taught me my strongest life lesson, you can do anything I set my mind to. It led me down the path of getting my BSc. in Exercise Physiology. While in university, I opened my own independent personal training business. I needed a website to advertise myself, so I decided to build my own.. and that was it, I was addicted.
-    # "After graduation, I spent the next 6 months engrossed self-studying. I enrolled in Lambda School, a full time intensive 7.5 month long Computer Science Academy. I finished with honors along with 6 weeks of TAing for the Computer Science curriculum (Data Structures & Algorithms, C lang, & OS/Processes). Software Engineering has given me an outlet to fulfill my greatest passions: creating stuff, solving problems, and lifelong learning."
+  body: 
+    - I’m a San Fransisco Bay Area native born and raised. My background is in health and fitness which grew from my own body transformation in which I lost 100lbs. This taught me my strongest life lesson, you can do anything I set my mind to. It led me down the path of getting my BSc. in Exercise Physiology. While in university, I opened my own independent personal training business. I needed a website to advertise myself, so I decided to build my own.. and that was it, I was addicted.
+    - "After graduation, I spent the next 6 months engrossed self-studying. I enrolled in Lambda School, a full time intensive 7.5 month long Computer Science Academy. I finished with honors along with 6 weeks of TAing for the Computer Science curriculum (Data Structures & Algorithms, C lang, & OS/Processes). Software Engineering has given me an outlet to fulfill my greatest passions: creating stuff, solving problems, and lifelong learning."
+  texture: 1
+  background: "pink"
 
 index:
   title: Home
   social:
     - title: Twitter
       url: http://twitter.com
+  texture: 0
+  background: "#cecece"
 
 projects:
   title: Projects
-  project:  
+  items:  
     - {
       title: "myShifts.app",
       image: "https://raw.githubusercontent.com/Lambda-School-Labs/CS10-employee-shift/master/front-end/public/favicon.ico",
@@ -40,6 +45,8 @@ projects:
       technology: "Gatsby using GraphQL",
       url: "https://github.com/Jkasem/justinkaseman.com",
   }
+  background: "#b2f3b2"
+  texture: 2
 
 random:
   title: Random
@@ -51,12 +58,12 @@ random:
     - title: "🂠 Games"
     - title: "🗑 Disc Golf"
     - title: "🌟 Self Improvement"
-  index: 4
   background: "#8fcadd"
+  texture: 4
 
 writing:
   title: Writing
-  article: 
+  items: 
     - {
       title: "Lambda School: the Personal Trainer of Computer Science fitness",
       image: "https://cdn-images-1.medium.com/max/800/1*HsMuYhtpUdRqWTudC8DWQw.png",
@@ -81,4 +88,5 @@ writing:
       description: "",
       url: "",
     }
-  
+  background: "violet"
+  texture: 3

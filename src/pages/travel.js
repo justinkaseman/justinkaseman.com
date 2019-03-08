@@ -29,13 +29,16 @@ class TravelPage extends React.Component {
   }
 
   render() {
-    const { data } = this.props;
-    const page = data.allDataYaml.edges[0].node.random;
+    const {
+      background,
+      cities,
+      texture,
+    } = this.props.data.allDataYaml.edges[0].node.travel;
     return (
       <Layout
         from={this.props.location.state ? this.props.location.state.from : null}
       >
-        <Map />
+        <Map cities={cities} />
         <NavigationArrows right={"/"} rightText={"back"} />
       </Layout>
     );
@@ -44,22 +47,21 @@ class TravelPage extends React.Component {
 
 export default TravelPage;
 
-// export const pageQuery = graphql`
-//   query {
-//     allDataYaml {
-//       edges {
-//         node {
-//           random {
-//             title
-//             items {
-//               title
-//             }
-//             description
-//             texture
-//             background
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+export const pageQuery = graphql`
+  query {
+    allDataYaml {
+      edges {
+        node {
+          travel {
+            background
+            texture
+            cities {
+              name
+              coordinates
+            }
+          }
+        }
+      }
+    }
+  }
+`;

@@ -81,5 +81,97 @@ travel:
       coordinates:
         - -122.4194
         - 37.7749
+      date: "March 2019"
+    - name: "Houston"
+      coordinates:
+        - -95.3698
+        - 29.7604
+      date: "March 2019"
+    - name: "Lafayette"
+      coordinates:
+        - -92.0198
+        - 30.2241
+      date: "March 2019"
+    - name: "Austin"
+      coordinates:
+        - -97.7431
+        - 30.2672
+      date: "January 2019"
+    - name: "Las Vegas"
+      coordinates:
+        - -115.1398
+        - 36.1699
+    - name: "Portland"
+      coordinates:
+        - -122.6587
+        - 45.5122
+    - name: "San Luis Obispo"
+      coordinates:
+        - -120.6596
+        - 35.2828
+    - name: "Los Angeles"
+      coordinates:
+        - -118.2437
+        - 34.0522
+    - name: "San Diego"
+      coordinates:
+        - -117.1611
+        - 32.7157
+    - name: "Chico"
+      coordinates:
+        - -121.8375
+        - 39.7285
+    - name: "Monterey"
+      coordinates:
+        - -121.8947
+        - 36.6002
+    - name: "Santa Cruz"
+      coordinates:
+        - -122.0308
+        - 36.9741
+    - name: "Fort Bragg"
+      coordinates:
+        - -123.8053
+        - 39.4457
+    - name: "Ashland"
+      coordinates:
+        - -122.7095
+        - 42.1946
+    - name: "Eugene"
+      coordinates:
+        - -123.0868
+        - 44.0521
+    - name: "Kauai"
+      coordinates:
+        - -159.5261
+        - 22.0964
+    - name: "South Lake Tahoe"
+      coordinates:
+        - -119.9772
+        - 38.9399
+    - name: "Indio"
+      coordinates:
+        - -116.2156
+        - 33.7206
+    - name: "Davis"
+      coordinates:
+        - -121.7405
+        - 38.5449
+    - name: "Napa"
+      coordinates:
+        - -122.2869
+        - 38.2975
+    - name: "Santa Rosa"
+      coordinates:
+        - -122.7141
+        - 38.4404
+    - name: "San Jose"
+      coordinates:
+        - -121.8863
+        - 37.3382
+    - name: "Temecula"
+      coordinates:
+        - -117.1484
+        - 33.4936
   background: "red"
   texture: 1

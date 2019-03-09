@@ -7,8 +7,6 @@ import {
   SectionContainer,
   SectionContents,
   SectionHeader,
-  IconContainer,
-  Icon,
   SectionTitle,
   SectionDescription,
   SectionItems,

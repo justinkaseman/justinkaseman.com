@@ -7,7 +7,6 @@ import {
   SectionContents,
   SectionMainTitle,
   SectionMainDescription,
-  Icon,
   IconContainer,
   SocialLinks,
   Social,

@@ -20,12 +20,7 @@ module.exports = {
       },
     },
     "gatsby-plugin-offline",
-    {
-      resolve: "gatsby-plugin-transition-link",
-      options: {
-        layout: false,
-      },
-    },
+    "gatsby-plugin-transition-link",
     {
       resolve: `gatsby-source-filesystem`,
       options: {

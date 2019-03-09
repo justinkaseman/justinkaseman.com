@@ -1,6 +1,5 @@
 import React from "react";
 import Helmet from "react-helmet";
-import PageTransition from "gatsby-plugin-page-transitions";
 
 import "../styles/layout.css";
 
@@ -19,7 +18,7 @@ const Layout = props => (
         },
       ]}
     />
-    <PageTransition>{props.children}</PageTransition>
+    {props.children}
   </div>
 );
 

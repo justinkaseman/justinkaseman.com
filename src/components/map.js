@@ -6,6 +6,7 @@ import {
   Geography,
   Markers,
   Marker,
+  Annotation,
 } from "react-simple-maps";
 import { Motion, spring } from "react-motion";
 import geography from "../data/world-110m.json";
@@ -19,6 +20,7 @@ class Map extends React.Component {
   state = {
     center: [0, 20],
     zoom: 1,
+    annotation: null,
   };
 
   handleZoomIn = () => {
@@ -37,6 +39,11 @@ class Map extends React.Component {
       center: city.coordinates,
     });
   };
+  handleCountryClick = (city, e) => {
+    this.setState({
+      zoom: this.state.zoom * 2,
+    });
+  };
   handleReset = () => {
     this.setState({
       center: [0, 20],
@@ -44,6 +51,16 @@ class Map extends React.Component {
     });
   };
 
+  onMouseEnter = marker => {
+    this.setState({
+      annotation: marker,
+    });
+  };
+  onMouseLeave = () => {
+    this.setState({
+      annotation: null,
+    });
+  };
   render() {
     return (
       <div style={wrapperStyles}>
@@ -102,6 +119,7 @@ class Map extends React.Component {
                                 outline: "none",
                               },
                             }}
+                            onClick={this.handleCountryClick}
                           />
                         )
                     )
@@ -113,17 +131,30 @@ class Map extends React.Component {
                       key={i}
                       marker={city}
                       onClick={this.handleCityClick}
+                      onMouseEnter={this.onMouseEnter}
+                      onMouseLeave={this.onMouseLeave}
                     >
                       <circle
                         cx={0}
                         cy={0}
-                        r={2}
+                        r={3}
                         fill="#FF5722"
                         stroke="#DF3702"
                       />
                     </Marker>
                   ))}
                 </Markers>
+                {this.state.annotation ? (
+                  <Annotation
+                    dx={-35}
+                    dy={-15}
+                    subject={this.state.annotation.coordinates}
+                    strokeWidth={1}
+                    stroke="#607D8B"
+                  >
+                    <text>{this.state.annotation.name}</text>
+                  </Annotation>
+                ) : null}
               </ZoomableGroup>
             </ComposableMap>
           )}

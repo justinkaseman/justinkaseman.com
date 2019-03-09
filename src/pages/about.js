@@ -11,7 +11,6 @@ class AboutPage extends React.Component {
     this.checkSize();
     window.addEventListener("resize", this.checkSize);
     window.addEventListener("keydown", this.onKeyDown);
-    console.log(this.props.data);
   }
 
   checkSize = () => {

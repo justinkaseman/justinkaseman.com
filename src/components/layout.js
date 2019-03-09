@@ -15,7 +15,7 @@ const Layout = props => (
         },
         {
           name: `keywords`,
-          content: `developer, web, portfolio, software, engineer, personal website, justin, kaseman, full stack, front end, back end, san fransisco, oakland, react, node, gatsby, bay area`,
+          content: `developer, web, portfolio, software, engineer, personal website, justin, kaseman, full stack, front end, back end, san fransisco, oakland, react, node, javascript, graphql, gatsby, bay area`,
         },
       ]}
     />

@@ -10,7 +10,7 @@ class RandomPage extends React.Component {
   componentDidMount() {
     this.checkSize();
     window.addEventListener("resize", this.checkSize);
-    setTimeout(() => window.addEventListener("keydown", this.onKeyDown), 1000);
+    window.addEventListener("keydown", this.onKeyDown);
   }
 
   checkSize = () => {
@@ -19,6 +19,8 @@ class RandomPage extends React.Component {
   };
 
   onKeyDown(e) {
+    if (document.readyState === "complete" && e.key === "ArrowLeft")
+      document.getElementById("leftArrow").click();
     if (document.readyState === "complete" && e.key === "ArrowRight")
       document.getElementById("rightArrow").click();
   }
@@ -47,7 +49,12 @@ class RandomPage extends React.Component {
           index={texture}
           background={background}
         />
-        <NavigationArrows right={"/"} rightText={"back"} />
+        <NavigationArrows
+          left="/travel"
+          leftText="travel"
+          right="/"
+          rightText="back"
+        />
       </Layout>
     );
   }

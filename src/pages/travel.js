@@ -10,7 +10,7 @@ class TravelPage extends React.Component {
   componentDidMount() {
     this.checkSize();
     window.addEventListener("resize", this.checkSize);
-    setTimeout(() => window.addEventListener("keydown", this.onKeyDown), 1000);
+    window.addEventListener("keydown", this.onKeyDown);
   }
 
   checkSize = () => {
@@ -39,7 +39,7 @@ class TravelPage extends React.Component {
         from={this.props.location.state ? this.props.location.state.from : null}
       >
         <Map cities={cities} />
-        <NavigationArrows right={"/"} rightText={"back"} />
+        <NavigationArrows right="/random" rightText="random" />
       </Layout>
     );
   }

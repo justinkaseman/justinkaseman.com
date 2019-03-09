@@ -81,9 +81,9 @@ class IndexPage extends React.Component {
             />
             <Section
               title={projects.title}
-              items={about.items}
-              index={about.texture}
-              background={about.background}
+              items={projects.items}
+              index={projects.texture}
+              background={projects.background}
             />
             <Section
               title={writing.title}
@@ -118,11 +118,11 @@ class IndexPage extends React.Component {
             <NavigationArrows
               up={"/about"}
               upText={"ABOUT"}
-              right={"/projects/"}
+              right={"/projects"}
               rightText={"PROJECTS"}
-              down={"/writing/"}
+              down={"/writing"}
               downText="WRITING"
-              left={"/random/"}
+              left={"/random"}
               leftText="RANDOM"
             />
           </div>

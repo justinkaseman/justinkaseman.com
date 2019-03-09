@@ -1,5 +1,4 @@
 import React from "react";
-
 import Background from "./background.js";
 import Sketchy from "./sketchy.js";
 
@@ -8,33 +7,26 @@ import {
   SectionContents,
   SectionMainTitle,
   SectionMainDescription,
-  Icon,
   IconContainer,
   SocialLinks,
   Social,
 } from "../styles/styled-components.js";
 
-import jkhead from "../images/jkhead2.png";
-
 const SectionMain = props => {
   return (
     <SectionContainer style={{ backgroundColor: props.background }}>
-      <Background index={props.index} />{" "}
+      <Background index={props.index} />
       <SectionContents style={{ marginTop: "8%" }}>
         <Sketchy />
 
-        <IconContainer height={168} width={168}>
+        <IconContainer height={150} width={150}>
           <Sketchy />
-          <Icon
-            src={jkhead}
-            alt={"justin kaseman's head in black and white"}
-            height={164}
-            width={164}
-          />
-          <SectionMainTitle>
-            Just <span>i</span>n Kase man
-          </SectionMainTitle>
+          {props.image()}
         </IconContainer>
+
+        <SectionMainTitle>
+          Just <span>i</span>n Kase man
+        </SectionMainTitle>
 
         <SectionMainDescription>
           I‎’m Justin Kaseman, a Software Engineer in the San Fransisco Bay

@@ -7,8 +7,6 @@ import {
   SectionContainer,
   SectionContents,
   SectionHeader,
-  IconContainer,
-  Icon,
   SectionTitle,
   SectionDescription,
   SectionItems,
@@ -23,16 +21,16 @@ import {
 const Section = props => {
   return (
     <SectionContainer style={{ backgroundColor: props.background }}>
-      <Background index={props.index} />{" "}
+      <Background index={props.index} />
       <SectionContents>
         <Sketchy />
 
-        {props.image ? (
+        {/* {props.image ? (
           <IconContainer>
             <Sketchy offSetBottom={4} offSetLeft={2} />
             <Icon src={props.image} alt={props.alt} />
           </IconContainer>
-        ) : null}
+        ) : null} */}
 
         <SectionHeader>
           <SectionTitle>{props.title}</SectionTitle>

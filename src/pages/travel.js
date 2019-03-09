@@ -3,10 +3,10 @@ import { navigate, graphql } from "gatsby";
 
 import Layout from "../components/layout";
 
-import Section from "../components/section";
+import Map from "../components/map";
 import NavigationArrows from "../components/navigationArrows";
 
-class RandomPage extends React.Component {
+class TravelPage extends React.Component {
   componentDidMount() {
     this.checkSize();
     window.addEventListener("resize", this.checkSize);
@@ -19,8 +19,6 @@ class RandomPage extends React.Component {
   };
 
   onKeyDown(e) {
-    if (document.readyState === "complete" && e.key === "ArrowLeft")
-      document.getElementById("leftArrow").click();
     if (document.readyState === "complete" && e.key === "ArrowRight")
       document.getElementById("rightArrow").click();
   }
@@ -32,49 +30,35 @@ class RandomPage extends React.Component {
 
   render() {
     const {
-      title,
-      description,
-      items,
-      texture,
       background,
-    } = this.props.data.allDataYaml.edges[0].node.random;
+      cities,
+      texture,
+    } = this.props.data.allDataYaml.edges[0].node.travel;
     return (
       <Layout
         from={this.props.location.state ? this.props.location.state.from : null}
       >
-        <Section
-          title={title}
-          description={description}
-          items={items}
-          index={texture}
-          background={background}
-        />
-        <NavigationArrows
-          left="/travel"
-          leftText="travel"
-          right="/"
-          rightText="back"
-        />
+        <Map cities={cities} />
+        <NavigationArrows right="/random" rightText="random" />
       </Layout>
     );
   }
 }
 
-export default RandomPage;
+export default TravelPage;
 
 export const pageQuery = graphql`
   query {
     allDataYaml {
       edges {
         node {
-          random {
-            title
-            items {
-              title
-            }
-            description
+          travel {
             background
             texture
+            cities {
+              name
+              coordinates
+            }
           }
         }
       }

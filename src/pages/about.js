@@ -29,16 +29,19 @@ class AboutPage extends React.Component {
   }
 
   render() {
+    const {
+      title,
+      body,
+      texture,
+      background,
+    } = this.props.data.allDataYaml.edges[0].node.about;
     return (
       <Layout>
         <Section
-          title={"About"}
-          body={[
-            "I’m a San Fransisco Bay Area native born and raised. My background is in health and fitness which grew from my own body transformation in which I lost 100lbs. This taught me my strongest life lesson: you can do anything I set my mind to. It led me down the path of getting my BSc. in Exercise Physiology. While in university, I opened my own independent personal training business. I needed a website to advertise myself, so I decided to build my own.. and that was it, I was addicted.",
-            "After graduation, I spent the next 6 months engrossed self-studying. I enrolled in Lambda School, a full time intensive 7.5 month long Computer Science Academy. I finished with honors along with 6 weeks of TAing for the Computer Science curriculum (Data Structures & Algorithms, C lang, & OS/Processes). Software Engineering has given me an outlet to fulfill my greatest passions: creating stuff, solving problems, and lifelong learning.",
-          ]}
-          index={1}
-          background={"pink"}
+          title={title}
+          body={body}
+          index={texture}
+          background={background}
         />
         <NavigationArrows down={"/"} downText="B A C K" />
       </Layout>
@@ -53,8 +56,11 @@ export const pageQuery = graphql`
     allDataYaml {
       edges {
         node {
-          writing {
+          about {
+            texture
             title
+            body
+            background
           }
         }
       }

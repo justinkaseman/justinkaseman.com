@@ -1,15 +1,12 @@
 import React from "react";
-import { navigate } from "gatsby";
-
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-
 import { Arrow, ArrowText } from "../styles/styled-components.js";
 
 const navigationArrows = props => {
   return (
     <div>
       {props.up ? (
-        <AniLink swipe to={props.up} direction="down">
+        <AniLink swipe to={props.up} direction="down" duration={1}>
           <Arrow id="upArrow" up role="link">
             &larr;
             <ArrowText length={props.upText.length} direction={"up"}>
@@ -34,13 +31,8 @@ const navigationArrows = props => {
       ) : null}
 
       {props.left ? (
-        <AniLink swipe to={props.left} direction="right">
-          <Arrow
-            id="leftArrow"
-            left
-            onClick={() => navigate(props.left, { state: { from: `left` } })}
-            role="link"
-          >
+        <AniLink swipe to={props.left} direction="right" duration={1}>
+          <Arrow id="leftArrow" left role="link">
             &larr;
             <ArrowText length={props.leftText.length} direction={"left"}>
               {props.leftText
@@ -56,13 +48,8 @@ const navigationArrows = props => {
       ) : null}
 
       {props.down ? (
-        <AniLink swipe to={props.down} direction="up">
-          <Arrow
-            id="downArrow"
-            down
-            onClick={() => navigate(props.down, { state: { from: `down` } })}
-            role="link"
-          >
+        <AniLink swipe to={props.down} direction="up" duration={1}>
+          <Arrow id="downArrow" down role="link">
             &rarr;
             <ArrowText length={props.downText.length} direction={"down"}>
               {props.downText
@@ -86,13 +73,8 @@ const navigationArrows = props => {
       ) : null}
 
       {props.right ? (
-        <AniLink swipe to={props.right} direction="left">
-          <Arrow
-            id="rightArrow"
-            right
-            onClick={() => navigate(props.right, { state: { from: `right` } })}
-            role="link"
-          >
+        <AniLink swipe to={props.right} direction="left" duration={1}>
+          <Arrow id="rightArrow" right role="link">
             &rarr;
             <ArrowText length={props.rightText.length} direction={"right"}>
               {props.rightText

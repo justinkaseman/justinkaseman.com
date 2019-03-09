@@ -20,18 +20,7 @@ module.exports = {
       },
     },
     "gatsby-plugin-offline",
-    {
-      resolve: "gatsby-plugin-transition-link",
-      options: {
-        layout: false,
-      },
-    },
-    // {
-    //   resolve: "gatsby-plugin-page-transitions",
-    //   options: {
-    //     transitionTime: 1000,
-    //   },
-    // },
+    "gatsby-plugin-transition-link",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -39,6 +28,34 @@ module.exports = {
         path: `${__dirname}/src/data`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "images",
+        path: `${__dirname}/src/images`,
+      },
+    },
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     `gatsby-transformer-yaml`,
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["Open Sans Condensed:300,700"],
+          urls: ["/fonts/fonts.css"],
+        },
+        custom: {
+          families: [
+            "Triumph Wheels",
+            "Federo Regular",
+            "Sullivan Fill",
+            "Sullivan Bevel",
+            "Sullivan Regular",
+          ],
+          urls: ["/fonts/fonts.css"],
+        },
+      },
+    },
   ],
 };

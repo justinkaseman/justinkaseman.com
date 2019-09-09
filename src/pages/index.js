@@ -30,14 +30,19 @@ class IndexPage extends React.Component {
   onKeyDown(e) {
     window.removeEventListener("keydown", this.onKeyDown);
     if (window.innerWidth > 641) {
-      if (document.readyState === "complete" && e.key === "ArrowLeft")
-        document.getElementById("leftArrow").click();
-      else if (document.readyState === "complete" && e.key === "ArrowRight")
-        document.getElementById("rightArrow").click();
-      else if (document.readyState === "complete" && e.key === "ArrowUp")
-        document.getElementById("upArrow").click();
-      else if (document.readyState === "complete" && e.key === "ArrowDown")
-        document.getElementById("downArrow").click();
+      if (document.readyState === "complete" && e.key === "ArrowLeft") {
+        const arrow = document.getElementById("leftArrow");
+        if (arrow) arrow.click();
+      } else if (document.readyState === "complete" && e.key === "ArrowRight") {
+        const arrow = document.getElementById("rightArrow");
+        if (arrow) arrow.click();
+      } else if (document.readyState === "complete" && e.key === "ArrowUp") {
+        const arrow = document.getElementById("upArrow");
+        if (arrow) arrow.click();
+      } else if (document.readyState === "complete" && e.key === "ArrowDown") {
+        const arrow = document.getElementById("downArrow");
+        if (arrow) arrow.click();
+      }
     }
   }
 
@@ -61,6 +66,7 @@ class IndexPage extends React.Component {
             <SectionMain
               index={index.texture}
               background={index.background}
+              social={index.social}
               size={true}
               image={() => (
                 <Img
@@ -104,6 +110,7 @@ class IndexPage extends React.Component {
             <SectionMain
               index={index.texture}
               background={index.background}
+              social={index.social}
               image={() => (
                 <Img
                   fluid={this.props.data.image.childImageSharp.fluid}
@@ -149,6 +156,10 @@ export const pageQuery = graphql`
             title
             texture
             background
+            social {
+              title
+              url
+            }
           }
           projects {
             texture

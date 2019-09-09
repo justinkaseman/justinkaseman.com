@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import rough from "roughjs";
+import rough from "roughjs/dist/rough.umd";
 
 import ReactFauxDOM from "react-faux-dom";
 

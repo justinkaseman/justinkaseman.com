@@ -10,11 +10,7 @@ import {
 } from "react-simple-maps";
 import { Motion, spring } from "react-motion";
 import geography from "../data/world-110m.json";
-
-const wrapperStyles = {
-  width: "100vw",
-  height: "95vh",
-};
+import { MapNavigationButton } from "../styles/styled-components";
 
 class Map extends React.Component {
   state = {
@@ -63,10 +59,29 @@ class Map extends React.Component {
   };
   render() {
     return (
-      <div style={wrapperStyles}>
-        <button onClick={this.handleZoomIn}>{"Zoom in"}</button>
-        <button onClick={this.handleZoomOut}>{"Zoom out"}</button>
-        <button onClick={this.handleReset}>{"Reset"}</button>
+      <div
+        style={{
+          backgroundColor: "white",
+          height: "100vh",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            right: "calc(50% - 100px)",
+            top: "10px",
+          }}
+        >
+          <MapNavigationButton onClick={this.handleZoomIn}>
+            {"Zoom in"}
+          </MapNavigationButton>
+          <MapNavigationButton onClick={this.handleZoomOut}>
+            {"Zoom out"}
+          </MapNavigationButton>
+          <MapNavigationButton onClick={this.handleReset}>
+            {"Reset"}
+          </MapNavigationButton>
+        </div>
         <Motion
           defaultStyle={{
             zoom: 1,

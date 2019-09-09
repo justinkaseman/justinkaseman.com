@@ -85,15 +85,6 @@ const blink = keyframes`
   }
 `;
 
-const coolBoxKeyframes = keyframes`
-  0% {
-    left: 0px;
-  }
-  100% {
-    left: 200px;
-  }
-  `;
-
 /* 
 TEMPLATES
 */
@@ -215,82 +206,69 @@ export const NavigationSubButton = styled.button`
   }
 `;
 
-export const Arrow = styled.nav`
-  height: 1px;
-  width: 1px;
-  position: fixed;
+export const Arrow = styled.div`
+  height: 17px;
+  width: 66px;
+  position: absolute;
   cursor: pointer;
-  z-index: 15;
+  z-index: 999;
   font-family: Sullivan Regular;
   transition: color 0.4s;
   font-size: 110px;
-  
-    
-  ${props =>
-    props.up ? "top: 0; margin-top: 54px; margin-left: 7px; left: 50%;" : null}
-  ${props =>
-    props.left
-      ? "left: 0; margin-left: 46px; margin-top: -10px; top: 50%;"
-      : null}
-  ${props =>
-    props.down
-      ? "bottom: 0; margin-bottom: 120px; margin-left: 7px; left: 50%;"
-      : null}
-  ${props =>
-    props.right
-      ? "right: 0; margin-right: 124px; margin-top: -10px; top: 50%;"
-      : null}
+
+  &:hover {
+    color: black;
+  }
 
   ${props =>
-    props.down ? "transform: translate3d(0,-50%,0) rotate(90deg);" : null}
+    props.up &&
+    `top: 0;
+    margin-top: 88px;
+    margin-left: -32px;
+    left: 50%;
+    transform: rotate(90deg);`}
   ${props =>
-    props.up ? "transform: translate3d(0,-50%,0) rotate(90deg);" : null}
-    
-    ${props =>
-      props.right || props.down
-        ? `
-    &:after {
-      position: absolute;
-      z-index: -1;
-      content: "→";
-      font-family: Sullivan Fill;
-      top: 100%;
-      left: 50%;
-      height: 0;
-      width: 0;
-      color: ${white};
-      font-size: 110px;
-    }`
-        : `&:after {
+    props.left &&
+    `left: 0;
+    margin-left: 26px;
+    margin-top: -12px;
+    top: 50%;`}
+  ${props =>
+    props.down &&
+    `bottom: 0;
+    margin-bottom: 84px;
+    margin-left: -32px;
+    left: 50%;
+    transform: rotate(90deg);`}
+  ${props =>
+    props.right &&
+    `right: 0;
+    margin-right: 26px;
+    margin-bottom: -5px;
+    bottom: 50%;`}
+
+   ${props =>
+     props.right || props.down
+       ? `&:after {
+        z-index: -1;
+        content: "→";
+        font-family: Sullivan Fill;
         position: absolute;
+        top: 0;
+        left: 0;
+        color: ${white};
+        font-size: 110px;
+  }`
+       : `&:after {
         z-index: -1;
         content: "←";
         font-family: Sullivan Fill;
-        top: 100%;
-        left: 50%;
-        height: 0;
-        width: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
         color: ${white};
         font-size: 110px;
-      }`}
-
-    &:hover {
-      color: black;
-    }
-  }
-
-  ${medium`
-
-  ${props =>
-    props.left
-      ? "left: 0; margin-left: 24px; margin-top: -10px; top: 50%;"
-      : null}
-  ${props =>
-    props.right
-      ? "right: 0; margin-right: 98px; margin-top: -10px; top: 50%;"
-      : null}
-  } 
-  `}
+  }`}
 `;
 
 export const ArrowText = styled.span`
@@ -302,16 +280,11 @@ export const ArrowText = styled.span`
   top: ${props =>
     props.direction === "up" || props.direction === "down" ? "-180" : "-260"}px;
   height: ${props => (props.length % 2 === 1 ? "380px" : "540px")};
-  ${props => (props.direction === "left" ? "right: 8px;" : null)}
-  ${props => (props.direction === "up" ? "left: -34px;" : null)}
-  ${props => (props.direction === "down" ? "left: 76px;" : null)}
-  ${props => (props.direction === "right" ? "left: 92px;" : null)}
+  ${props => props.direction === "left" && "right: 56px;"}
+  ${props => props.direction === "up" && "left: -34px;"}
+  ${props => props.direction === "down" && "left: 76px;"}
+  ${props => props.direction === "right" && "left: 60px;"}
   font-size: 54px;
-
-  ${medium`
-  ${props => (props.direction === "left" ? "right: -8px;" : null)}
-  ${props => (props.direction === "right" ? "left: 64px;" : null)}
-  `}
 `;
 
 // Section
@@ -321,18 +294,37 @@ export const SectionContainer = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
+  height: 100%;
 
   ${small`
     padding: 10px 10px 10px 10px;
+  `} ${medium`
+    padding: 20px 100px 20px 100px;
+    min-height: 100vh;
+  `} ${large`
+    padding: 40px 150px 40px 150px;
+    min-height: 100vh;
+  `};
+`;
+
+export const SectionContainerMain = styled.div`
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  ${small`
+    padding: 20px 10px 10px 10px;
   `}
   ${medium`
-    padding: 20px 100px 20px 100px;
+    padding: 70px 100px 20px 100px;
     min-height: 100vh;
   `}
   ${large`
-    padding: 40px 150px 40px 150px;
+    padding: 120px 150px 40px 150px;
     min-height: 100vh;
-  `}
+  `};
 `;
 
 export const SectionContents = styled.section`
@@ -406,6 +398,7 @@ export const SectionMainDescription = styled.p`
   line-height: 30px;
   font-family: "Federo Regular";
   font-size: ${fontsize.medium};
+  text-align: center;
 
   ${small`
     padding: 20px 40px;
@@ -565,4 +558,22 @@ export const Social = styled.li`
   ${medium`
   margin: 0 1%;
   `};
+`;
+
+export const MapNavigationButton = styled.button`
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 4px 4px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 4px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+
+  &:active {
+    background: rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
 `;

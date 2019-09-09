@@ -20,7 +20,8 @@ class ProjectsPage extends React.Component {
 
   onKeyDown(e) {
     if (document.readyState === "complete" && e.key === "ArrowLeft") {
-      document.getElementById("leftArrow").click();
+      const arrow = document.getElementById("leftArrow");
+      if (arrow) arrow.click();
     }
   }
 

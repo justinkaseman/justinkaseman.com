@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 import Background from "./background.js";
 import Sketchy from "./sketchy.js";
 
@@ -97,6 +97,13 @@ const Section = props => {
       </SectionContents>
     </SectionContainer>
   );
+};
+
+Section.propTypes = {
+  title: PropTypes.string,
+  body: PropTypes.arrayOf(PropTypes.string),
+  index: PropTypes.number,
+  background: PropTypes.string,
 };
 
 export default Section;

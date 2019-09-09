@@ -19,10 +19,14 @@ class RandomPage extends React.Component {
   };
 
   onKeyDown(e) {
-    if (document.readyState === "complete" && e.key === "ArrowLeft")
-      document.getElementById("leftArrow").click();
-    if (document.readyState === "complete" && e.key === "ArrowRight")
-      document.getElementById("rightArrow").click();
+    if (document.readyState === "complete" && e.key === "ArrowLeft") {
+      const arrow = document.getElementById("leftArrow");
+      if (arrow) arrow.click();
+    }
+    if (document.readyState === "complete" && e.key === "ArrowRight") {
+      const arrow = document.getElementById("rightArrow");
+      if (arrow) arrow.click();
+    }
   }
 
   componentWillUnmount() {
@@ -50,10 +54,10 @@ class RandomPage extends React.Component {
           background={background}
         />
         <NavigationArrows
-          left="/travel"
-          leftText="travel"
-          right="/"
-          rightText="back"
+          left={"/travel"}
+          leftText={"travel"}
+          right={"/"}
+          rightText={"back"}
         />
       </Layout>
     );

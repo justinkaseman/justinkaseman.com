@@ -4,13 +4,13 @@ import Helmet from "react-helmet";
 import "../styles/layout.css";
 
 const Layout = props => (
-  <div>
+  <div style={{ height: "100vh", width: "100vw" }}>
     <Helmet
       title="Justin Kaseman"
       meta={[
         {
           name: `description`,
-          content: `Hey, I'm Justin Kaseman, a software engineer in San Fransisco.`,
+          content: `Hey, I'm Justin Kaseman, a software engineer in the San Fransisco Bay Area.`,
         },
         {
           name: `keywords`,

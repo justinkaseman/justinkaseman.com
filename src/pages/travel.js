@@ -1,8 +1,6 @@
 import React from "react";
 import { navigate, graphql } from "gatsby";
-
 import Layout from "../components/layout";
-
 import Map from "../components/map";
 import NavigationArrows from "../components/navigationArrows";
 
@@ -19,8 +17,10 @@ class TravelPage extends React.Component {
   };
 
   onKeyDown(e) {
-    if (document.readyState === "complete" && e.key === "ArrowRight")
-      document.getElementById("rightArrow").click();
+    if (document.readyState === "complete" && e.key === "ArrowRight") {
+      const arrow = document.getElementById("rightArrow");
+      if (arrow) arrow.click();
+    }
   }
 
   componentWillUnmount() {
@@ -29,11 +29,7 @@ class TravelPage extends React.Component {
   }
 
   render() {
-    const {
-      background,
-      cities,
-      texture,
-    } = this.props.data.allDataYaml.edges[0].node.travel;
+    const { cities } = this.props.data.allDataYaml.edges[0].node.travel;
     return (
       <Layout
         from={this.props.location.state ? this.props.location.state.from : null}

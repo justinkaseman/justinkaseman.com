@@ -19,8 +19,10 @@ class AboutPage extends React.Component {
   };
 
   onKeyDown(e) {
-    if (document.readyState === "complete" && e.key === "ArrowDown")
-      document.getElementById("downArrow").click();
+    if (document.readyState === "complete" && e.key === "ArrowDown") {
+      const arrow = document.getElementById("downArrow");
+      if (arrow) arrow.click();
+    }
   }
 
   componentWillUnmount() {

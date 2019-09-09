@@ -19,8 +19,10 @@ class WritingPage extends React.Component {
   };
 
   onKeyDown(e) {
-    if (document.readyState === "complete" && e.key === "ArrowUp")
-      document.getElementById("upArrow").click();
+    if (document.readyState === "complete" && e.key === "ArrowUp") {
+      const arrow = document.getElementById("upArrow");
+      if (arrow) arrow.click();
+    }
   }
 
   componentWillUnmount() {

@@ -10,7 +10,7 @@ const spacing = {
   quarter: "10px",
   half: "20px",
   single: "40px",
-  double: "80px",
+  double: "80px"
 };
 
 const fontsize = {
@@ -19,7 +19,7 @@ const fontsize = {
   medium: "1.7em",
   small: "1em",
   extrasmall: "0.6em",
-  tiny: "0.4em",
+  tiny: "0.4em"
 };
 
 // Media Queries
@@ -362,27 +362,30 @@ export const SectionMainTitle = styled.h1`
   width: 70%;
   left: 180px;
 
-  &:after {
-    position: absolute;
-    z-index: -10;
-    content: "";
-    font-family: Sullivan Fill;
-    top: 40px;
-    left: 0;
-    height: 40%;
-    width: 100%;
-    color: ${white};
-    background: #afafaf;
-    box-sizing: content-box;
-    opacity: 0.7;
-  }
-
-  > span {
+  > span.flicker {
     animation: ${blink} linear infinite 4s;
   }
 
   @media screen and (max-width: 900px) {
-    visibility: hidden;
+    top: -110px;
+
+    > span.secondrow {
+      position: absolute;
+      top: 65px;
+      left: 60px;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    top: -88px;
+    left: 0px;
+    text-align: center;
+    width: 100%;
+    > span.secondrow {
+      position: static;
+      top: 65px;
+      left: 60px;
+    }
   }
 
   ${large`
@@ -391,8 +394,8 @@ export const SectionMainTitle = styled.h1`
   `};
 `;
 
-export const SectionMainDescription = styled.p`
-  margin-top: 60px;
+export const SectionMainDescription = styled.div`
+  margin-top: 30px;
   font-weight: 20;
   width: 100%;
   line-height: 30px;
@@ -403,7 +406,7 @@ export const SectionMainDescription = styled.p`
   ${small`
     padding: 20px 40px;
   `} ${medium`
-    margin-top: 30px;
+    margin-top: 50px;
   `};
 `;
 
@@ -425,23 +428,22 @@ export const IconContainer = styled.div`
   height: ${props => (props.height ? props.height : 22)}px;
   width: ${props => (props.width ? props.width : 22)}px;
   position: absolute;
-  left: 35%;
-  margin-top: -80px;
+  left: 15px;
+  top: 15px;
 
   ${medium`
   height: ${props => (props.height ? props.height : 72)}px;
   width: ${props => (props.width ? props.width : 72)}px;
-  position: absolute;
-  left: -8%;
-  top: 4%;
+  top: -100px;
 `}
+
+  @media screen and (max-width: 640px) {
+    display: none;
+  }
 
   @media screen and (min-width: 900px) {
     height: ${props => (props.height ? props.height : 72)}px;
     width: ${props => (props.width ? props.width : 72)}px;
-    position: absolute;
-    left: 5%;
-    top: -10%;
   }
 `;
 
@@ -491,9 +493,12 @@ export const ItemIcon = styled.img`
 `;
 
 export const ItemIconAlt = styled.h2`
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+  margin-bottom: 20px;
   font-family: Triumph Wheels;
   font-size: 2.4rem;
-  margin-right: 10px;
 
   ${medium`
   font-size: 2rem;

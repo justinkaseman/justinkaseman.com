@@ -15,7 +15,7 @@ import {
   ItemIcon,
   ItemIconAlt,
   ItemDescription,
-  SectionBody,
+  SectionBody
 } from "../styles/styled-components.js";
 
 const Section = props => {
@@ -48,7 +48,7 @@ const Section = props => {
                   style={{
                     textDecoration: "none",
                     zIndex: "-1",
-                    color: "#343434",
+                    color: "#343434"
                   }}
                 >
                   <div style={{ display: "flex", alignItems: "center" }}>
@@ -86,7 +86,7 @@ const Section = props => {
                 style={{
                   paddingBottom: "10px",
                   textIndent: "20px",
-                  fontSize: "1.1em",
+                  fontSize: "1.1em"
                 }}
               >
                 {item}
@@ -103,7 +103,7 @@ Section.propTypes = {
   title: PropTypes.string,
   body: PropTypes.arrayOf(PropTypes.string),
   index: PropTypes.number,
-  background: PropTypes.string,
+  background: PropTypes.string
 };
 
 export default Section;

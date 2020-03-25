@@ -8,29 +8,38 @@ import {
   SectionMainTitle,
   SectionMainDescription,
   IconContainer,
-  SocialLinks,
+  SocialLinks
 } from "../styles/styled-components.js";
 
-const SectionMain = props => {
+const SectionMain = ({ image, containerStyle, ...props }) => {
   return (
     <SectionContainerMain style={{ backgroundColor: props.background }} main>
       <Background index={props.index} />
-      <SectionContents>
+      <SectionContents style={containerStyle}>
         <Sketchy />
 
         <IconContainer height={150} width={150}>
           <Sketchy />
-          {props.image()}
+          {image && image()}
         </IconContainer>
 
         <SectionMainTitle>
-          Just <span>i</span>n Kase man
+          Just <span className="flicker">i</span>n{" "}
+          <span className="secondrow">Kase man</span>
         </SectionMainTitle>
 
         <SectionMainDescription>
-          {props.size
-            ? "Keep scrolling or reach out to say hello."
-            : "Use the arrows to keep exploring or reach out to say hello."}
+          {props.size ? (
+            <>
+              <div>I'm a full-stack web engineer passionate about</div>
+              <div></div>
+              <div style={{ marginTop: "20px" }}>
+                Keep scrolling or reach out to say hello.
+              </div>
+            </>
+          ) : (
+            <>Use the arrows explore or reach out to say hello.</>
+          )}
         </SectionMainDescription>
 
         <SocialLinks>

@@ -1,7 +1,8 @@
 about:
   title: About
   body:
-    - "Hey 👋 I'm Justin Kaseman, a San Fransisco Bay Area native - born and raised. My original love for technology stems all way back to a childhood of staying up late playing video games and gorging on junk food. It was highly un-sustainable. One day a spark ignited my 4-month weight loss transformation of over 100lbs. Through this, my deep love of self-improvement formed and fostered one of my strongest beliefs: with enough motivation and daily consistency anyone can achieve their goals. This led me through a BSc. in Exercise Physiology to learn how I could best help other people achieve similar results. While attending university, I opened an independent personal training business. But to market a business without a storefront I needed a website...so why not build it myself? A new addiction was born."
+    - "Hey 👋 I'm Justin Kaseman, a San Fransisco Bay Area native - born and raised. My original love for technology stems all way back to a childhood of staying up late playing video games and gorging on junk food. It was highly un-sustainable. One day a spark ignited my 4-month weight loss transformation of over 100lbs."
+    - "Through this, my deep love of self-improvement formed and fostered one of my strongest beliefs: with enough motivation and daily consistency anyone can achieve their goals. This led me through a BSc. in Exercise Physiology to learn how I could best help other people achieve similar results. While attending university, I opened an independent personal training business. But to market a business without a storefront I needed a website...so why not build it myself? A new addiction was born."
     - "Suddenly my evenings and weekends were spent in furious self-study. I had finally found my passion. I enrolled in Lambda School, a full time intensive 7.5 month long Computer Science Academy, with a focus on Full-Stack Web Development. To continue helping other students I was a Teacher's Assistant for the Computer Science curriculum."
     - "I currently spend my days playing as a Software Engineer at MediaJel, learning and building solutions for emerging markets to best reach their consumers."
   texture: 1
@@ -10,14 +11,14 @@ about:
 index:
   title: Home
   social:
-    - title: GitHub
-      url: https://github.com/justinkaseman
-    - title: LinkedIn
-      url: https://www.linkedin.com/in/justin-kaseman/
-    - title: Instagram
-      url: https://www.instagram.com/just.in.kase.man/
     - title: Email
       url: mailto:justinkaseman@live.com?Subject=Hello
+    - title: LinkedIn
+      url: https://www.linkedin.com/in/justin-kaseman/
+    - title: GitHub
+      url: https://github.com/justinkaseman
+    - title: Instagram
+      url: https://www.instagram.com/just.in.kase.man/
   texture: 0
   background: "#cecece"
 
@@ -25,7 +26,7 @@ projects:
   title: Projects
   items:
     - title: "MediaJel Dashboard"
-      image: "https://media.licdn.com/dms/image/C4E0BAQFFpf3W4xdttg/company-logo_400_400/0?e=1576108800&v=beta&t=AL3gavlvClQI73Ri_47kEzg8DGfAleUHSCKpdLOdIgg"
+      image: ""
       description: "All-in-one marketing platform for taking customers through the full journey from discovery to returning client"
       technology: "TypeScript • React • Apollo GraphQL • MySQL • Prisma • Node"
       url: "https://www.mediajel.com/"

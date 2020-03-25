@@ -2,77 +2,79 @@
 Currently unused 
 */
 
-import React, { Component } from "react";
-import { Link } from "gatsby";
-import Sketchy from "./sketchy.js";
+// import React, { Component } from "react";
+// import { Link } from "gatsby";
+// import Sketchy from "./sketchy.js";
 
-import {
-  NavigationModal,
-  NavigationButton,
-  NavigationSubButton,
-} from "../styles/styled-components.js";
+// import {
+//   NavigationModal,
+//   NavigationButton,
+//   NavigationSubButton,
+// } from "../styles/styled-components.js";
 
-import map from "../images/iconmonstr-map-10.png";
+// import map from "../images/iconmonstr-map-10.png";
 
-class Navigation extends Component {
-  state = {
-    isOpen: false,
-  };
+// class Navigation extends Component {
+//   state = {
+//     isOpen: false,
+//   };
 
-  toggle = () => {
-    this.setState({ isOpen: !this.state.isOpen });
-  };
+//   toggle = () => {
+//     this.setState({ isOpen: !this.state.isOpen });
+//   };
 
-  close = () => {
-    this.setState({ isOpen: false });
-  };
+//   close = () => {
+//     this.setState({ isOpen: false });
+//   };
 
-  expandNavigation = () => {
-    return [
-      <Link to="/projects/">
-        <NavigationSubButton key={0} onClick={this.close}>
-          <Sketchy offSetBottom={3} />
-        </NavigationSubButton>
-      </Link>,
-      <Link to="/writing/">
-        <NavigationSubButton key={1} onClick={this.close}>
-          <Sketchy offSetBottom={3} />
-        </NavigationSubButton>
-      </Link>,
-      <Link to="/about/">
-        <NavigationSubButton key={2} onClick={this.close}>
-          <Sketchy offSetBottom={3} />
-        </NavigationSubButton>
-      </Link>,
-      <Link to="/random/">
-        <NavigationSubButton key={3} onClick={this.close}>
-          <Sketchy offSetBottom={3} />
-        </NavigationSubButton>
-      </Link>,
-    ];
-  };
+//   expandNavigation = () => {
+//     return [
+//       <Link to="/projects/">
+//         <NavigationSubButton key={0} onClick={this.close}>
+//           <Sketchy offSetBottom={3} />
+//         </NavigationSubButton>
+//       </Link>,
+//       <Link to="/writing/">
+//         <NavigationSubButton key={1} onClick={this.close}>
+//           <Sketchy offSetBottom={3} />
+//         </NavigationSubButton>
+//       </Link>,
+//       <Link to="/about/">
+//         <NavigationSubButton key={2} onClick={this.close}>
+//           <Sketchy offSetBottom={3} />
+//         </NavigationSubButton>
+//       </Link>,
+//       <Link to="/random/">
+//         <NavigationSubButton key={3} onClick={this.close}>
+//           <Sketchy offSetBottom={3} />
+//         </NavigationSubButton>
+//       </Link>,
+//     ];
+//   };
 
-  render() {
-    this.toggle = this.toggle.bind(this);
-    this.close = this.close.bind(this);
-    this.expandNavigation = this.expandNavigation.bind(this);
-    return (
-      <NavigationModal
-        onMouseLeave={this.close}
-        width={this.state.isOpen ? 350 : 60}
-      >
-        <NavigationButton onClick={this.toggle}>
-          <Sketchy offSetBottom={3}>
-            <img src={map} alt="map svg icon" />
-          </Sketchy>
-        </NavigationButton>
-        {this.state.isOpen ? this.expandNavigation() : null}
-      </NavigationModal>
-    );
-  }
-}
+//   render() {
+//     this.toggle = this.toggle.bind(this);
+//     this.close = this.close.bind(this);
+//     this.expandNavigation = this.expandNavigation.bind(this);
+//     return (
+//       <NavigationModal
+//         onMouseLeave={this.close}
+//         width={this.state.isOpen ? 350 : 60}
+//       >
+//         <NavigationButton onClick={this.toggle}>
+//           <Sketchy offSetBottom={3}>
+//             <img src={map} alt="map svg icon" />
+//           </Sketchy>
+//         </NavigationButton>
+//         {this.state.isOpen ? this.expandNavigation() : null}
+//       </NavigationModal>
+//     );
+//   }
+// }
 
-export default Navigation;
+// export default Navigation;
+
+/////////////////////////////////////////////////////
 
 // To be used later:
 

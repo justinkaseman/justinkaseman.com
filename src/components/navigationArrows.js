@@ -23,7 +23,7 @@ const navigationArrows = props => {
                     <span
                       key={props.upText + index}
                       style={{
-                        transform: "rotate(-90deg)",
+                        transform: "rotate(-90deg)"
                       }}
                     >
                       {letter}
@@ -75,7 +75,7 @@ const navigationArrows = props => {
                     <span
                       key={props.downText + index}
                       style={{
-                        transform: "rotate(-90deg)",
+                        transform: "rotate(-90deg)"
                       }}
                     >
                       {letter}

@@ -9,7 +9,7 @@ import NavigationArrows from "../components/navigationArrows";
 
 class IndexPage extends React.Component {
   state = {
-    screenSize: "",
+    screenSize: ""
   };
 
   componentDidMount() {
@@ -57,7 +57,7 @@ class IndexPage extends React.Component {
       about,
       writing,
       random,
-      projects,
+      projects
     } = this.props.data.allDataYaml.edges[0].node;
     return (
       <Layout>
@@ -68,22 +68,7 @@ class IndexPage extends React.Component {
               background={index.background}
               social={index.social}
               size={true}
-              image={() => (
-                <Img
-                  fluid={this.props.data.image.childImageSharp.fluid}
-                  style={{
-                    height: "98%",
-                    width: "98%",
-                    marginTop: "2px",
-                  }}
-                />
-              )}
-            />
-            <Section
-              title={about.title}
-              body={about.body}
-              index={about.texture}
-              background={about.background}
+              containerStyle={{ marginTop: "70px" }}
             />
             <Section
               title={projects.title}
@@ -96,6 +81,12 @@ class IndexPage extends React.Component {
               items={writing.items}
               index={writing.texture}
               background={writing.background}
+            />
+            <Section
+              title={about.title}
+              body={about.body}
+              index={about.texture}
+              background={about.background}
             />
             <Section
               title={random.title}
@@ -117,7 +108,7 @@ class IndexPage extends React.Component {
                   style={{
                     height: "98%",
                     width: "98%",
-                    marginTop: "2px",
+                    marginTop: "2px"
                   }}
                 />
               )}

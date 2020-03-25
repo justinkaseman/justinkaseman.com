@@ -1,58 +1,33 @@
-import React, { Component } from "react";
-import rough from "roughjs/dist/rough.umd";
-
+import React, { useState, useEffect, useCallback, useRef } from "react";
+import rough from "roughjs/bundled/rough.esm.js";
 import ReactFauxDOM from "react-faux-dom";
-
 import { SketchyContainer } from "../styles/styled-components";
 
-class Sketchy extends Component {
-  constructor(props) {
-    super(props);
+const Sketchy = () => {
+  const divRef = useRef(null);
+  const [node, setNode] = useState(null);
 
-    this.state = {
-      width: 200,
-      height: 100,
-    };
-
-    this.setDivRef = element => {
-      this.div = element;
-    };
-
-    this.resize = this.resize.bind(this);
-  }
-
-  componentDidMount() {
-    this.resize();
-    window.addEventListener("resize", this.resize);
-  }
-
-  resize() {
-    const parent = this.div;
-    //parent.offsetHeight && parent.offsetWidth
-    if (parent) {
-      const width = parent.offsetWidth - 3;
-      const height = parent.offsetHeight - 3;
-      this.setState({
-        width,
-        height,
-      });
+  const resize = useCallback(() => {
+    const parentHeight = divRef?.current?.parentNode?.offsetHeight;
+    const parentWidth = divRef?.current?.parentNode?.offsetWidth;
+    if (parentHeight && parentWidth) {
+      const node = ReactFauxDOM.createElement("svg");
+      const roughSvg = rough.svg(node);
+      const fill = roughSvg.rectangle(0, 0, parentWidth, parentHeight);
+      node.appendChild(fill);
+      setNode(node);
     }
-  }
+  }, [divRef]);
 
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.resize);
-  }
+  useEffect(() => {
+    window.addEventListener("resize", resize);
+    setTimeout(resize, 0);
+    return () => {
+      window.removeEventListener("resize", resize);
+    };
+  }, [resize]);
 
-  render() {
-    const { width, height } = this.state;
-    const node = ReactFauxDOM.createElement("svg");
-    const roughSvg = rough.svg(node);
-    const fill = roughSvg.rectangle(0, 0, width, height);
-    node.appendChild(fill);
-    return (
-      <SketchyContainer ref={this.setDivRef}>{node.toReact()}</SketchyContainer>
-    );
-  }
-}
+  return <SketchyContainer ref={divRef}>{node?.toReact()}</SketchyContainer>;
+};
 
 export default Sketchy;

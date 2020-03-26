@@ -21,7 +21,7 @@ class IndexPage extends React.Component {
   checkSize = () => {
     const currentSize = window.innerWidth;
     let newSize;
-    if (currentSize < 641) newSize = "Mobile";
+    if (currentSize < 701) newSize = "Mobile";
     else if (currentSize < 1201) newSize = "Tablet";
     if (this.state.screenSize !== newSize)
       this.setState({ screenSize: newSize });
@@ -29,7 +29,7 @@ class IndexPage extends React.Component {
 
   onKeyDown(e) {
     window.removeEventListener("keydown", this.onKeyDown);
-    if (window.innerWidth > 641) {
+    if (window.innerWidth > 701) {
       if (document.readyState === "complete" && e.key === "ArrowLeft") {
         const arrow = document.getElementById("leftArrow");
         if (arrow) arrow.click();

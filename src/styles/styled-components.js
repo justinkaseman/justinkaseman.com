@@ -30,7 +30,12 @@ const small = (...args) => css`
   }
 `;
 const medium = (...args) => css`
-  @media screen and (min-width: 641px) {
+  @media screen and (min-width: 701px) {
+    ${css(...args)};
+  }
+`;
+const ml = (...args) => css`
+  @media screen and (min-width: 900px) {
     ${css(...args)};
   }
 `;
@@ -214,11 +219,18 @@ export const Arrow = styled.div`
   z-index: 999;
   font-family: Sullivan Regular;
   transition: color 0.4s;
-  font-size: 110px;
+  font-size: 80px;
 
   &:hover {
-    color: black;
-  }
+    transition: text-shadow 0.4s;
+    color: #fee;
+    ${props =>
+      props.up || props.down
+        ? `text-shadow:  -40px 0 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
+    0 0 0.1em #ff4444, 10px 0 3px #000;`
+        : `text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
+    0 0 0.1em #ff4444, 0 10px 3px #000;`}
+    }
 
   ${props =>
     props.up &&
@@ -257,8 +269,9 @@ export const Arrow = styled.div`
         top: 0;
         left: 0;
         color: ${white};
-        font-size: 110px;
-  }`
+        font-size: 80px;
+         
+        }`
        : `&:after {
         z-index: -1;
         content: "←";
@@ -267,8 +280,36 @@ export const Arrow = styled.div`
         top: 0;
         left: 0;
         color: ${white};
+        font-size: 80px;
+        }`}
+
+           ${ml`
         font-size: 110px;
-  }`}
+
+        ${props =>
+          props.right || props.down
+            ? `&:after {
+            z-index: -1;
+            content: "→";
+            font-family: Sullivan Fill;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: ${white};
+            font-size: 110px;
+            
+            }`
+            : `&:after {
+            z-index: -1;
+            content: "←";
+            font-family: Sullivan Fill;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: ${white};
+            font-size: 110px;
+            }`}
+  `}
 `;
 
 export const ArrowText = styled.span`
@@ -280,11 +321,21 @@ export const ArrowText = styled.span`
   top: ${props =>
     props.direction === "up" || props.direction === "down" ? "-180" : "-260"}px;
   height: ${props => (props.length % 2 === 1 ? "380px" : "540px")};
-  ${props => props.direction === "left" && "right: 56px;"}
-  ${props => props.direction === "up" && "left: -34px;"}
-  ${props => props.direction === "down" && "left: 76px;"}
-  ${props => props.direction === "right" && "left: 60px;"}
-  font-size: 54px;
+  ${props => props.direction === "left" && "right: -10px;padding-right: 70px;"}
+  ${props => props.direction === "up" && "left: -44px;padding-right: 90px;"}
+  ${props => props.direction === "down" && "left: 0px;padding-left: 80px;"}
+  ${props => props.direction === "right" && "left: -18px;padding-left: 80px;"}
+  font-size: 48px;
+
+  ${ml`
+      font-size: 54px;
+  `}
+
+  &:hover {
+    transition: text-shadow 0.4s;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
+        0 0 0.1em #ff4444, 0 10px 3px #000;
+  }
 `;
 
 // Section
@@ -367,16 +418,16 @@ export const SectionMainTitle = styled.h1`
   }
 
   @media screen and (max-width: 900px) {
-    top: -110px;
+    top: -90px;
 
     > span.secondrow {
       position: absolute;
       top: 65px;
-      left: 60px;
+      left: 90px;
     }
   }
 
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 700px) {
     top: -88px;
     left: 0px;
     text-align: center;
@@ -437,7 +488,7 @@ export const IconContainer = styled.div`
   top: -100px;
 `}
 
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 700px) {
     display: none;
   }
 
@@ -550,9 +601,12 @@ export const Social = styled.li`
   margin: 0 40px;
 
   > a {
+    transition: fill 0.3s;
     fill: #4e4e4e;
     &:hover {
-      fill: black;
+      fill: #ff9c9c;
+      -webkit-filter: drop-shadow(5px 5px 3px #ffabab);
+      filter: drop-shadow(5px 5px 3px #ffabab);
     }
   }
 

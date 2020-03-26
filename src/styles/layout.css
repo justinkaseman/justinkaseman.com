@@ -621,6 +621,16 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
+
+.Typewriter {
+  display: inline-block;
+  width: 270px;
+  padding-left: 8px;
+  text-align: left;
+  font-family: "Federo Regular", "Lucida Sans Unicode", "Lucida Grande",
+    "sans-serif";
+}
+
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;

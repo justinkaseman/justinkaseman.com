@@ -10,6 +10,7 @@ import {
   IconContainer,
   SocialLinks
 } from "../styles/styled-components.js";
+import Typewriter from "typewriter-effect";
 
 const SectionMain = ({ image, containerStyle, ...props }) => {
   return (
@@ -29,17 +30,28 @@ const SectionMain = ({ image, containerStyle, ...props }) => {
         </SectionMainTitle>
 
         <SectionMainDescription>
-          {props.size ? (
-            <>
-              <div>I'm a full-stack web engineer passionate about</div>
-              <div></div>
-              <div style={{ marginTop: "20px" }}>
-                Keep scrolling or reach out to say hello.
-              </div>
-            </>
-          ) : (
-            <>Use the arrows explore or reach out to say hello.</>
-          )}
+          <>
+            <div>
+              I'm a Software Engineer passionate about
+              <Typewriter
+                options={{
+                  strings: [
+                    "full-stack development.",
+                    "decentralized web.",
+                    "frictionless UX.",
+                    "lifelong learning."
+                  ],
+                  autoStart: true,
+                  loop: true
+                }}
+              />
+            </div>
+            <div style={{ marginTop: "20px" }}>
+              {props.size
+                ? "Keep scrolling or reach out to say hello."
+                : "Use the arrows explore or reach out to say hello."}
+            </div>
+          </>
         </SectionMainDescription>
 
         <SocialLinks>

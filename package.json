@@ -28,7 +28,8 @@
     "roughjs": "^4.0.4",
     "styled-components": "5.0.1",
     "textures": "^1.2.0",
-    "three": "^0.114.0"
+    "three": "^0.114.0",
+    "typewriter-effect": "^2.13.0"
   },
   "keywords": [
     "gatsby"

@@ -6,7 +6,7 @@ about:
     - "Suddenly my evenings and weekends were spent in furious self-study. I had finally found my passion. I enrolled in Lambda School, a full time intensive 7.5 month long Computer Science Academy, with a focus on Full-Stack Web Development. To continue helping other students I was a Teacher's Assistant for the Computer Science curriculum."
     - "I currently spend my days playing as a Software Engineer at MediaJel, learning and building solutions for emerging markets to best reach their consumers."
   texture: 1
-  background: "pink"
+  background: "#6c4747"
 
 index:
   title: Home
@@ -20,7 +20,7 @@ index:
     - title: Instagram
       url: https://www.instagram.com/just.in.kase.man/
   texture: 0
-  background: "#cecece"
+  background: "#505050"
 
 projects:
   title: Projects
@@ -45,7 +45,7 @@ projects:
       description: "Check this site out on GitHub!"
       technology: "Gatsby using GraphQL"
       url: "https://github.com/justinkaseman/justinkaseman.com"
-  background: "#b2f3b2"
+  background: "#464e41"
   texture: 2
 
 random:
@@ -58,7 +58,7 @@ random:
     - title: "🂠 Games"
     - title: "🗑 Disc Golf"
     - title: "🌟 Self Improvement"
-  background: "#8fcadd"
+  background: "#495260"
   texture: 4
 
 writing:
@@ -80,7 +80,7 @@ writing:
       image: ""
       description: ""
       url: ""
-  background: "violet"
+  background: "#5d4960"
   texture: 3
 
 travel:

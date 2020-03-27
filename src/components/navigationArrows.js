@@ -1,6 +1,10 @@
 import React from "react";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-import { Arrow, ArrowText } from "../styles/styled-components.js";
+import {
+  Arrow,
+  ArrowText,
+  ArrowTextLetter
+} from "../styles/styled-components.js";
 
 const navigationArrows = props => {
   return (
@@ -20,14 +24,15 @@ const navigationArrows = props => {
                 props.upText
                   .split("")
                   .map((letter, index) => (
-                    <span
+                    <ArrowTextLetter
                       key={props.upText + index}
+                      direction={"up"}
                       style={{
                         transform: "rotate(-90deg)"
                       }}
                     >
                       {letter}
-                    </span>
+                    </ArrowTextLetter>
                   ))
                   .reverse()}
             </ArrowText>
@@ -47,11 +52,14 @@ const navigationArrows = props => {
             &larr;
             <ArrowText length={props.leftText.length} direction={"left"}>
               {props.leftText &&
-                props.leftText
-                  .split("")
-                  .map((letter, index) => (
-                    <span key={props.leftText + index}>{letter}</span>
-                  ))}
+                props.leftText.split("").map((letter, index) => (
+                  <ArrowTextLetter
+                    key={props.leftText + index}
+                    direction={"left"}
+                  >
+                    {letter}
+                  </ArrowTextLetter>
+                ))}
             </ArrowText>
           </Arrow>
         </AniLink>
@@ -72,14 +80,15 @@ const navigationArrows = props => {
                 props.downText
                   .split("")
                   .map((letter, index) => (
-                    <span
+                    <ArrowTextLetter
                       key={props.downText + index}
+                      direction={"down"}
                       style={{
                         transform: "rotate(-90deg)"
                       }}
                     >
                       {letter}
-                    </span>
+                    </ArrowTextLetter>
                   ))
                   .reverse()}
             </ArrowText>
@@ -99,11 +108,14 @@ const navigationArrows = props => {
             &rarr;
             <ArrowText length={props.rightText.length} direction={"right"}>
               {props.rightText &&
-                props.rightText
-                  .split("")
-                  .map((letter, index) => (
-                    <span key={props.rightText + index}>{letter}</span>
-                  ))}
+                props.rightText.split("").map((letter, index) => (
+                  <ArrowTextLetter
+                    key={props.rightText + index}
+                    direction={"right"}
+                  >
+                    {letter}
+                  </ArrowTextLetter>
+                ))}
             </ArrowText>
           </Arrow>
         </AniLink>

@@ -50,10 +50,7 @@ class Background extends React.Component {
         break;
 
       case 4:
-        t = textures
-          .circles()
-          .lighter()
-          .fill("rgba(0,0,0,0.3)");
+        t = textures.circles().lighter().fill("rgba(0,0,0,0.3)");
         break;
 
       default:

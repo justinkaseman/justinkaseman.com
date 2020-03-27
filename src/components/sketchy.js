@@ -13,7 +13,11 @@ const Sketchy = () => {
     if (parentHeight && parentWidth) {
       const node = ReactFauxDOM.createElement("svg");
       const roughSvg = rough.svg(node);
-      const fill = roughSvg.rectangle(0, 0, parentWidth, parentHeight);
+      const fill = roughSvg.rectangle(0, 0, parentWidth, parentHeight, {
+        stroke: "black",
+        roughness: "2",
+        bowing: "0.5"
+      });
       node.appendChild(fill);
       setNode(node);
     }

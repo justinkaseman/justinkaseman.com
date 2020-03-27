@@ -219,17 +219,17 @@ export const Arrow = styled.div`
   z-index: 999;
   font-family: Sullivan Regular;
   transition: color 0.4s;
-  font-size: 80px;
+  font-size: 88px;
 
   &:hover {
     transition: text-shadow 0.4s;
     color: #fee;
     ${props =>
       props.up || props.down
-        ? `text-shadow:  -40px 0 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
-    0 0 0.1em #ff4444, 10px 0 3px #000;`
-        : `text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
-    0 0 0.1em #ff4444, 0 10px 3px #000;`}
+        ? `text-shadow:  -40px 0 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.8em #ff4444,
+    0 0 0.3em #ff4444, 10px 0 3px #000;`
+        : `text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.8em #ff4444,
+    0 0 0.3em #ff4444, 0 10px 3px #000;`}
     }
 
   ${props =>
@@ -270,7 +270,6 @@ export const Arrow = styled.div`
         left: 0;
         color: ${white};
         font-size: 80px;
-         
         }`
        : `&:after {
         z-index: -1;
@@ -318,6 +317,7 @@ export const ArrowText = styled.span`
   justify-content: space-evenly;
   align-items: center;
   position: absolute;
+  font-family: Sullivan Regular;
   top: ${props =>
     props.direction === "up" || props.direction === "down" ? "-180" : "-260"}px;
   height: ${props => (props.length % 2 === 1 ? "380px" : "540px")};
@@ -325,19 +325,45 @@ export const ArrowText = styled.span`
   ${props => props.direction === "up" && "left: -44px;padding-right: 90px;"}
   ${props => props.direction === "down" && "left: 0px;padding-left: 80px;"}
   ${props => props.direction === "right" && "left: -18px;padding-left: 80px;"}
-  font-size: 48px;
+  font-size: 46px;
+  color: lightgrey;
 
   ${ml`
       font-size: 54px;
   `}
 
   &:hover {
+      color: white;
     transition: text-shadow 0.4s;
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
         0 0 0.1em #ff4444, 0 10px 3px #000;
   }
 `;
 
+export const ArrowTextLetter = styled.span`
+//  &:after {
+//     z-index: -1;
+//     content: "${props => props.children}";
+//     font-family: Sullivan Fill;
+//     color: grey;
+//     font-size: 88px;
+//     position: absolute;
+//     left: 5px;
+
+//   }
+
+// ${ml`
+//   &:after {
+//     z-index: -1;
+//     content: "${props => props.children}";
+//     font-family: Sullivan Fill;
+//     color: grey;
+//     font-size: 59px;
+//     position: absolute;
+//     left: 2px;
+//   }
+// `}
+`;
 // Section
 
 export const SectionContainer = styled.div`

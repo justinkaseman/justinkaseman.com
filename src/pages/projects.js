@@ -1,10 +1,9 @@
 import React from "react";
 import { navigate, graphql } from "gatsby";
-
 import Layout from "../components/layout";
-
 import Section from "../components/section";
 import NavigationArrows from "../components/navigationArrows";
+import Television from "../components/television";
 
 class ProjectsPage extends React.Component {
   componentDidMount() {
@@ -35,7 +34,7 @@ class ProjectsPage extends React.Component {
       title,
       items,
       texture,
-      background,
+      background
     } = this.props.data.allDataYaml.edges[0].node.projects;
     return (
       <Layout
@@ -46,6 +45,7 @@ class ProjectsPage extends React.Component {
           items={items}
           index={texture}
           background={background}
+          component={<Television />}
         />
         <NavigationArrows left={"/"} leftText="BACK" />
       </Layout>

@@ -15,7 +15,7 @@ const Sketchy = () => {
       const roughSvg = rough.svg(node);
       const fill = roughSvg.rectangle(0, 0, parentWidth, parentHeight, {
         stroke: "black",
-        roughness: "2",
+        roughness: "1",
         bowing: "0.5"
       });
       node.appendChild(fill);

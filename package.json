@@ -3,6 +3,9 @@
   "description": "Justin Kaseman's portfolio website",
   "version": "1.0.1",
   "author": "Justin Kaseman <justinkaseman@live.com>",
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "dependencies": {
     "d3": "^5.15.0",
     "gatsby": "^2.20.4",

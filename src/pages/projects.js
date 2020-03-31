@@ -45,7 +45,7 @@ class ProjectsPage extends React.Component {
           items={items}
           index={texture}
           background={background}
-          component={<Television />}
+          component={<Television channels={items} />}
         />
         <NavigationArrows left={"/"} leftText="BACK" />
       </Layout>
@@ -65,7 +65,8 @@ export const pageQuery = graphql`
             title
             items {
               title
-              image
+              logo
+              video
               description
               technology
               url

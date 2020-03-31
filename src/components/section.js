@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Background from "./background.js";
 import Sketchy from "./sketchy.js";
-
+import Image from "./Image";
 import {
   SectionContainer,
   SectionContents,
@@ -12,7 +12,6 @@ import {
   SectionItems,
   Item,
   ItemTitle,
-  ItemIcon,
   ItemIconAlt,
   ItemDescription,
   SectionBody
@@ -62,9 +61,9 @@ const Section = ({
                     }}
                   >
                     <div style={{ display: "flex", alignItems: "center" }}>
-                      {item.image ? (
-                        <ItemIcon src={item.image} />
-                      ) : item.image === "" ? (
+                      {item.logo ? (
+                        <Image filename={item.logo} />
+                      ) : item.logo === "" ? (
                         <ItemIconAlt>
                           {item.title[0]}
                           {item.title.split(" ").length > 1

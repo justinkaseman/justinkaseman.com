@@ -1,51 +1,98 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   Tv,
   Screen,
   Speaker,
   Volume,
-  Channel,
+  ChannelUp,
+  ChannelDown,
   Button,
-  Button_Channel,
+  ButtonChannel,
   Power,
   Footer,
   ErrorNoise,
   ErrorEffect,
-  TvContent
-  //   Input
+  Input,
+  Title,
+  CTA
+  //   OldFilter,
+  //   ScrollTextContainer,
+  //   ScrollText,
 } from "./styles";
+import Subtitles from "./Subtitles";
+import Video from "./Video";
 
-/* 
-Copyright (c) 2020 by Roque Ribeiro (https://codepen.io/roqueribeiro/pen/GZNgzY)
+const Television = ({ channels = [] }) => {
+  const [power, setPower] = useState(false);
+  const [channel, setChannel] = useState(1);
+  const [volume, setVolume] = useState(0);
+  const { title, video, description, technology, url } = channels[channel - 1];
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+  useEffect(() => {
+    setTimeout(() => setPower(true), 1000);
+  }, []);
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
-
-const Television = () => {
   return (
     <Container>
       <Tv>
         <Screen>
           <ErrorNoise>
-            <ErrorEffect>
-              <TvContent />
+            <ErrorEffect power={power}>
+              {power && (
+                <>
+                  <Video src={video} />
+                  <Title>
+                    <p>{`${channel} - ${title}`}</p>
+                  </Title>
+                  <Subtitles
+                    description={description}
+                    technology={technology}
+                  />
+                  <CTA
+                    onClick={() => {
+                      window.open(url, "_blank");
+                    }}
+                  >
+                    <a href={url}>SEE NOW!</a>
+                  </CTA>
+                </>
+              )}
             </ErrorEffect>
           </ErrorNoise>
         </Screen>
         <Speaker />
+        <ChannelUp>
+          <ButtonChannel
+            centered
+            onClick={() => {
+              if (channel + 1 > channels.length) return setChannel(1);
+              return setChannel(channel + 1);
+            }}
+          />
+        </ChannelUp>
+        <ChannelDown>
+          <ButtonChannel
+            centered
+            onClick={() => {
+              if (channel - 1 < 1) return setChannel(channels.length);
+              return setChannel(channel - 1);
+            }}
+          />
+        </ChannelDown>
         <Volume>
-          <Button_Channel centered />
+          <Input
+            type="range"
+            min="0"
+            // Temporarily disabled
+            // max="100"
+            max="0"
+            value={volume}
+            onChange={e => setVolume(e.target.value)}
+          />
         </Volume>
-        <Channel>
-          <Button_Channel centered />
-        </Channel>
-        <Power>
-          <Button />
+        <Power power={power}>
+          <Button onClick={() => setPower(!power)} />
         </Power>
         <Footer />
       </Tv>

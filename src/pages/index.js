@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
-
 import Layout from "../components/layout";
 import Section from "../components/section";
 import SectionMain from "../components/sectionMain";
@@ -68,7 +67,7 @@ class IndexPage extends React.Component {
               background={index.background}
               social={index.social}
               size={true}
-              containerStyle={{ marginTop: "70px" }}
+              containerStyle={{}}
             />
             <Section
               title={projects.title}
@@ -157,7 +156,7 @@ export const pageQuery = graphql`
             title
             items {
               title
-              image
+              logo
               description
               technology
               url
@@ -169,7 +168,7 @@ export const pageQuery = graphql`
             title
             items {
               title
-              image
+              logo
               description
               url
             }

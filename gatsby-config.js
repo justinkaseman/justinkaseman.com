@@ -3,7 +3,7 @@ module.exports = {
     title: "Justin Kaseman",
     author: "Justin Kaseman",
     description: "Justin Kaseman - Software Engineer.",
-    siteUrl: "https://justinkaseman.com/",
+    siteUrl: "https://justinkaseman.com/"
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -16,8 +16,8 @@ module.exports = {
         background_color: "#663399",
         theme_color: "#663399",
         display: "minimal-ui",
-        icon: "src/images/favicon.png",
-      },
+        icon: "src/images/favicon.png"
+      }
     },
     "gatsby-plugin-offline",
     "gatsby-plugin-transition-link",
@@ -25,32 +25,32 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: "data",
-        path: `${__dirname}/src/data`,
-      },
+        path: `${__dirname}/src/data`
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: "images",
-        path: `${__dirname}/src/images`,
-      },
+        path: `${__dirname}/src/images`
+      }
     },
     "gatsby-transformer-sharp",
     {
-        resolve: `gatsby-plugin-sharp`,
-        options: {
-          useMozJpeg: false,
-          stripMetadata: true,
-          defaultQuality: 75,
-        },
-      },
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        useMozJpeg: false,
+        stripMetadata: true,
+        defaultQuality: 75
+      }
+    },
     `gatsby-transformer-yaml`,
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
           families: ["Open Sans Condensed:300,700"],
-          urls: ["/fonts/fonts.css"],
+          urls: ["/fonts/fonts.css"]
         },
         custom: {
           families: [
@@ -58,11 +58,11 @@ module.exports = {
             "Federo Regular",
             "Sullivan Fill",
             "Sullivan Bevel",
-            "Sullivan Regular",
+            "Sullivan Regular"
           ],
-          urls: ["/fonts/fonts.css"],
-        },
-      },
-    },
-  ],
+          urls: ["/fonts/fonts.css"]
+        }
+      }
+    }
+  ]
 };

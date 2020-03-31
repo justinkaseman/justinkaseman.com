@@ -12,11 +12,11 @@ import {
 } from "../styles/styled-components.js";
 import Typewriter from "typewriter-effect";
 
-const SectionMain = ({ image, containerStyle, ...props }) => {
+const SectionMain = ({ image, ...props }) => {
   return (
     <SectionContainerMain style={{ backgroundColor: props.background }} main>
       <Background index={props.index} />
-      <SectionContents style={containerStyle}>
+      <SectionContents main>
         <Sketchy />
 
         <IconContainer height={150} width={150}>

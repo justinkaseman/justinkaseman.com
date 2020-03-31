@@ -35,7 +35,7 @@ class WritingPage extends React.Component {
       title,
       items,
       texture,
-      background,
+      background
     } = this.props.data.allDataYaml.edges[0].node.writing;
     return (
       <Layout
@@ -65,7 +65,7 @@ export const pageQuery = graphql`
             title
             items {
               title
-              image
+              logo
               description
               url
             }

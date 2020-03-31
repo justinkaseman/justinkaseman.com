@@ -349,7 +349,6 @@ export const ArrowTextLetter = styled.span`
 //     font-size: 88px;
 //     position: absolute;
 //     left: 5px;
-
 //   }
 
 // ${ml`
@@ -411,15 +410,19 @@ export const SectionContents = styled.section`
   box-shadow: 8px 8px rgba(0, 0, 0, 0.15);
   width: 100%;
 
-  ${small`
-    padding: ${spacing.half} ${spacing.half};
-  `}
   ${medium`
     padding: ${spacing.single} ${spacing.double};
   `}
   ${large`
     padding: ${spacing.single} ${spacing.double};
   `}
+    @media screen and (max-width: 901px) {
+    padding: ${spacing.half} ${spacing.half};
+    ${props => (props.main ? "margin-top: 70px;" : "margin-top: 0px;")}
+  }
+  @media screen and (max-width: 490px) {
+    ${props => (props.main ? "margin-top: 100px;" : "margin-top: 0px;")}
+  }
 `;
 
 export const SectionHeader = styled.header`
@@ -440,8 +443,14 @@ export const SectionMainTitle = styled.h1`
   left: 180px;
 
   > span.flicker {
+    will-change: color, text-shadow;
     animation: ${blink} linear infinite 4s;
   }
+
+  ${large`
+    font-size: 115px;
+    top: -100px;
+  `};
 
   @media screen and (max-width: 900px) {
     top: -90px;
@@ -465,10 +474,17 @@ export const SectionMainTitle = styled.h1`
     }
   }
 
-  ${large`
-    font-size: 115px;
-    top: -100px;
-  `};
+  @media screen and (max-width: 490px) {
+    top: -124px;
+    left: -10%;
+    text-align: center;
+    width: 100%;
+    > span.secondrow {
+      width: 300px;
+      position: absolute;
+      top: 65px;
+    }
+  }
 `;
 
 export const SectionMainDescription = styled.div`
@@ -546,6 +562,7 @@ export const SectionItems = styled.main`
 `;
 
 export const Item = styled.div`
+width: 100%;
   padding: 10px;
   transition: all .2s ease-in-out;
 

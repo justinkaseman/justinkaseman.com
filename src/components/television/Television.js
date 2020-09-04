@@ -15,10 +15,7 @@ import {
   ErrorEffect,
   Input,
   Title,
-  CTA
-  //   OldFilter,
-  //   ScrollTextContainer,
-  //   ScrollText,
+  CTA,
 } from "./styles";
 import Subtitles from "./Subtitles";
 import Video from "./Video";
@@ -49,12 +46,10 @@ const Television = ({ channels = [] }) => {
                     description={description}
                     technology={technology}
                   />
-                  <CTA
-                    onClick={() => {
-                      window.open(url, "_blank");
-                    }}
-                  >
-                    <a href={url}>SEE NOW!</a>
+                  <CTA>
+                    <a href={url} target="_blank">
+                      SEE NOW!
+                    </a>
                   </CTA>
                 </>
               )}
@@ -84,11 +79,9 @@ const Television = ({ channels = [] }) => {
           <Input
             type="range"
             min="0"
-            // Temporarily disabled
-            // max="100"
             max="0"
             value={volume}
-            onChange={e => setVolume(e.target.value)}
+            onChange={(e) => setVolume(e.target.value)}
           />
         </Volume>
         <Power power={power}>

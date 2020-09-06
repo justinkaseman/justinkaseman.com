@@ -47,7 +47,7 @@ const Television = ({ channels = [] }) => {
                     technology={technology}
                   />
                   <CTA>
-                    <a href={url} target="_blank">
+                    <a href={url} target="_blank" rel="noopener noreferrer">
                       SEE NOW!
                     </a>
                   </CTA>

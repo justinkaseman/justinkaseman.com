@@ -28,7 +28,6 @@ const Image = props => (
       if (!image) {
         return null;
       }
-      //const imageSizes = image.node.childImageSharp.sizes; sizes={imageSizes}
       return (
         <Img
           style={{

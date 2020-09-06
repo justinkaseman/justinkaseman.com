@@ -330,11 +330,11 @@ export const ArrowText = styled.span`
   color: lightgrey;
 
   ${ml`
-      font-size: 54px;
+      font-size: 50px;
   `}
 
   &:hover {
-      color: white;
+    color: white;
     transition: text-shadow 0.4s;
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444,
         0 0 0.1em #ff4444, 0 10px 3px #000;
@@ -342,27 +342,7 @@ export const ArrowText = styled.span`
 `;
 
 export const ArrowTextLetter = styled.span`
-//  &:after {
-//     z-index: -1;
-//     content: "${(props) => props.children}";
-//     font-family: Sullivan Fill;
-//     color: grey;
-//     font-size: 88px;
-//     position: absolute;
-//     left: 5px;
-//   }
 
-// ${ml`
-//   &:after {
-//     z-index: -1;
-//     content: "${(props) => props.children}";
-//     font-family: Sullivan Fill;
-//     color: grey;
-//     font-size: 59px;
-//     position: absolute;
-//     left: 2px;
-//   }
-// `}
 `;
 // Section
 

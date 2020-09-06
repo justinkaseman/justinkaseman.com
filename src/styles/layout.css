@@ -5,6 +5,7 @@ html {
 }
 body {
   margin: 0;
+  padding:0;
 }
 article,
 aside,
@@ -186,17 +187,16 @@ textarea {
 html {
   font: 100%/1.45em georgia, serif;
   box-sizing: border-box;
-  overflow-y: scroll;
 }
 * {
   box-sizing: inherit;
 }
-/* *:before {
+*:before {
   box-sizing: inherit;
 }
 *:after {
   box-sizing: inherit;
-} */
+}
 body {
   color: hsla(0, 0%, 0%, 0.8);
   font-family: "Federo Regular", "Lucida Sans Unicode", "Lucida Grande",

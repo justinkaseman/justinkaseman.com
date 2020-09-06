@@ -4,7 +4,6 @@ import {
   ZoomableGroup,
   Geographies,
   Geography,
-  Markers,
   Marker,
   Annotation,
 } from "react-simple-maps";
@@ -17,11 +16,13 @@ class Map extends React.Component {
     center: [0, 20],
     zoom: 1,
     annotation: null,
+    moveTo: [0,20],
   };
 
   handleZoomIn = () => {
     this.setState({
       zoom: this.state.zoom * 2,
+      center: this.state.moveTo,
     });
   };
   handleZoomOut = () => {
@@ -29,17 +30,13 @@ class Map extends React.Component {
       zoom: this.state.zoom / 2,
     });
   };
-  handleCityClick = city => {
+  handleCityClick = coordinates => {
     this.setState({
       zoom: 2,
-      center: city.coordinates,
+      center: coordinates,
     });
   };
-  handleCountryClick = (city, e) => {
-    this.setState({
-      zoom: this.state.zoom * 2,
-    });
-  };
+
   handleReset = () => {
     this.setState({
       center: [0, 20],
@@ -57,6 +54,7 @@ class Map extends React.Component {
       annotation: null,
     });
   };
+
   render() {
     return (
       <div
@@ -104,16 +102,18 @@ class Map extends React.Component {
                 height: "100%",
               }}
             >
-              <ZoomableGroup center={[x, y]} zoom={zoom}>
+              <ZoomableGroup center={[x, y]} zoom={zoom} onMoveEnd={({coordinates}) => 
+                this.setState({
+                  moveTo: coordinates,
+                })}>
                 <Geographies geography={geography}>
-                  {(geographies, projection) =>
+                  {({geographies}) =>
                     geographies.map(
                       (geography, i) =>
                         geography.id !== "010" && (
                           <Geography
                             key={i}
                             geography={geography}
-                            projection={projection}
                             style={{
                               default: {
                                 fill: "#ECEFF1",
@@ -122,50 +122,50 @@ class Map extends React.Component {
                                 outline: "none",
                               },
                               hover: {
-                                fill: "#CFD8DC",
+                                fill: "#ECEFF1",
                                 stroke: "#607D8B",
                                 strokeWidth: 0.75,
                                 outline: "none",
                               },
                               pressed: {
-                                fill: "#FF5722",
+                                fill: "#ECEFF1",
                                 stroke: "#607D8B",
                                 strokeWidth: 0.75,
                                 outline: "none",
                               },
                             }}
-                            onClick={this.handleCountryClick}
                           />
                         )
                     )
                   }
                 </Geographies>
-                <Markers>
-                  {this.props.cities.map((city, i) => (
+                  {this.props.cities.map(({name, coordinates}, i) => (
                     <Marker
                       key={i}
-                      marker={city}
-                      onClick={this.handleCityClick}
-                      onMouseEnter={this.onMouseEnter}
+                      coordinates={coordinates}
+                      onClick={() => this.handleCityClick(coordinates)}
+                      onMouseEnter={() => this.onMouseEnter({name, coordinates})}
                       onMouseLeave={this.onMouseLeave}
                     >
                       <circle
                         cx={0}
                         cy={0}
-                        r={3}
+                        r={1.5}
                         fill="#FF5722"
                         stroke="#DF3702"
                       />
                     </Marker>
                   ))}
-                </Markers>
                 {this.state.annotation ? (
                   <Annotation
                     dx={-35}
                     dy={-15}
                     subject={this.state.annotation.coordinates}
-                    strokeWidth={1}
-                    stroke="#607D8B"
+                    connectorProps={{
+                      stroke: "#607D8B",
+                      strokeWidth: 1,
+                      strokeLinecap: "round"
+                    }}
                   >
                     <text>{this.state.annotation.name}</text>
                   </Annotation>
